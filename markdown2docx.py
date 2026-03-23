@@ -22,10 +22,17 @@ Install pandoc:
 """
 
 import argparse
+import logging
 import sys
 import re
 import tempfile
 from pathlib import Path
+
+import os
+_level = getattr(logging, os.environ.get('LOGLEVEL', 'INFO').upper(), logging.INFO)
+logging.basicConfig(format='%(levelname)s: %(message)s', level=_level)
+log = logging.getLogger(__name__)
+logging.getLogger('pypandoc').setLevel(logging.ERROR)
 
 try:
     import pypandoc
@@ -111,7 +118,7 @@ def normalize_heading_anchors(content: str) -> str:
             # Add explicit anchor ID
             new_heading = f"{level} {heading_text} {{#{anchor}}}"
             modified_content = modified_content[:start] + new_heading + modified_content[end:]
-            print(f"  Adding anchor to heading: {heading_text} -> {{#{anchor}}}")
+            log.debug("Adding anchor to heading: %s -> {#%s}", heading_text, anchor)
 
     # Second pass: Fix TOC links
     # Pattern to match markdown links like [text](#anchor)
@@ -144,11 +151,11 @@ def normalize_heading_anchors(content: str) -> str:
         if best_match:
             heading_text, correct_anchor = best_match
             if old_anchor != correct_anchor:
-                print(f"  Fixing TOC link: #{old_anchor} -> #{correct_anchor}")
+                log.warning("Fixing TOC link: #%s -> #%s", old_anchor, correct_anchor)
             return f'[{link_text}](#{correct_anchor})'
 
         # If no match found, keep original
-        print(f"  Warning: No heading found for TOC link: [{link_text}](#{old_anchor})")
+        log.warning("No heading found for TOC link: [%s](#%s)", link_text, old_anchor)
         return match.group(0)
 
     normalized_content = link_pattern.sub(replace_link, modified_content)
@@ -182,13 +189,10 @@ def convert_markdown_to_docx(input_path: str) -> None:
     # Generate output DOCX path
     output_file = input_file.with_suffix('.docx')
 
-    # Read markdown content
-    print(f"Reading markdown file: {input_file}")
+    log.info("Converting %s -> %s", input_file, output_file)
     with open(input_file, 'r', encoding='utf-8') as f:
         original_content = f.read()
 
-    # Normalize the markdown content to fix TOC links
-    print(f"Normalizing TOC links...")
     normalized_content = normalize_heading_anchors(original_content)
 
     # Create a temporary file with normalized content
@@ -200,9 +204,6 @@ def convert_markdown_to_docx(input_path: str) -> None:
         with open(temp_file, 'w', encoding='utf-8') as f:
             f.write(normalized_content)
 
-        # Convert markdown to DOCX using pandoc
-        print(f"Converting to DOCX: {output_file}")
-
         try:
             pypandoc.convert_file(
                 str(temp_file),
@@ -213,7 +214,7 @@ def convert_markdown_to_docx(input_path: str) -> None:
                     '--to=docx',
                 ]
             )
-            print(f"Successfully converted to DOCX: {output_file}")
+            log.info("Done: %s", output_file)
         except RuntimeError as e:
             if "pandoc" in str(e).lower():
                 raise RuntimeError(
@@ -234,7 +235,7 @@ def convert_markdown_to_docx(input_path: str) -> None:
             pass
         if temp_file.exists():
             temp_file.unlink()
-            print(f"Cleaned up temporary file")
+            log.debug("Cleaned up temporary file")
 
 
 def main():

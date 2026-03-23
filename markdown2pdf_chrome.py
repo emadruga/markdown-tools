@@ -18,11 +18,18 @@ Then run: playwright install chromium
 """
 
 import argparse
+import logging
 import sys
 from pathlib import Path
 import asyncio
 import re
 import tempfile
+
+import os
+_level = getattr(logging, os.environ.get('LOGLEVEL', 'INFO').upper(), logging.INFO)
+logging.basicConfig(format='%(levelname)s: %(message)s', level=_level)
+log = logging.getLogger(__name__)
+logging.getLogger('pypandoc').setLevel(logging.ERROR)
 
 try:
     from playwright.async_api import async_playwright
@@ -117,7 +124,7 @@ def normalize_heading_anchors(content: str) -> str:
             # Add explicit anchor ID
             new_heading = f"{level} {heading_text} {{#{anchor}}}"
             modified_content = modified_content[:start] + new_heading + modified_content[end:]
-            print(f"  Adding anchor to heading: {heading_text} -> {{#{anchor}}}")
+            log.debug("Adding anchor to heading: %s -> {#%s}", heading_text, anchor)
 
     # Second pass: Fix TOC links
     # Pattern to match markdown links like [text](#anchor)
@@ -150,11 +157,11 @@ def normalize_heading_anchors(content: str) -> str:
         if best_match:
             heading_text, correct_anchor = best_match
             if old_anchor != correct_anchor:
-                print(f"  Fixing TOC link: #{old_anchor} -> #{correct_anchor}")
+                log.warning("Fixing TOC link: #%s -> #%s", old_anchor, correct_anchor)
             return f'[{link_text}](#{correct_anchor})'
 
         # If no match found, keep original
-        print(f"  Warning: No heading found for TOC link: [{link_text}](#{old_anchor})")
+        log.warning("No heading found for TOC link: [%s](#%s)", link_text, old_anchor)
         return match.group(0)
 
     normalized_content = link_pattern.sub(replace_link, modified_content)
@@ -178,11 +185,9 @@ async def convert_markdown_to_pdf_async(input_path: str) -> None:
 
     output_file = input_file.with_suffix('.pdf')
 
-    print(f"Reading markdown file: {input_file}")
+    log.info("Converting %s -> %s", input_file, output_file)
     original_content = input_file.read_text(encoding='utf-8')
 
-    # Normalize the markdown content to fix TOC links
-    print(f"Normalizing TOC links...")
     markdown_text = normalize_heading_anchors(original_content)
 
     # Preprocess: ensure blank lines before lists for proper parsing
@@ -199,7 +204,7 @@ async def convert_markdown_to_pdf_async(input_path: str) -> None:
 
     markdown_text = '\n'.join(processed_lines)
 
-    print("Converting markdown to HTML...")
+    log.debug("Converting markdown to HTML")
     # Use pypandoc to convert markdown to HTML (preserves list structure better)
     html_content = pypandoc.convert_text(
         markdown_text,
@@ -313,8 +318,6 @@ async def convert_markdown_to_pdf_async(input_path: str) -> None:
     </html>
     """
 
-    print(f"Generating PDF: {output_file}")
-
     async with async_playwright() as p:
         browser = await p.chromium.launch()
         page = await browser.new_page()
@@ -337,7 +340,7 @@ async def convert_markdown_to_pdf_async(input_path: str) -> None:
 
         await browser.close()
 
-    print(f"Successfully converted to PDF: {output_file}")
+    log.info("Done: %s", output_file)
 
 
 def convert_markdown_to_pdf(input_path: str) -> None:

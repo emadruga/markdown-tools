@@ -184,6 +184,30 @@ def _xml_escape(text):
     return text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;')
 
 
+def _sanitize_bookmark(name):
+    """Sanitize a bookmark name for Word compatibility.
+
+    Word bookmark rules:
+    - Only ASCII letters, digits, and underscores
+    - Must start with a letter
+    - Max 40 characters
+    """
+    import unicodedata
+    # Normalize unicode (e.g. á → a)
+    nfkd = unicodedata.normalize('NFKD', name)
+    ascii_name = ''.join(c for c in nfkd if not unicodedata.combining(c))
+    # Replace hyphens and spaces with underscores
+    ascii_name = re.sub(r'[-\s]+', '_', ascii_name)
+    # Remove anything that isn't alphanumeric or underscore
+    ascii_name = re.sub(r'[^A-Za-z0-9_]', '', ascii_name)
+    # Must start with a letter
+    if ascii_name and not ascii_name[0].isalpha():
+        ascii_name = 'bk_' + ascii_name
+    # Truncate to 40 chars
+    ascii_name = ascii_name[:40]
+    return ascii_name
+
+
 def add_badge(paragraph, level):
     bg, fg = BADGE_COLORS.get(level, (BG_HEADER_MEDIUM, C_WHITE))
     run = paragraph.add_run(f'  {level}  ')
@@ -460,8 +484,33 @@ class DocxBeautifier:
         self.doc = Document()
         self.blocks = blocks
         self.bookmarks = {}  # name -> id
+        self._anchor_map = {}  # normalized_pandoc_anchor -> bookmark_name (for TOC resolution)
+        self._precompute_anchor_map()
         self._setup_styles()
         self._setup_page()
+
+    def _precompute_anchor_map(self):
+        """Pre-scan all H2+ headings and build a map from any possible
+        pandoc-style anchor to the sanitized bookmark name we will create.
+
+        Maps: normalized_pandoc_anchor -> sanitized_bookmark_name
+        """
+        for block in self.blocks:
+            if block['type'] != 'heading' or block['level'] < 2:
+                continue
+            text = block['text']
+            level = block['level']
+            # The pandoc-style anchor (with accents etc.)
+            pandoc = self._generate_pandoc_anchor(text)
+            # The actual bookmark name (ASCII, max 40 chars)
+            sanitized = _sanitize_bookmark(pandoc) if pandoc else None
+            if pandoc and sanitized:
+                self._anchor_map[pandoc] = sanitized
+            # Short bookmarks (cap3, lab31, apendice_a) only for H2
+            if level == 2:
+                short = self._generate_bookmark(text)
+                if short:
+                    self._anchor_map[short] = sanitized or _sanitize_bookmark(short)
 
     def _setup_page(self):
         section = self.doc.sections[0]
@@ -656,6 +705,26 @@ class DocxBeautifier:
         for k in range(start_idx + 1, min(j, len(self.blocks))):
             self.blocks[k] = {'type': '_skip'}
 
+    def _resolve_toc_anchor(self, raw_anchor):
+        """Resolve a TOC anchor from the markdown to a sanitized bookmark name.
+
+        Handles pandoc-style inconsistencies: leading dashes from emojis,
+        double dashes from special chars, etc.
+        Returns an ASCII-safe, Word-compatible bookmark name.
+        """
+        # Normalize: strip leading/trailing dashes, collapse double dashes
+        normalized = re.sub(r'-+', '-', raw_anchor).strip('-')
+        # Direct match in anchor map -> returns sanitized name
+        if normalized in self._anchor_map:
+            return self._anchor_map[normalized]
+        # Try substring matching against known anchors
+        for known_anchor in self._anchor_map:
+            if normalized in known_anchor or known_anchor in normalized:
+                return self._anchor_map[known_anchor]
+        # Fallback: sanitize the normalized anchor directly
+        log.warning("TOC anchor not resolved: %s (normalized: %s)", raw_anchor, normalized)
+        return _sanitize_bookmark(normalized)
+
     def _build_toc(self, start_idx):
         """Build table of contents from list blocks."""
         p = self.doc.add_paragraph()
@@ -694,8 +763,9 @@ class DocxBeautifier:
             link_match = re.match(r'\[(.+?)\]\(#(.+?)\)', text)
             if link_match:
                 link_text = link_match.group(1)
-                anchor = link_match.group(2)
-                add_hyperlink(p, anchor, link_text)
+                raw_anchor = link_match.group(2)
+                resolved = self._resolve_toc_anchor(raw_anchor)
+                add_hyperlink(p, resolved, link_text)
             else:
                 render_inline(p, text, base_size=11, base_color=C_PRIMARY)
 
@@ -714,39 +784,63 @@ class DocxBeautifier:
                 clean_text = text.replace(emoji, '').strip()
                 break
 
-        p = self.doc.add_heading(clean_text, level=1)
+        # Build paragraph manually to control run order (badge before text)
+        p = self.doc.add_paragraph(style='Heading 1')
         p.paragraph_format.space_before = Pt(16)
         p.paragraph_format.space_after = Pt(8)
 
-        # Add badge if it's a lab heading
+        # Add badge FIRST if it's a lab heading
         if emoji_level:
-            add_run(p, '  ')
             add_badge(p, emoji_level)
+            add_run(p, '  ', size=18, font_name='Arial')
 
-        # Add bookmark
+        # Add heading text
+        add_run(p, clean_text, bold=True, size=18, color=C_PRIMARY, font_name='Arial')
+
+        # Add sanitized bookmarks — both short name AND pandoc-style anchor for TOC links
         bookmark_name = self._generate_bookmark(text)
         if bookmark_name:
+            safe_name = _sanitize_bookmark(bookmark_name)
             bid = next_bookmark_id()
-            add_bookmark(p, bookmark_name, bid)
-            self.bookmarks[bookmark_name] = bid
+            add_bookmark(p, safe_name, bid)
+            self.bookmarks[safe_name] = bid
+
+        # Also add pandoc-style anchor (sanitized) so TOC hyperlinks work
+        pandoc_anchor = self._generate_pandoc_anchor(text)
+        if pandoc_anchor:
+            safe_pandoc = _sanitize_bookmark(pandoc_anchor)
+            if safe_pandoc and safe_pandoc not in self.bookmarks:
+                bid2 = next_bookmark_id()
+                add_bookmark(p, safe_pandoc, bid2)
+                self.bookmarks[safe_pandoc] = bid2
 
         # Chapter separator
         set_paragraph_border_bottom(p, BORDER_CHAPTER)
 
     def _add_heading3(self, text):
         """### headings → Heading2."""
-        p = self.doc.add_heading(text, level=2)
+        p = self.doc.add_paragraph(style='Heading 2')
         p.paragraph_format.space_before = Pt(12)
         p.paragraph_format.space_after = Pt(6)
+        add_run(p, text, bold=True, size=13, color=C_PRIMARY, font_name='Arial')
+        # Add sanitized pandoc-style bookmark
+        pandoc_anchor = self._generate_pandoc_anchor(text)
+        if pandoc_anchor:
+            safe = _sanitize_bookmark(pandoc_anchor)
+            if safe and safe not in self.bookmarks:
+                bid = next_bookmark_id()
+                add_bookmark(p, safe, bid)
+                self.bookmarks[safe] = bid
 
     def _add_heading4(self, text):
         """#### headings → Heading3."""
-        p = self.doc.add_heading(text, level=3)
+        p = self.doc.add_paragraph(style='Heading 3')
+        add_run(p, text, size=12, color=C_HEADING3, font_name='Arial')
 
     def _generate_bookmark(self, text):
-        """Generate bookmark name from heading text."""
+        """Generate short bookmark name from heading text."""
         # Chapter heading
-        m = re.match(r'Capítulo\s+(\d+)', text)
+        m = re.match(r'.*Capítulo\s+(\d+)', text)
         if m:
             return f'cap{m.group(1)}'
         # Lab heading
@@ -754,9 +848,27 @@ class DocxBeautifier:
         if m:
             return f'lab{m.group(1)}{m.group(2)}'
         # Appendix
-        if 'Apêndice A' in text:
+        if 'Apêndice A' in text or 'Apêndice A' in text:
             return 'apendice_a'
         return None
+
+    @staticmethod
+    def _generate_pandoc_anchor(text):
+        """Generate pandoc-style anchor from heading text (for TOC link compatibility)."""
+        # Strip emojis
+        anchor = text
+        for emoji in ('🟢', '🟡', '🔴', '✔'):
+            anchor = anchor.replace(emoji, '')
+        anchor = anchor.lower().strip()
+        # Remove all punctuation except hyphens, underscores, spaces
+        anchor = re.sub(r'[^\w\s-]', '', anchor)
+        # Replace whitespace with hyphens
+        anchor = re.sub(r'\s+', '-', anchor)
+        # Collapse multiple hyphens
+        anchor = re.sub(r'-+', '-', anchor)
+        # Strip leading/trailing hyphens
+        anchor = anchor.strip('-')
+        return anchor
 
     # ── Code blocks ──
 
@@ -951,14 +1063,18 @@ class DocxBeautifier:
 # Main
 # ──────────────────────────────────────────────
 
-def convert(input_path: str) -> str:
+def convert(input_path: str, output_path: str = None) -> str:
     input_file = Path(input_path).resolve()
     if not input_file.exists():
         raise FileNotFoundError(f"Input file not found: {input_file}")
     if input_file.suffix.lower() not in ('.md', '.markdown'):
         raise ValueError(f"Input must be a markdown file: {input_file}")
 
-    output_file = input_file.with_suffix('.docx')
+    if output_path:
+        output_file = Path(output_path).resolve()
+    else:
+        output_file = input_file.with_suffix('.docx')
+
     log.info("Converting %s -> %s", input_file, output_file)
 
     content = input_file.read_text(encoding='utf-8')
@@ -978,10 +1094,11 @@ def main():
         description='Convert markdown to beautifully formatted DOCX.'
     )
     parser.add_argument('input_file', help='Path to the input markdown file')
+    parser.add_argument('-o', '--output', help='Output DOCX file path (default: same name as input with .docx)')
     args = parser.parse_args()
 
     try:
-        output = convert(args.input_file)
+        output = convert(args.input_file, args.output)
         print(f"Output: {output}")
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)

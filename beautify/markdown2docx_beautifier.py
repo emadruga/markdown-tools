@@ -161,7 +161,7 @@ def add_bookmark(paragraph, name, bookmark_id):
     paragraph._p.append(tag_end)
 
 
-def add_hyperlink(paragraph, anchor, text, color='0563C1'):
+def add_hyperlink(paragraph, anchor, text, color='0563C1', size=11):
     """Insert an internal hyperlink (w:hyperlink with w:anchor)."""
     hyperlink = parse_xml(
         f'<w:hyperlink {nsdecls("w")} w:anchor="{anchor}"/>'
@@ -171,7 +171,7 @@ def add_hyperlink(paragraph, anchor, text, color='0563C1'):
         f'  <w:rPr>'
         f'    <w:color w:val="{color}"/>'
         f'    <w:u w:val="single"/>'
-        f'    <w:sz w:val="{11 * 2}"/>'
+        f'    <w:sz w:val="{size * 2}"/>'
         f'  </w:rPr>'
         f'  <w:t xml:space="preserve">{_xml_escape(text)}</w:t>'
         f'</w:r>'
@@ -731,6 +731,10 @@ class DocxBeautifier:
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         p.paragraph_format.space_after = Pt(12)
         add_run(p, 'Sumário', bold=True, size=16, color=C_PRIMARY, font_name='Arial')
+        # Bookmark so footer hyperlink can jump here
+        bid = next_bookmark_id()
+        add_bookmark(p, 'sumario_toc', bid)
+        self.bookmarks['sumario_toc'] = bid
 
         # Collect TOC entries from list blocks
         toc_entries = []
@@ -1047,7 +1051,8 @@ class DocxBeautifier:
         footer.is_linked_to_previous = False
         p = footer.paragraphs[0] if footer.paragraphs else footer.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        add_run(p, 'Segurança Defensiva 2026-1 — Laboratórios', size=9, color=C_MUTED, font_name='Arial')
+        add_hyperlink(p, 'sumario_toc', 'Segurança Defensiva 2026-1', color=C_MUTED, size=9)
+        add_run(p, ' — Laboratórios', size=9, color=C_MUTED, font_name='Arial')
 
         # Add page number field
         run = p.add_run('    ')

@@ -162,7 +162,7 @@ def normalize_heading_anchors(content: str) -> str:
     return normalized_content
 
 
-def convert_markdown_to_pdf(input_path: str) -> None:
+def convert_markdown_to_pdf(input_path: str, mainfont: str = 'Latin Modern Roman', monofont: str = 'Latin Modern Mono') -> None:
     """
     Convert a markdown file to PDF using pandoc.
 
@@ -171,6 +171,8 @@ def convert_markdown_to_pdf(input_path: str) -> None:
 
     Args:
         input_path: Full path to the input markdown file
+        mainfont: Main font name for the PDF (default: Latin Modern Roman)
+        monofont: Monospace font name for the PDF (default: Latin Modern Mono)
 
     Raises:
         FileNotFoundError: If the input file doesn't exist
@@ -213,8 +215,8 @@ def convert_markdown_to_pdf(input_path: str) -> None:
                     '--pdf-engine=xelatex',  # Use xelatex for better Unicode support
                     '--variable', 'geometry:margin=1in',
                     '--variable', 'fontsize=11pt',
-                    '--variable', 'mainfont=Latin Modern Roman',
-                    '--variable', 'monofont=Latin Modern Mono',
+                    '--variable', f'mainfont={mainfont}',
+                    '--variable', f'monofont={monofont}',
                     '--from=markdown+hard_line_breaks',  # Preserve line breaks and list formatting
                     '--to=pdf',
                 ]
@@ -252,6 +254,7 @@ def main():
 Examples:
   %(prog)s /path/to/document.md
   %(prog)s ~/Documents/README.md
+  %(prog)s doc.md --mainfont "DejaVu Serif" --monofont "DejaVu Sans Mono"
         """
     )
 
@@ -261,10 +264,24 @@ Examples:
         help='Full path to the input markdown file'
     )
 
+    parser.add_argument(
+        '--mainfont',
+        type=str,
+        default='Latin Modern Roman',
+        help='Main font for the PDF (default: "Latin Modern Roman")'
+    )
+
+    parser.add_argument(
+        '--monofont',
+        type=str,
+        default='Latin Modern Mono',
+        help='Monospace font for the PDF (default: "Latin Modern Mono")'
+    )
+
     args = parser.parse_args()
 
     try:
-        convert_markdown_to_pdf(args.input_file)
+        convert_markdown_to_pdf(args.input_file, mainfont=args.mainfont, monofont=args.monofont)
         sys.exit(0)
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)

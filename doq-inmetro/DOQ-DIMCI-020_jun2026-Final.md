@@ -39,7 +39,7 @@ Revisão 01 – Junho/2026
 - [5 DOCUMENTOS DE REFERÊNCIA](#5-documentos-de-referência)
 - [6 DOCUMENTOS COMPLEMENTARES](#6-documentos-complementares)
 - [7 SIGLAS](#7-siglas)
-- [8 DEFINIÇÕES](#8-definições)
+- [8 TERMOS E DEFINIÇÕES](#8-termos-e-definições)
   - [8.1 Organização Candidata](#81-organização-candidata)
   - [8.2 Responsável Técnico](#82-responsável-técnico)
   - [8.3 Participante](#83-participante)
@@ -332,7 +332,7 @@ A responsabilidade pela revisão deste documento é da Dmtic.
 | OAC | Organismo de Avaliação da Conformidade |
 | RAC | Regulamento de Avaliação da Conformidade |
 
-## 8 DEFINIÇÕES
+## 8 TERMOS E DEFINIÇÕES
 
 ### 8.1 Organização Candidata
 

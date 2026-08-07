@@ -37,8 +37,8 @@ Revisão 01 – Junho/2026
 - [2 CAMPO DE APLICAÇÃO](#2-campo-de-aplicação)
 - [3 RESPONSABILIDADE](#3-responsabilidade)
 - [4 HISTÓRICO DA REVISÃO](#4-histórico-da-revisão)
-- [5 DOCUMENTOS COMPLEMENTARES](#5-documentos-complementares)
-- [6 DOCUMENTOS DE REFERÊNCIA](#6-documentos-de-referência)
+- [5 DOCUMENTOS DE REFERÊNCIA](#5-documentos-de-referência)
+- [6 DOCUMENTOS COMPLEMENTARES](#6-documentos-complementares)
 - [7 SIGLAS](#7-siglas)
 - [8 DEFINIÇÕES](#8-definições)
   - [8.1 Organização Candidata](#81-organização-candidata)
@@ -307,7 +307,13 @@ A responsabilidade pela revisão deste documento é da Dmtic.
 |---|---|---|
 | | | |
 
-## 5 DOCUMENTOS COMPLEMENTARES
+## 5 DOCUMENTOS DE REFERÊNCIA
+
+| Documento | Descrição |
+|---|---|
+| Portaria Inmetro nº 171, de 2026, ou substituta | Aprova a Instrução Normativa Inmetro e os Requisitos de Avaliação da Conformidade para Classificação da Maturidade da Indústria 4.0. |
+
+## 6 DOCUMENTOS COMPLEMENTARES
 
 <!-- pág. original: 8/465 -->
 
@@ -316,12 +322,6 @@ A responsabilidade pela revisão deste documento é da Dmtic.
 | ABNT NBR ISO 19011 | Diretrizes para auditoria de sistemas de gestão |
 | ABNT NBR ISO 9001 | Sistemas de gestão da qualidade - Requisitos |
 | ABNT NBR ISO/IEC 17065 | Avaliação da conformidade - Requisitos para organismos de certificação de produtos, processos e serviços |
-
-## 6 DOCUMENTOS DE REFERÊNCIA
-
-| Documento | Descrição |
-|---|---|
-| Portaria Inmetro nº 171, de 2026, ou substituta | Aprova a Instrução Normativa Inmetro e os Requisitos de Avaliação da Conformidade para Classificação da Maturidade da Indústria 4.0. |
 
 ## 7 SIGLAS
 

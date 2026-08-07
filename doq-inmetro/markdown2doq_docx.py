@@ -291,7 +291,16 @@ def build_header(section, total_pages_placeholder="465"):
             r.font.name = 'Arial'
 
     set_table_borders(table)
+    add_header_spacer(header)
     return table
+
+
+def add_header_spacer(header):
+    """Parágrafo em branco após a tabela do cabeçalho, dando 0,5cm de
+    respiro entre o cabeçalho e o início do conteúdo da página."""
+    spacer = header.add_paragraph()
+    spacer.paragraph_format.space_before = Pt(0)
+    spacer.paragraph_format.space_after = Cm(0.5)
 
 
 def add_logo_run(paragraph, size_cm=2.6):
@@ -334,6 +343,7 @@ def build_cover_header(section):
     run.font.name = 'Arial'
 
     set_table_borders(table)
+    add_header_spacer(header)
     return table
 
 
@@ -365,6 +375,13 @@ FIRST_CAPACIDADE_RE = re.compile(r'^I\.\d+\.1\s+Capacidade:', re.IGNORECASE)
 # Subtítulos de nível 4 que se repetem em toda Capacidade e não devem
 # aparecer no sumário (usam o estilo 'Heading4NoTOC', sem outlineLvl).
 NO_TOC_HEADING_TEXTS = {'bloco/pilar', 'resumo descritivo', 'questões', 'glossário'}
+
+# Subtítulos de nível 5 cujas listas (bullets) recebem recuo extra para se
+# alinhar mais à direita, conforme padrão do PDF de referência.
+INDENTED_BULLET_BLOCK_TEXTS = {
+    'artefatos e onde buscar', 'métricas/kpis', 'sinais por nível', 'amostragem',
+}
+INDENTED_BULLET_EXTRA_CM = 1.0
 
 
 def strip_html_comments(text):
@@ -418,6 +435,7 @@ class MarkdownDocxBuilder:
         self.bookmark_id = 100
         self.toc_entries = []  # (level, text, anchor)
         self._anchor_counts = {}
+        self._current_subsection = None
 
     def next_bookmark_id(self):
         self.bookmark_id += 1
@@ -435,6 +453,13 @@ class MarkdownDocxBuilder:
     # -- heading -------------------------------------------------------
     def add_heading(self, level, text):
         stripped_text = text.strip()
+        # Marca o início/fim dos blocos que recebem recuo extra nos bullets
+        # ('Artefatos e onde buscar', 'Métricas/KPIs', 'Sinais por nível',
+        # 'Amostragem'); qualquer outro heading de nível <= 5 encerra o bloco.
+        if stripped_text.lower() in INDENTED_BULLET_BLOCK_TEXTS:
+            self._current_subsection = stripped_text.lower()
+        else:
+            self._current_subsection = None
         is_first_capacidade = bool(FIRST_CAPACIDADE_RE.match(stripped_text))
         if PAGE_BREAK_BEFORE_RE.match(stripped_text) and not is_first_capacidade:
             self.doc.add_page_break()
@@ -472,10 +497,27 @@ class MarkdownDocxBuilder:
         return p
 
     def add_bullet(self, text, indent_level):
-        p = self.doc.add_paragraph(style='List Bullet')
-        p.paragraph_format.left_indent = Cm(0.5 + 0.6 * indent_level)
-        p.paragraph_format.space_after = Pt(2)
-        add_runs(p, text, base_size=11)
+        # Em 'Sinais por nível', o rótulo 'Nível N:' (indent 0) mantém o
+        # marcador de bullet padrão (•); todos os seus sub-itens (indent > 0,
+        # a descrição de cada nível) usam hífen em vez do marcador.
+        use_dash = self._current_subsection == 'sinais por nível' and indent_level > 0
+
+        base = 0.5 + (INDENTED_BULLET_EXTRA_CM if self._current_subsection else 0)
+        indent = Cm(base + 0.6 * indent_level)
+
+        if use_dash:
+            p = self.doc.add_paragraph()
+            p.paragraph_format.left_indent = indent
+            p.paragraph_format.space_after = Pt(2)
+            dash_run = p.add_run('-  ')
+            dash_run.font.size = Pt(11)
+            dash_run.font.name = 'Arial'
+            add_runs(p, text, base_size=11)
+        else:
+            p = self.doc.add_paragraph(style='List Bullet')
+            p.paragraph_format.left_indent = indent
+            p.paragraph_format.space_after = Pt(2)
+            add_runs(p, text, base_size=11)
         return p
 
     def add_table(self, rows):

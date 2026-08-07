@@ -64,6 +64,8 @@ O MOD-Gabin-039 fixa nove seções numeradas, nesta ordem:
 
 ### 1.3 Divergências de estrutura
 
+> ✅ **Corrigidas** (E-1, E-2, E-3/E-5, E-4) — ver status e commits na §6.
+
 | ID | Divergência | Situação atual | Situação-alvo (template) |
 |----|-------------|----------------|---------------------------|
 | E-1 | **Ordem das seções 4-6 trocada.** O template ordena `4 Documentos de referência`, `5 Documentos complementares`; a versão de trabalho traz `5 Documentos Complementares` e `6 Documentos de Referência`, além de intercalar `4 Histórico da Revisão`. | 4 Histórico / 5 Compl. / 6 Ref. | 4 Referência / 5 Complementares |
@@ -99,6 +101,8 @@ Observações:
 
 ### 1.5 Divergência de fonte
 
+> ✅ **Corrigidas** (F-1, F-2) — ver status e commits na §6.
+
 | ID | Divergência | Situação atual | Situação-alvo (template) |
 |----|-------------|----------------|---------------------------|
 | F-1 | **Fonte do corpo divergente.** A versão de trabalho usa **Arial 11 pt** (herança do PDF original, gerado pelo Google Docs) em corpo e títulos de seção; o template exige **Times New Roman 12 pt**. | Arial 11 pt | Times New Roman 12 pt |
@@ -113,6 +117,8 @@ variação de tamanho entre níveis de heading.
 ---
 
 ## 2. Cabeçalho de página
+
+> ✅ **C-1 corrigido** (§6). C-2/C-3 já eram conformes. C-4 (logo) na §2.1.
 
 | ID | Elemento | Template (MOD-Gabin-039) | Versão de trabalho | Ação |
 |----|----------|--------------------------|--------------------|------|
@@ -134,6 +140,9 @@ A **largura é a mesma** (1,79 cm) nos dois cabeçalhos; só a **altura**
 varia (~1 mm). A versão de trabalho, por outro lado, renderiza o logo
 (`inmetro-logo.png`) a **2,6 cm de largura** — bem maior que o template.
 
+> ✅ **C-4 corrigido** (§6): logo reduzido para 1,79 cm de largura, com
+> altura proporcional ao PNG atual (para não distorcê-lo).
+
 | ID | Divergência | Situação atual | Situação-alvo (template) |
 |----|-------------|----------------|---------------------------|
 | C-4 | **Logo superdimensionado.** A versão de trabalho renderiza o logo a **2,6 cm de largura**; o template usa **1,79 cm**. | 2,6 cm (largura) | 1,79 cm (largura); altura ~1,87 cm na capa / ~1,97 cm nas internas |
@@ -142,15 +151,21 @@ varia (~1 mm). A versão de trabalho, por outro lado, renderiza o logo
 
 ## 3. Rodapé de página
 
+> ✅ **R-1 corrigido** (§6). Referências do rodapé ainda a confirmar.
+
 | ID | Elemento | Template (MOD-Gabin-039) | Versão de trabalho | Ação |
 |----|----------|--------------------------|--------------------|------|
 | R-1 | **Rodapé institucional obrigatório.** | Linha em **todas as páginas**: `MOD-Gabin-039 - Rev. 02 – Publicado Jan/22 – Responsabilidade: Gabin – Referência(s): NIG-Gabin-040`. | **Ausente.** A versão de trabalho não gera rodapé. | **Decisão tomada (§5.2):** criar rodapé `DOQ-DIMCI-020 - Rev. 01 – Publicado Jun/2026 – Responsabilidade: Dmtic`, em todas as páginas. As referências (`Referência(s): …`) ficam **a confirmar**. |
 
 ---
 
-## 4. Quadros obrigatórios da seção 9
+## 4. Quadros obrigatórios da seção de Histórico
 
-O template define, na seção 9, **dois quadros** distintos:
+> ✅ **Q-1 e Q-2 corrigidos** (§6). Na versão de trabalho, esta é a
+> seção **13** (Histórico da Revisão e Quadro de Aprovação).
+
+O template define, na sua seção de histórico (nº 9 no template; nº 13 na
+versão de trabalho), **dois quadros** distintos:
 
 ### 4.1 Quadro "Histórico da Revisão"
 
@@ -209,21 +224,30 @@ as correções da §6.
 ## 6. Plano de correção (uma não conformidade por vez)
 
 Ordem sugerida, da maior para a menor prioridade de conformidade, cada
-item aplicado e verificado isoladamente antes de passar ao seguinte:
+item aplicado e verificado isoladamente antes de passar ao seguinte.
 
-| Ordem | ID | Ação | Onde corrigir |
-|-------|-----|------|----------------|
-| 1 | E-1 | Reordenar seções para `4 Documentos de referência`, `5 Documentos complementares`. | `.md` (ordem dos headings) |
-| 2 | E-2 | Mover `Histórico da Revisão` para o fim, como seção 9. | `.md` |
-| 3 | E-4 | Renomear `Definições` → `Termos e definições`. | `.md` |
-| 4 | E-3 / E-5 | Renumerar todas as seções conforme a ordem canônica do template. | `.md` |
-| 5 | Q-2 | Adicionar o Quadro de Aprovação (Elaborado/Verificado/Aprovado por) na seção 9, **mantendo** o `Controle de Versões` existente (§5.3). | `.md` |
-| 6 | Q-1 | Preencher o quadro Histórico da Revisão (já reposicionado por E-2). | `.md` |
-| 7 | R-1 | Gerar rodapé institucional em todas as páginas. | `markdown2doq_docx.py` + decisão §5.2 |
-| 8 | C-1 | Ajustar texto do cabeçalho da capa. | `markdown2doq_docx.py` + decisão §5.1 |
-| 9 | F-1 | Trocar a fonte do corpo/headings para Times New Roman 12 pt. | `markdown2doq_docx.py` + decisão §5.4 |
-| 10 | F-2 | Aplicar Arial 8 pt (negrito) ao rodapé ao criá-lo (junto de R-1). | `markdown2doq_docx.py` |
-| 11 | C-4 | Reduzir o logo para 1,79 cm de largura (altura ~1,87 cm capa / ~1,97 cm internas). | `markdown2doq_docx.py` |
+**Status: todos os 11 itens concluídos**, cada um verificado no `.docx`
+gerado e commitado individualmente.
+
+| Ordem | ID | Ação | Onde corrigir | Status |
+|-------|-----|------|----------------|--------|
+| 1 | E-1 | Reordenar seções para `4 Documentos de referência`, `5 Documentos complementares`. | `.md` (ordem dos headings) | ✅ `128b918` |
+| 2 | E-2 | Mover `Histórico da Revisão` para o fim (seção **13**, última numerada antes dos anexos — a numeração canônica final foi consolidada no item 4). | `.md` | ✅ `a515c47` |
+| 3 | E-4 | Renomear `Definições` → `Termos e definições`. | `.md` | ✅ `3227625` |
+| 4 | E-3 / E-5 | Renumerar todas as seções conforme a ordem canônica do template (blocos temáticos sequenciais 8–12, Histórico=13 — decisão de §1.3/§5). | `.md` | ✅ `18da801` |
+| 5 | Q-2 | Adicionar o Quadro de Aprovação (Elaborado/Verificado/Aprovado por) na seção 13, **mantendo** o `Controle de Versões` existente (§5.3). | `.md` | ✅ `7576729` |
+| 6 | Q-1 | Preencher o quadro Histórico da Revisão (Rev. 01 / Jun/2026 / "Emissão inicial do documento."). | `.md` | ✅ `d67cfa4` |
+| 7 | R-1 | Gerar rodapé institucional em todas as páginas (§5.2). | `markdown2doq_docx.py` | ✅ `4e96f08` |
+| 8 | C-1 | Ajustar texto do cabeçalho da capa para "Instituto Nacional de Metrologia, Qualidade e Tecnologia" (§5.1). | `markdown2doq_docx.py` | ✅ `8316c8b` |
+| 9 | F-1 | Trocar a fonte do corpo/headings (e cabeçalho/capa) para Times New Roman 12 pt (§5.4). | `markdown2doq_docx.py` | ✅ `5eda4b1` |
+| 10 | F-2 | Aplicar Arial 8 pt (negrito) ao rodapé (feito junto de R-1). | `markdown2doq_docx.py` | ✅ `4e96f08` |
+| 11 | C-4 | Reduzir o logo para 1,79 cm de largura (altura proporcional, para não distorcer o PNG atual). | `markdown2doq_docx.py` | ✅ `bfa3026` |
+
+### Pendências remanescentes
+
+- **Referências do rodapé (R-1):** o campo `Referência(s): …` do rodapé
+  ficou em branco, aguardando indicação dos documentos aplicáveis
+  (decisão §5.2).
 
 ### Observações sobre o conversor
 

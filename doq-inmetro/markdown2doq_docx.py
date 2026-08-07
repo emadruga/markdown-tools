@@ -383,6 +383,10 @@ INDENTED_BULLET_BLOCK_TEXTS = {
 }
 INDENTED_BULLET_EXTRA_CM = 1.0
 
+# ANEXO II: 'Critérios de Entrada:' / 'Critérios de Saída:' são parágrafos
+# comuns (não headings) que também abrem um bloco de bullets a recuar.
+INDENTED_BULLET_PARAGRAPH_TEXTS = {'critérios de entrada:', 'critérios de saída:'}
+
 
 def strip_html_comments(text):
     return HTML_COMMENT_RE.sub('', text)
@@ -482,6 +486,15 @@ class MarkdownDocxBuilder:
 
     # -- paragraph -------------------------------------------------------
     def add_paragraph_text(self, text):
+        stripped_text = text.strip()
+        # 'Critérios de Entrada:' / 'Critérios de Saída:' (ANEXO II) também
+        # abrem um bloco cujos bullets recebem recuo extra; qualquer outro
+        # parágrafo comum encerra o bloco (seja de 'Sinais por nível' etc.,
+        # seja de Critérios).
+        if stripped_text.lower() in INDENTED_BULLET_PARAGRAPH_TEXTS:
+            self._current_subsection = stripped_text.lower()
+        else:
+            self._current_subsection = None
         p = self.doc.add_paragraph()
         add_runs(p, text, base_size=11)
         return p

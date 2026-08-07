@@ -41,6 +41,13 @@ LOGO_PATH = SCRIPT_DIR / "inmetro-logo.png"
 DOC_CODE = "DOQ-DIMCI-020"
 DOC_REV = "REV. 01"
 
+# Fonte do corpo e dos títulos (F-1 / decisão §5.4): o template usa
+# Times New Roman 12 pt no corpo e nos títulos, distinguindo os títulos
+# apenas pelo negrito (sem variação de tamanho entre níveis de heading).
+BODY_FONT = "Times New Roman"
+BODY_PT = 12
+# O rodapé é a única exceção do template: Arial 8 pt (ver build_footer).
+
 # Rodapé institucional (modelo MOD-Gabin-039). Referências ainda a confirmar
 # (decisão §5.2 do PLANO_TEMPLATE_CONFORMIDADE) — deixadas fora por ora.
 FOOTER_TEXT = (
@@ -172,8 +179,8 @@ def setup_styles(doc):
     styles = doc.styles
 
     normal = styles['Normal']
-    normal.font.name = 'Arial'
-    normal.font.size = Pt(11)
+    normal.font.name = BODY_FONT
+    normal.font.size = Pt(BODY_PT)
     normal.font.color.rgb = RGBColor(0, 0, 0)
     normal.paragraph_format.space_after = Pt(8)
     normal.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
@@ -182,21 +189,24 @@ def setup_styles(doc):
     if rFonts is None:
         rFonts = OxmlElement('w:rFonts')
         rpr.append(rFonts)
-    rFonts.set(qn('w:eastAsia'), 'Arial')
+    rFonts.set(qn('w:eastAsia'), BODY_FONT)
 
+    # Todos os níveis de heading em BODY_PT (12 pt); só o negrito distingue
+    # (decisão §5.4). H5 permanece sem negrito para preservar a hierarquia
+    # visual mínima usada nos subtítulos das questões.
     heading_specs = {
-        'Heading 1': (16, True),
-        'Heading 2': (14, True),
-        'Heading 3': (12, True),
-        'Heading 4': (11, True),
-        'Heading 5': (11, False),
+        'Heading 1': (BODY_PT, True),
+        'Heading 2': (BODY_PT, True),
+        'Heading 3': (BODY_PT, True),
+        'Heading 4': (BODY_PT, True),
+        'Heading 5': (BODY_PT, False),
     }
     for name, (size, bold) in heading_specs.items():
         try:
             st = styles[name]
         except KeyError:
             continue
-        st.font.name = 'Arial'
+        st.font.name = BODY_FONT
         st.font.size = Pt(size)
         st.font.bold = bold
         st.font.color.rgb = RGBColor(0, 0, 0)
@@ -220,8 +230,8 @@ def setup_styles(doc):
     if 'Heading4NoTOC' not in styles:
         no_toc = styles.add_style('Heading4NoTOC', WD_STYLE_TYPE.PARAGRAPH)
         no_toc.base_style = styles['Heading 4']
-        no_toc.font.name = 'Arial'
-        no_toc.font.size = Pt(11)
+        no_toc.font.name = BODY_FONT
+        no_toc.font.size = Pt(BODY_PT)
         no_toc.font.bold = True
         no_toc.font.italic = False
         no_toc.font.color.rgb = RGBColor(0, 0, 0)
@@ -270,21 +280,21 @@ def build_header(section, total_pages_placeholder="465"):
     run = code_p.add_run(DOC_CODE)
     run.bold = True
     run.font.size = Pt(12)
-    run.font.name = 'Arial'
+    run.font.name = BODY_FONT
 
     rev_p = rev_cell.paragraphs[0]
     rev_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = rev_p.add_run(DOC_REV)
     run.bold = True
     run.font.size = Pt(10)
-    run.font.name = 'Arial'
+    run.font.name = BODY_FONT
 
     page_p = page_cell.paragraphs[0]
     page_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = page_p.add_run('PÁGINA\n')
     run.bold = True
     run.font.size = Pt(10)
-    run.font.name = 'Arial'
+    run.font.name = BODY_FONT
     page_p2 = page_cell.add_paragraph()
     page_p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
     add_field(page_p2, 'PAGE')
@@ -294,7 +304,7 @@ def build_header(section, total_pages_placeholder="465"):
     for pp in (page_p, page_p2):
         for r in pp.runs:
             r.font.size = Pt(10)
-            r.font.name = 'Arial'
+            r.font.name = BODY_FONT
 
     set_table_borders(table)
     add_header_spacer(header)
@@ -377,7 +387,7 @@ def build_cover_header(section):
     run = text_p.add_run('Instituto Nacional de Metrologia, Qualidade e Tecnologia')
     run.bold = True
     run.font.size = Pt(12)
-    run.font.name = 'Arial'
+    run.font.name = BODY_FONT
 
     set_table_borders(table)
     add_header_spacer(header)
@@ -450,7 +460,7 @@ def split_inline_runs(text):
     return runs
 
 
-def add_runs(paragraph, text, base_size=11, base_color=None):
+def add_runs(paragraph, text, base_size=BODY_PT, base_color=None):
     for chunk, bold, italic in split_inline_runs(text):
         if chunk == '':
             continue
@@ -458,7 +468,7 @@ def add_runs(paragraph, text, base_size=11, base_color=None):
         run.bold = bold
         run.italic = italic
         run.font.size = Pt(base_size)
-        run.font.name = 'Arial'
+        run.font.name = BODY_FONT
         if base_color:
             run.font.color.rgb = base_color
 
@@ -509,12 +519,13 @@ class MarkdownDocxBuilder:
         p = self.doc.add_paragraph(style=style_name)
         anchor = self.unique_anchor(text)
         add_bookmark(p, anchor, self.next_bookmark_id())
-        add_runs(p, text, base_size=11)
-        # add_runs força tamanho 11 nos runs — corrige para o tamanho do heading.
-        size_map = {1: 16, 2: 14, 3: 12, 4: 11, 5: 11}
+        add_runs(p, text, base_size=BODY_PT)
+        # Todos os níveis em BODY_PT (12 pt); só o negrito distingue títulos
+        # (decisão §5.4). H5 permanece sem negrito e em itálico, exceto o
+        # Heading4NoTOC (subtítulos de Capacidade), que é negrito.
         italic5 = (level == 5) and not excluded_from_toc
         for run in p.runs:
-            run.font.size = Pt(size_map.get(level, 11))
+            run.font.size = Pt(BODY_PT)
             run.bold = (level != 5) or excluded_from_toc
             run.italic = italic5 or run.italic
         if not excluded_from_toc:
@@ -547,7 +558,7 @@ class MarkdownDocxBuilder:
             # respiro antes do próximo texto comum (o parágrafo anterior era
             # um bullet com space_after=2pt, pequeno demais).
             p.paragraph_format.space_before = Pt(8)
-        add_runs(p, text, base_size=11)
+        add_runs(p, text, base_size=BODY_PT)
         return p
 
     def add_italic_caption(self, text):
@@ -556,7 +567,7 @@ class MarkdownDocxBuilder:
         run = p.add_run(text)
         run.italic = True
         run.font.size = Pt(10)
-        run.font.name = 'Arial'
+        run.font.name = BODY_FONT
         p.paragraph_format.space_after = Pt(4)
         return p
 
@@ -574,14 +585,14 @@ class MarkdownDocxBuilder:
             p.paragraph_format.left_indent = indent
             p.paragraph_format.space_after = Pt(2)
             dash_run = p.add_run('-  ')
-            dash_run.font.size = Pt(11)
-            dash_run.font.name = 'Arial'
-            add_runs(p, text, base_size=11)
+            dash_run.font.size = Pt(BODY_PT)
+            dash_run.font.name = BODY_FONT
+            add_runs(p, text, base_size=BODY_PT)
         else:
             p = self.doc.add_paragraph(style='List Bullet')
             p.paragraph_format.left_indent = indent
             p.paragraph_format.space_after = Pt(2)
-            add_runs(p, text, base_size=11)
+            add_runs(p, text, base_size=BODY_PT)
         return p
 
     def add_table(self, rows):
@@ -834,7 +845,7 @@ def build_cover_page(doc, title_text):
     p1.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p1.add_run(title_text)
     run.font.size = Pt(18)
-    run.font.name = 'Arial'
+    run.font.name = BODY_FONT
     p1.paragraph_format.space_after = Pt(30)
 
     p2 = doc.add_paragraph()
@@ -842,14 +853,14 @@ def build_cover_page(doc, title_text):
     run = p2.add_run('Diretoria de Metrologia Científica e Industrial')
     run.bold = True
     run.font.size = Pt(12)
-    run.font.name = 'Arial'
+    run.font.name = BODY_FONT
     p2.paragraph_format.space_after = Pt(16)
 
     p3 = doc.add_paragraph()
     p3.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p3.add_run('Documento de caráter orientativo')
     run.font.size = Pt(12)
-    run.font.name = 'Arial'
+    run.font.name = BODY_FONT
     p3.paragraph_format.space_after = Pt(60)
 
     p4 = doc.add_paragraph()
@@ -857,7 +868,7 @@ def build_cover_page(doc, title_text):
     run = p4.add_run(DOC_CODE)
     run.bold = True
     run.font.size = Pt(20)
-    run.font.name = 'Arial'
+    run.font.name = BODY_FONT
     p4.paragraph_format.space_after = Pt(6)
 
     p5 = doc.add_paragraph()
@@ -865,7 +876,7 @@ def build_cover_page(doc, title_text):
     run = p5.add_run('Revisão 01 – Junho/2026')
     run.bold = True
     run.font.size = Pt(12)
-    run.font.name = 'Arial'
+    run.font.name = BODY_FONT
 
 
 def insert_toc_placeholder(doc, builder):
@@ -873,7 +884,7 @@ def insert_toc_placeholder(doc, builder):
     run = p.add_run('SUMÁRIO')
     run.font.size = Pt(14)
     run.bold = True
-    run.font.name = 'Arial'
+    run.font.name = BODY_FONT
     p.paragraph_format.space_after = Pt(10)
 
     field_p = doc.add_paragraph()

@@ -36,24 +36,24 @@ Revisão 01 – Junho/2026
 - [1 OBJETIVO](#1-objetivo)
 - [2 CAMPO DE APLICAÇÃO](#2-campo-de-aplicação)
 - [3 RESPONSABILIDADE](#3-responsabilidade)
-- [5 DOCUMENTOS DE REFERÊNCIA](#5-documentos-de-referência)
-- [6 DOCUMENTOS COMPLEMENTARES](#6-documentos-complementares)
-- [7 SIGLAS](#7-siglas)
-- [8 TERMOS E DEFINIÇÕES](#8-termos-e-definições)
-  - [8.1 Organização Candidata](#81-organização-candidata)
-  - [8.2 Responsável Técnico](#82-responsável-técnico)
-  - [8.3 Participante](#83-participante)
-  - [8.4 Instituição Avaliadora](#84-instituição-avaliadora)
-  - [8.5 Avaliador-Líder](#85-avaliador-líder)
-  - [8.6 Equipe da Organização](#86-equipe-da-organização)
-- [9 GENERALIDADES](#9-generalidades)
-- [10 ORIENTAÇÕES DE CONDUTA](#10-orientações-de-conduta)
-- [11 DOCUMENTAÇÃO PESSOAL NECESSÁRIA](#11-documentação-pessoal-necessária)
-  - [11.1 Avaliações no Brasil](#111-avaliações-no-brasil)
-  - [11.2 Avaliações no Exterior](#112-avaliações-no-exterior)
-- [12 CONHECIMENTO DOS REQUISITOS DE CERTIFICAÇÃO](#12-conhecimento-dos-requisitos-de-certificação)
-- [13 AVALIAÇÃO DE MATURIDADE](#13-avaliação-de-maturidade)
-- [9 HISTÓRICO DA REVISÃO](#9-histórico-da-revisão)
+- [4 DOCUMENTOS DE REFERÊNCIA](#4-documentos-de-referência)
+- [5 DOCUMENTOS COMPLEMENTARES](#5-documentos-complementares)
+- [6 SIGLAS](#6-siglas)
+- [7 TERMOS E DEFINIÇÕES](#7-termos-e-definições)
+  - [7.1 Organização Candidata](#71-organização-candidata)
+  - [7.2 Responsável Técnico](#72-responsável-técnico)
+  - [7.3 Participante](#73-participante)
+  - [7.4 Instituição Avaliadora](#74-instituição-avaliadora)
+  - [7.5 Avaliador-Líder](#75-avaliador-líder)
+  - [7.6 Equipe da Organização](#76-equipe-da-organização)
+- [8 GENERALIDADES](#8-generalidades)
+- [9 ORIENTAÇÕES DE CONDUTA](#9-orientações-de-conduta)
+- [10 DOCUMENTAÇÃO PESSOAL NECESSÁRIA](#10-documentação-pessoal-necessária)
+  - [10.1 Avaliações no Brasil](#101-avaliações-no-brasil)
+  - [10.2 Avaliações no Exterior](#102-avaliações-no-exterior)
+- [11 CONHECIMENTO DOS REQUISITOS DE CERTIFICAÇÃO](#11-conhecimento-dos-requisitos-de-certificação)
+- [12 AVALIAÇÃO DE MATURIDADE](#12-avaliação-de-maturidade)
+- [13 HISTÓRICO DA REVISÃO](#13-histórico-da-revisão)
 - [ANEXO I - QUESTIONÁRIO DE AVALIAÇÃO DA MATURIDADE DA INDÚSTRIA 4.0](#anexo-i-questionário-de-avaliação-da-maturidade-da-indústria-40)
   - [I.1 Dimensão: Integração Vertical](#i1-dimensão-integração-vertical)
     - [I.1.1 Capacidade: Integração vertical entre chão de fábrica e sistemas corporativos](#i11-capacidade-integração-vertical-entre-chão-de-fábrica-e-sistemas-corporativos)
@@ -298,13 +298,13 @@ escopo da Portaria Inmetro 171 de Mar/26, ou substituta.
 
 A responsabilidade pela revisão deste documento é da Dmtic.
 
-## 5 DOCUMENTOS DE REFERÊNCIA
+## 4 DOCUMENTOS DE REFERÊNCIA
 
 | Documento | Descrição |
 |---|---|
 | Portaria Inmetro nº 171, de 2026, ou substituta | Aprova a Instrução Normativa Inmetro e os Requisitos de Avaliação da Conformidade para Classificação da Maturidade da Indústria 4.0. |
 
-## 6 DOCUMENTOS COMPLEMENTARES
+## 5 DOCUMENTOS COMPLEMENTARES
 
 <!-- pág. original: 8/465 -->
 
@@ -314,7 +314,7 @@ A responsabilidade pela revisão deste documento é da Dmtic.
 | ABNT NBR ISO 9001 | Sistemas de gestão da qualidade - Requisitos |
 | ABNT NBR ISO/IEC 17065 | Avaliação da conformidade - Requisitos para organismos de certificação de produtos, processos e serviços |
 
-## 7 SIGLAS
+## 6 SIGLAS
 
 <!-- pág. original: 9/465 -->
 
@@ -332,122 +332,122 @@ A responsabilidade pela revisão deste documento é da Dmtic.
 | OAC | Organismo de Avaliação da Conformidade |
 | RAC | Regulamento de Avaliação da Conformidade |
 
-## 8 TERMOS E DEFINIÇÕES
+## 7 TERMOS E DEFINIÇÕES
 
-### 8.1 Organização Candidata
+### 7.1 Organização Candidata
 
 Organização que está requerendo a avaliação de uma unidade organizacional, candidatando-se a uma certificação de maturidade.
 
-### 8.2 Responsável Técnico
+### 7.2 Responsável Técnico
 
 Profissional formalmente indicado e com alguma forma de vínculo com a organização candidata, estando legalmente habilitado e devidamente registrado no respectivo órgão de classe profissional, com formação e/ou experiências compatíveis com a digitalização de processos produtivos, responsável por receber e enviar as informações e evidências requeridas ao longo das etapas da certificação.
 
-### 8.3 Participante
+### 7.3 Participante
 
 Profissional, com alguma forma de vínculo com a organização candidata, que fornece conhecimento ou experiência específicos para o responsável técnico, incluindo conhecimento ou experiência sobre a organização, processo ou atividade a ser candidata, bem como o idioma.
 
-### 8.4 Instituição Avaliadora
+### 7.4 Instituição Avaliadora
 
 Organização responsável pelo processo de avaliação e certificação de uma indústria 4.0, papel que pode ser desempenhado pela Dmtic ou OAC acreditada pelo Inmetro.
 
-### 8.5 Avaliador-Líder
+### 7.5 Avaliador-Líder
 
 Auditor indicado pela Instituição Avaliadora como líder da avaliação.
 
-### 8.6 Equipe da Organização
+### 7.6 Equipe da Organização
 
 Um ou mais participantes, incluindo o responsável técnico, que compõem a equipe da organização candidata.
 
-## 9 GENERALIDADES
+## 8 GENERALIDADES
 
 <!-- pág. original: 10/465 -->
 
-**9.1** Para avaliar a organização candidata, a equipe de auditoria deve ser composta por indivíduos que não devem pertencer a um concorrente dos produtos ou serviços fornecidos pela organização. Além disso, os auditores não podem estar trabalhando ou terem trabalhado para a referida organização há menos de três anos, o que seria caracterizado como conflito de interesse.
+**8.1** Para avaliar a organização candidata, a equipe de auditoria deve ser composta por indivíduos que não devem pertencer a um concorrente dos produtos ou serviços fornecidos pela organização. Além disso, os auditores não podem estar trabalhando ou terem trabalhado para a referida organização há menos de três anos, o que seria caracterizado como conflito de interesse.
 
-**9.2** A avaliação deve ser realizada de forma discreta, evitando manifestação verbal ou postural. A equipe de auditoria não deve fazer considerações sobre a avaliação na presença do pessoal da organização, a menos que haja possibilidade de risco. As necessidades de intervenção devem ser, sempre que possível, formalmente comunicadas antecipadamente ao responsável técnico e, em casos excepcionais, à equipe da organização.
+**8.2** A avaliação deve ser realizada de forma discreta, evitando manifestação verbal ou postural. A equipe de auditoria não deve fazer considerações sobre a avaliação na presença do pessoal da organização, a menos que haja possibilidade de risco. As necessidades de intervenção devem ser, sempre que possível, formalmente comunicadas antecipadamente ao responsável técnico e, em casos excepcionais, à equipe da organização.
 
-**9.3** A equipe de auditores pode coletar informações através de: verificação de equipamentos; observações de atividades, do ambiente e condições de trabalho; documentos pertinentes à organização em processo de certificação ou já certificada como política, objetivos e metas, planos de gestão, procedimentos, normas, instruções, licenças, alvarás, outorgas, notificações e permissões, especificações, desenhos, contratos e registros. Caso continuem com dúvidas relativas ao escopo da avaliação ou atendimento a algum requisito, poderá solicitar esclarecimentos diretamente ao responsável técnico, apoiado ou não pela equipe da organização, desde que haja a anuência do avaliador-líder.
+**8.3** A equipe de auditores pode coletar informações através de: verificação de equipamentos; observações de atividades, do ambiente e condições de trabalho; documentos pertinentes à organização em processo de certificação ou já certificada como política, objetivos e metas, planos de gestão, procedimentos, normas, instruções, licenças, alvarás, outorgas, notificações e permissões, especificações, desenhos, contratos e registros. Caso continuem com dúvidas relativas ao escopo da avaliação ou atendimento a algum requisito, poderá solicitar esclarecimentos diretamente ao responsável técnico, apoiado ou não pela equipe da organização, desde que haja a anuência do avaliador-líder.
 
-**9.4** Todas as observações devem ser registradas no Relatório de Auditoria da Instituição Avaliadora.
+**8.4** Todas as observações devem ser registradas no Relatório de Auditoria da Instituição Avaliadora.
 
-## 10 ORIENTAÇÕES DE CONDUTA
+## 9 ORIENTAÇÕES DE CONDUTA
 
 Recomenda-se aos integrantes da equipe avaliadora a seguinte conduta no período em que estiver participando de avaliações:
 
-**10.1** Restrinja-se ao trabalho em execução. Não cite nomes de outras empresas em que trabalha ou trabalhou. Não apresente cartão de visita, nem faça propaganda pessoal.
+**9.1** Restrinja-se ao trabalho em execução. Não cite nomes de outras empresas em que trabalha ou trabalhou. Não apresente cartão de visita, nem faça propaganda pessoal.
 
-**10.2** O contato com a organização avaliada é atribuição do auditor-líder. Todas as comunicações do avaliador-líder sobre a avaliação devem ser feitas ao responsável técnico da organização ou a Dmtic. Não entre em contato diretamente com a organização a ser candidata. Caso chegue antes do auditor-líder, aguarde-o na recepção da organização candidata.
+**9.2** O contato com a organização avaliada é atribuição do auditor-líder. Todas as comunicações do avaliador-líder sobre a avaliação devem ser feitas ao responsável técnico da organização ou a Dmtic. Não entre em contato diretamente com a organização a ser candidata. Caso chegue antes do auditor-líder, aguarde-o na recepção da organização candidata.
 
-**10.3** Qualquer contato comercial com a organização só pode ser realizado após a conclusão da avaliação e efetivo encaminhamento, pela Dmtic, do relatório ao avaliado. Contudo, neste caso para a participação como membro da equipe de auditoria em futuras avaliações na mesma organização, deverá haver um interstício de três anos. Durante o período da avaliação não comente assuntos comerciais.
+**9.3** Qualquer contato comercial com a organização só pode ser realizado após a conclusão da avaliação e efetivo encaminhamento, pela Dmtic, do relatório ao avaliado. Contudo, neste caso para a participação como membro da equipe de auditoria em futuras avaliações na mesma organização, deverá haver um interstício de três anos. Durante o período da avaliação não comente assuntos comerciais.
 
-**10.4** A pontualidade é importante para o cumprimento do programa de avaliação proposto. Não se atrase. Procure chegar ao local marcado com antecedência de 15 minutos.
+**9.4** A pontualidade é importante para o cumprimento do programa de avaliação proposto. Não se atrase. Procure chegar ao local marcado com antecedência de 15 minutos.
 
-**10.5** A confidencialidade é um requisito essencial em avaliações. Não se refira a sua participação em auditorias anteriores. Concentre-se nos assuntos relativos à auditoria corrente.
+**9.5** A confidencialidade é um requisito essencial em avaliações. Não se refira a sua participação em auditorias anteriores. Concentre-se nos assuntos relativos à auditoria corrente.
 
-**10.6** Evite brincadeiras e assuntos paralelos. Observe discretamente o avaliado, permitindo-lhe a condução sem constrangimentos da avaliação. Faça intervenções oportunas (intervenções e observações devem ser registradas).
+**9.6** Evite brincadeiras e assuntos paralelos. Observe discretamente o avaliado, permitindo-lhe a condução sem constrangimentos da avaliação. Faça intervenções oportunas (intervenções e observações devem ser registradas).
 
-**10.7** Mantenha padrões de comportamento profissionais. Estabeleça uma comunicação amistosa com os envolvidos na avaliação.
+**9.7** Mantenha padrões de comportamento profissionais. Estabeleça uma comunicação amistosa com os envolvidos na avaliação.
 
-**10.8** Não consuma bebida alcoólica em refeições feitas com representantes do auditado.
+**9.8** Não consuma bebida alcoólica em refeições feitas com representantes do auditado.
 
-**10.9** Caso prefira, leve seus EPI pessoais, mas só os utilize quando a organização disponibilizar os EPI para a equipe.
+**9.9** Caso prefira, leve seus EPI pessoais, mas só os utilize quando a organização disponibilizar os EPI para a equipe.
 
-## 11 DOCUMENTAÇÃO PESSOAL NECESSÁRIA
+## 10 DOCUMENTAÇÃO PESSOAL NECESSÁRIA
 
-### 11.1 Avaliações no Brasil
+### 10.1 Avaliações no Brasil
 
 O auditor deve portar documento de identidade original ou carteira de conselho regional.
 
 Caso a organização candidata exija ASO para que um auditor adentre às suas instalações, é obrigação da organização candidata arcar com estes custos.
 
-### 11.2 Avaliações no Exterior
+### 10.2 Avaliações no Exterior
 
 O auditor deve portar passaporte, documento de identidade original (carteiras de conselhos regionais só são válidas em território nacional), carteira internacional de vacinação contra a febre amarela e outras vacinações necessárias conforme orientação do país de destino ou escala, e visto para ingresso nos EUA ou se o voo fizer escala nos EUA.
 
 Responda com seriedade às perguntas da alfândega. Brincadeiras nessa etapa da viagem podem ter consequências desagradáveis.
 
-## 12 CONHECIMENTO DOS REQUISITOS DE CERTIFICAÇÃO
+## 11 CONHECIMENTO DOS REQUISITOS DE CERTIFICAÇÃO
 
 <!-- pág. original: 12/465 -->
 
-É requerido que o auditor designado pela Instituição Avaliadora tenha conhecimento (leitura) dos requisitos de certificação listados em 12.1 e esteja em posse dos mesmos.
+É requerido que o auditor designado pela Instituição Avaliadora tenha conhecimento (leitura) dos requisitos de certificação listados em 11.1 e esteja em posse dos mesmos.
 
-**12.1** As normas, regulamentos e documentos base da certificação comuns são:
+**11.1** As normas, regulamentos e documentos base da certificação comuns são:
 
 a) Portaria Inmetro nº 171, de 2026, ou substituta, e;
 b) ANEXO I - QUESTIONÁRIO DE AVALIAÇÃO DA MATURIDADE DA INDÚSTRIA 4.0.
 
-## 13 AVALIAÇÃO DE MATURIDADE
+## 12 AVALIAÇÃO DE MATURIDADE
 
 <!-- pág. original: 13/465 -->
 
-**13.1** A avaliação de maturidade é um processo que deve ser implementado e formalizado pela Instituição Avaliadora para conduzir uma avaliação robusta, repetível e rastreável, baseando-se na Portaria Inmetro nº 171, de 2026, ou substituta, que atua como o instrumento normativo para estabelecer: quais os papéis desempenhados pelas partes interessadas, quais os insumos e resultados obrigatórios, bem como os cálculos devem ser feitos, quais critérios de decisão valem para concessão e manutenção do certificado e quais controles de qualidade e auditoria precisam existir para dar credibilidade ao resultado.
+**12.1** A avaliação de maturidade é um processo que deve ser implementado e formalizado pela Instituição Avaliadora para conduzir uma avaliação robusta, repetível e rastreável, baseando-se na Portaria Inmetro nº 171, de 2026, ou substituta, que atua como o instrumento normativo para estabelecer: quais os papéis desempenhados pelas partes interessadas, quais os insumos e resultados obrigatórios, bem como os cálculos devem ser feitos, quais critérios de decisão valem para concessão e manutenção do certificado e quais controles de qualidade e auditoria precisam existir para dar credibilidade ao resultado.
 
-**13.1.1** O ANEXO II (- GUIA DE AVALIAÇÃO DE MATURIDADE DA INDÚSTRIA 4.0) apresenta um guia de avaliação da maturidade, estabelecendo o conjunto mínimo de etapas e atividades que devem ser implementadas pela Instituição Avaliadora. Além disso, o guia explicita o método de medição da maturidade contido na Portaria Inmetro nº 171, de 2026, ou substituta, e como este se encaixa ao longo do processo de avaliação.
+**12.1.1** O ANEXO II (- GUIA DE AVALIAÇÃO DE MATURIDADE DA INDÚSTRIA 4.0) apresenta um guia de avaliação da maturidade, estabelecendo o conjunto mínimo de etapas e atividades que devem ser implementadas pela Instituição Avaliadora. Além disso, o guia explicita o método de medição da maturidade contido na Portaria Inmetro nº 171, de 2026, ou substituta, e como este se encaixa ao longo do processo de avaliação.
 
-**13.2** A Instituição Avaliadora sempre usará a última versão Portaria, ou substituta, e do ANEXO I (QUESTIONÁRIO DE AVALIAÇÃO DA MATURIDADE DA INDÚSTRIA 4.0) durante todo o processo de avaliação. Esse uso deve ser devidamente registrado ao longo do processo de avaliação para garantir rastreabilidade e consistência entre avaliações de diferentes organizações, bem como deixar transparente quais os parâmetros estão sendo utilizados para avaliar a organização candidata.
+**12.2** A Instituição Avaliadora sempre usará a última versão Portaria, ou substituta, e do ANEXO I (QUESTIONÁRIO DE AVALIAÇÃO DA MATURIDADE DA INDÚSTRIA 4.0) durante todo o processo de avaliação. Esse uso deve ser devidamente registrado ao longo do processo de avaliação para garantir rastreabilidade e consistência entre avaliações de diferentes organizações, bem como deixar transparente quais os parâmetros estão sendo utilizados para avaliar a organização candidata.
 
-**13.3** Inicialmente, a organização candidata informa a Instituição Avaliadora, formalizando o escopo da avaliação determinado pela unidade organizacional que será certificada — por exemplo, uma planta, uma linha ou um conjunto de processos — e definem os limites, o período de evidências.
+**12.3** Inicialmente, a organização candidata informa a Instituição Avaliadora, formalizando o escopo da avaliação determinado pela unidade organizacional que será certificada — por exemplo, uma planta, uma linha ou um conjunto de processos — e definem os limites, o período de evidências.
 
-**13.3.1** Todos os insumos e exigências contidas na Portaria, ou substituta, por exemplo, que o período de evidências precisa cobrir um ciclo completo de produção, ou que determinados registros digitais são mandatórios, devem ser incorporados e apresentados em um Relatório de Auto-Avaliação como uma das condições de aceitação antes de prosseguir com o processo de avaliação.
+**12.3.1** Todos os insumos e exigências contidas na Portaria, ou substituta, por exemplo, que o período de evidências precisa cobrir um ciclo completo de produção, ou que determinados registros digitais são mandatórios, devem ser incorporados e apresentados em um Relatório de Auto-Avaliação como uma das condições de aceitação antes de prosseguir com o processo de avaliação.
 
-**13.3.2** A instituição candidata deverá sempre basear-se na última versão Portaria, ou substituta, e do ANEXO I (QUESTIONÁRIO DE AVALIAÇÃO DA MATURIDADE DA INDÚSTRIA 4.0) para construção do Relatório de Auto-Avaliação.
+**12.3.2** A instituição candidata deverá sempre basear-se na última versão Portaria, ou substituta, e do ANEXO I (QUESTIONÁRIO DE AVALIAÇÃO DA MATURIDADE DA INDÚSTRIA 4.0) para construção do Relatório de Auto-Avaliação.
 
-**13.3.3** Ao responder o questionário do ANEXO I, a organização candidata deve explicitamente relacionar as evidências às respostas de cada questão. Consequentemente, essas evidências irão relacionar-se aos resultados obtidos nos cálculos referentes às capacidades e respectivas dimensões, para que, então, seja capaz de determinar qual o nível de maturidade pretendido.
+**12.3.3** Ao responder o questionário do ANEXO I, a organização candidata deve explicitamente relacionar as evidências às respostas de cada questão. Consequentemente, essas evidências irão relacionar-se aos resultados obtidos nos cálculos referentes às capacidades e respectivas dimensões, para que, então, seja capaz de determinar qual o nível de maturidade pretendido.
 
-**13.4** Se concluir que é possível prosseguir com a avaliação, a Instituição Avaliadora irá produzir um plano de avaliação, onde os insumos exigidos pela certificação são os requisitos para a sua elaboração. O plano de avaliação deve ser apresentado à organização candidata antes da etapa seguinte, que deve formalmente manifestar seu de acordo para o prosseguimento da avaliação.
+**12.4** Se concluir que é possível prosseguir com a avaliação, a Instituição Avaliadora irá produzir um plano de avaliação, onde os insumos exigidos pela certificação são os requisitos para a sua elaboração. O plano de avaliação deve ser apresentado à organização candidata antes da etapa seguinte, que deve formalmente manifestar seu de acordo para o prosseguimento da avaliação.
 
-**13.5** Uma vez apresentado o plano de avaliação, ocorre uma avaliação inicial, que funciona como uma verificação de prontidão e de aderência do escopo. Nessa fase, a Instituição Avaliadora revisa previamente evidências documentais e digitais, valida se o que foi definido no plano é viável e se há disponibilidade de informações suficientes para sustentar um julgamento consistente. O resultado típico é um ajuste fino do escopo, da amostra e do roteiro de entrevistas, reduzindo o risco de que a avaliação final seja contaminada por falta de evidência, acesso limitado a sistemas ou inconsistências de definição. No contexto da Portaria, essa etapa é importante porque reforça a conformidade processual: a certificação não depende apenas de uma nota final, mas da capacidade de demonstrar que a avaliação foi conduzida sob regras claras, com insumos válidos e evidências auditáveis. Se a Portaria, ou substituta, prever critérios de elegibilidade (por exemplo, requisitos mínimos de documentação, governança, rastreabilidade de dados ou condições de segurança e confidencialidade), a avaliação inicial é o ponto natural para confirmar esses critérios antes de avançar.
+**12.5** Uma vez apresentado o plano de avaliação, ocorre uma avaliação inicial, que funciona como uma verificação de prontidão e de aderência do escopo. Nessa fase, a Instituição Avaliadora revisa previamente evidências documentais e digitais, valida se o que foi definido no plano é viável e se há disponibilidade de informações suficientes para sustentar um julgamento consistente. O resultado típico é um ajuste fino do escopo, da amostra e do roteiro de entrevistas, reduzindo o risco de que a avaliação final seja contaminada por falta de evidência, acesso limitado a sistemas ou inconsistências de definição. No contexto da Portaria, essa etapa é importante porque reforça a conformidade processual: a certificação não depende apenas de uma nota final, mas da capacidade de demonstrar que a avaliação foi conduzida sob regras claras, com insumos válidos e evidências auditáveis. Se a Portaria, ou substituta, prever critérios de elegibilidade (por exemplo, requisitos mínimos de documentação, governança, rastreabilidade de dados ou condições de segurança e confidencialidade), a avaliação inicial é o ponto natural para confirmar esses critérios antes de avançar.
 
-**13.6** A penúltima etapa é a avaliação final, o núcleo do processo, onde a maturidade é efetivamente mensurada. Nessa etapa, entrevistas confirmatórias, observações (presenciais ou remotas) e demonstrações de processos e sistemas são conduzidas de forma estruturada para coletar e triangular resultados alcançados, medições e evidências. A triangulação é essencial: o julgamento de cada capacidade não deve depender apenas do "discurso" ou apenas de um procedimento de responder o questionário do ANEXO I, mas da convergência entre o que está definido (processos e políticas), o que é executado (prática observável) e o que é registrado (evidência objetiva em sistemas, indicadores, logs, relatórios).
+**12.6** A penúltima etapa é a avaliação final, o núcleo do processo, onde a maturidade é efetivamente mensurada. Nessa etapa, entrevistas confirmatórias, observações (presenciais ou remotas) e demonstrações de processos e sistemas são conduzidas de forma estruturada para coletar e triangular resultados alcançados, medições e evidências. A triangulação é essencial: o julgamento de cada capacidade não deve depender apenas do "discurso" ou apenas de um procedimento de responder o questionário do ANEXO I, mas da convergência entre o que está definido (processos e políticas), o que é executado (prática observável) e o que é registrado (evidência objetiva em sistemas, indicadores, logs, relatórios).
 
-**13.6.1** Como a Portaria, ou substituta, é a referência normativa, nela estarão as regras oficiais de cálculo, e classificação da maturidade, a avaliação final do processo de avaliação deve demonstrar como um resultado certificável foi alcançado, com uma classificação bem fundamentada por capacidade e por dimensão.
+**12.6.1** Como a Portaria, ou substituta, é a referência normativa, nela estarão as regras oficiais de cálculo, e classificação da maturidade, a avaliação final do processo de avaliação deve demonstrar como um resultado certificável foi alcançado, com uma classificação bem fundamentada por capacidade e por dimensão.
 
-**13.7** Depois da mensuração, vem a consolidação e a comunicação de resultados, em que a Instituição Avaliadora deve produzir um conjunto de saídas, tipicamente um Relatório de Auditoria, com um sumário executivo, evidências-chave, notas por dimensão, justificativas, pontos fortes, lacunas e recomendações.
+**12.7** Depois da mensuração, vem a consolidação e a comunicação de resultados, em que a Instituição Avaliadora deve produzir um conjunto de saídas, tipicamente um Relatório de Auditoria, com um sumário executivo, evidências-chave, notas por dimensão, justificativas, pontos fortes, lacunas e recomendações.
 
-**13.7.1** No contexto de certificação, é necessário que esse conteúdo seja apresentado em formato padronizado e auditável, com rastreabilidade suficiente para permitir verificação independente sem expor segredos industriais. O processo de avaliação descreve o "como documentar" e o "como a rastreabilidade é mantida", enquanto a Portaria, ou substituta especifica o "o que precisa constar" para que um resultado seja aceito no processo de decisão de certificação.
+**12.7.1** No contexto de certificação, é necessário que esse conteúdo seja apresentado em formato padronizado e auditável, com rastreabilidade suficiente para permitir verificação independente sem expor segredos industriais. O processo de avaliação descreve o "como documentar" e o "como a rastreabilidade é mantida", enquanto a Portaria, ou substituta especifica o "o que precisa constar" para que um resultado seja aceito no processo de decisão de certificação.
 
-## 9 HISTÓRICO DA REVISÃO
+## 13 HISTÓRICO DA REVISÃO
 
 | Revisão | Data | Itens revisados |
 |---|---|---|

@@ -36,7 +36,6 @@ Revisão 01 – Junho/2026
 - [1 OBJETIVO](#1-objetivo)
 - [2 CAMPO DE APLICAÇÃO](#2-campo-de-aplicação)
 - [3 RESPONSABILIDADE](#3-responsabilidade)
-- [4 HISTÓRICO DA REVISÃO](#4-histórico-da-revisão)
 - [5 DOCUMENTOS DE REFERÊNCIA](#5-documentos-de-referência)
 - [6 DOCUMENTOS COMPLEMENTARES](#6-documentos-complementares)
 - [7 SIGLAS](#7-siglas)
@@ -54,6 +53,7 @@ Revisão 01 – Junho/2026
   - [11.2 Avaliações no Exterior](#112-avaliações-no-exterior)
 - [12 CONHECIMENTO DOS REQUISITOS DE CERTIFICAÇÃO](#12-conhecimento-dos-requisitos-de-certificação)
 - [13 AVALIAÇÃO DE MATURIDADE](#13-avaliação-de-maturidade)
+- [9 HISTÓRICO DA REVISÃO](#9-histórico-da-revisão)
 - [ANEXO I - QUESTIONÁRIO DE AVALIAÇÃO DA MATURIDADE DA INDÚSTRIA 4.0](#anexo-i-questionário-de-avaliação-da-maturidade-da-indústria-40)
   - [I.1 Dimensão: Integração Vertical](#i1-dimensão-integração-vertical)
     - [I.1.1 Capacidade: Integração vertical entre chão de fábrica e sistemas corporativos](#i11-capacidade-integração-vertical-entre-chão-de-fábrica-e-sistemas-corporativos)
@@ -298,15 +298,6 @@ escopo da Portaria Inmetro 171 de Mar/26, ou substituta.
 
 A responsabilidade pela revisão deste documento é da Dmtic.
 
-## 4 HISTÓRICO DA REVISÃO
-
-<!-- pág. original: 7/465 — capítulo existe no corpo mas NÃO consta no Sumário
-     (não conformidade já documentada). Manter aqui como está no PDF. -->
-
-| Revisão | Data | Itens revisados |
-|---|---|---|
-| | | |
-
 ## 5 DOCUMENTOS DE REFERÊNCIA
 
 | Documento | Descrição |
@@ -455,6 +446,12 @@ b) ANEXO I - QUESTIONÁRIO DE AVALIAÇÃO DA MATURIDADE DA INDÚSTRIA 4.0.
 **13.7** Depois da mensuração, vem a consolidação e a comunicação de resultados, em que a Instituição Avaliadora deve produzir um conjunto de saídas, tipicamente um Relatório de Auditoria, com um sumário executivo, evidências-chave, notas por dimensão, justificativas, pontos fortes, lacunas e recomendações.
 
 **13.7.1** No contexto de certificação, é necessário que esse conteúdo seja apresentado em formato padronizado e auditável, com rastreabilidade suficiente para permitir verificação independente sem expor segredos industriais. O processo de avaliação descreve o "como documentar" e o "como a rastreabilidade é mantida", enquanto a Portaria, ou substituta especifica o "o que precisa constar" para que um resultado seja aceito no processo de decisão de certificação.
+
+## 9 HISTÓRICO DA REVISÃO
+
+| Revisão | Data | Itens revisados |
+|---|---|---|
+| | | |
 
 ---
 

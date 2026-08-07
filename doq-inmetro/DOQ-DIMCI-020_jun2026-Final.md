@@ -53,7 +53,7 @@ Revisão 01 – Junho/2026
   - [10.2 Avaliações no Exterior](#102-avaliações-no-exterior)
 - [11 CONHECIMENTO DOS REQUISITOS DE CERTIFICAÇÃO](#11-conhecimento-dos-requisitos-de-certificação)
 - [12 AVALIAÇÃO DE MATURIDADE](#12-avaliação-de-maturidade)
-- [13 HISTÓRICO DA REVISÃO](#13-histórico-da-revisão)
+- [13 HISTÓRICO DA REVISÃO E QUADRO DE APROVAÇÃO](#13-histórico-da-revisão-e-quadro-de-aprovação)
 - [ANEXO I - QUESTIONÁRIO DE AVALIAÇÃO DA MATURIDADE DA INDÚSTRIA 4.0](#anexo-i-questionário-de-avaliação-da-maturidade-da-indústria-40)
   - [I.1 Dimensão: Integração Vertical](#i1-dimensão-integração-vertical)
     - [I.1.1 Capacidade: Integração vertical entre chão de fábrica e sistemas corporativos](#i11-capacidade-integração-vertical-entre-chão-de-fábrica-e-sistemas-corporativos)
@@ -447,11 +447,19 @@ b) ANEXO I - QUESTIONÁRIO DE AVALIAÇÃO DA MATURIDADE DA INDÚSTRIA 4.0.
 
 **12.7.1** No contexto de certificação, é necessário que esse conteúdo seja apresentado em formato padronizado e auditável, com rastreabilidade suficiente para permitir verificação independente sem expor segredos industriais. O processo de avaliação descreve o "como documentar" e o "como a rastreabilidade é mantida", enquanto a Portaria, ou substituta especifica o "o que precisa constar" para que um resultado seja aceito no processo de decisão de certificação.
 
-## 13 HISTÓRICO DA REVISÃO
+## 13 HISTÓRICO DA REVISÃO E QUADRO DE APROVAÇÃO
 
 | Revisão | Data | Itens revisados |
 |---|---|---|
 | | | |
+
+### Quadro de Aprovação
+
+| | Nome | Atribuição |
+|---|---|---|
+| Elaborado por: | | |
+| Verificado por: | | |
+| Aprovado por: | | |
 
 ---
 

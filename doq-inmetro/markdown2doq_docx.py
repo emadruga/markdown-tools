@@ -374,7 +374,7 @@ def build_cover_header(section):
 
     text_p = text_cell.paragraphs[0]
     text_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    run = text_p.add_run('Diretoria de Metrologia Científica e Industrial')
+    run = text_p.add_run('Instituto Nacional de Metrologia, Qualidade e Tecnologia')
     run.bold = True
     run.font.size = Pt(12)
     run.font.name = 'Arial'

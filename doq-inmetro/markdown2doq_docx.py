@@ -263,7 +263,7 @@ def build_header(section, total_pages_placeholder="465"):
 
     table = header.add_table(rows=1, cols=4, width=Cm(17))
     table.alignment = WD_TABLE_ALIGNMENT.CENTER
-    widths = [Cm(3.2), Cm(8.3), Cm(2.8), Cm(2.7)]
+    widths = [Cm(2.4), Cm(9.1), Cm(2.8), Cm(2.7)]
     for col, w in zip(table.columns, widths):
         col.width = w
     row = table.rows[0]
@@ -350,7 +350,10 @@ def build_footer(section):
     run.font.name = 'Arial'
 
 
-def add_logo_run(paragraph, size_cm=2.6):
+def add_logo_run(paragraph, size_cm=1.79):
+    # Largura do logo conforme o template MOD-Gabin-039 (C-4): 1,79 cm.
+    # A altura fica proporcional à imagem para não distorcê-la (o PNG atual
+    # tem proporção diferente da usada no template).
     paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
     if LOGO_PATH.exists():
         run = paragraph.add_run()
@@ -371,7 +374,7 @@ def build_cover_header(section):
 
     table = header.add_table(rows=1, cols=2, width=Cm(17))
     table.alignment = WD_TABLE_ALIGNMENT.CENTER
-    widths = [Cm(3.2), Cm(13.8)]
+    widths = [Cm(2.4), Cm(14.6)]
     for col, w in zip(table.columns, widths):
         col.width = w
     row = table.rows[0]

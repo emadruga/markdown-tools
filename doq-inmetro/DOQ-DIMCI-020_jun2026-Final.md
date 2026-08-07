@@ -451,7 +451,7 @@ b) ANEXO I - QUESTIONÁRIO DE AVALIAÇÃO DA MATURIDADE DA INDÚSTRIA 4.0.
 
 | Revisão | Data | Itens revisados |
 |---|---|---|
-| | | |
+| 01 | Jun/2026 | Emissão inicial do documento. |
 
 ### Quadro de Aprovação
 

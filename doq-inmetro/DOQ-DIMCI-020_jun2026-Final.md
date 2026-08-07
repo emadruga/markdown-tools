@@ -1415,8 +1415,7 @@ vida (design, engenharia, produção, uso e serviço)?
 
   - As informações são dispersas e dependem de pessoas específicas.
 
-  - Inexistem registros formais e não há consciência sobre controle, rastreabilidade ou
-                  versionamento.
+  - Inexistem registros formais e não há consciência sobre controle, rastreabilidade ou versionamento.
 
 
 - Nível 1:
@@ -1437,8 +1436,7 @@ vida (design, engenharia, produção, uso e serviço)?
 
   - Repositórios físicos separados.
 
-  - Atualizações manuais e controle de versões limitado, com pouca rastreabilidade
-             interdepartamental.
+  - Atualizações manuais e controle de versões limitado, com pouca rastreabilidade interdepartamental.
   - Procedimentos documentados, mas sem repositório centralizado.
 
 
@@ -1457,8 +1455,7 @@ vida (design, engenharia, produção, uso e serviço)?
 
   - PLM implantado, integração entre áreas garantida digitalmente.
 
-  - Dados rastreáveis e seguros, mas exigindo validação e supervisão constante por
-             pessoas.
+  - Dados rastreáveis e seguros, mas exigindo validação e supervisão constante por pessoas.
   - Rastreabilidade de versões e controle de acesso.
 
 
@@ -1467,8 +1464,7 @@ vida (design, engenharia, produção, uso e serviço)?
 
   - Dados fluem entre CAD, ERP e MES automaticamente.
 
-  - Há continuidade digital, sincronização entre engenharia e produção, e redução de
-             inconsistências e retrabalhos.
+  - Há continuidade digital, sincronização entre engenharia e produção, e redução de inconsistências e retrabalhos.
 
 
 - Nível 6:
@@ -1781,8 +1777,7 @@ centros de pesquisa) no design e desenvolvimento de produtos?
 - Nível 0:
 
 
-  - Não há trocas de informação, contratos ou interação formal com fornecedores, clientes
-                  ou centros de pesquisa.
+  - Não há trocas de informação, contratos ou interação formal com fornecedores, clientes ou centros de pesquisa.
 
 
 - Nível 1:
@@ -2048,77 +2043,59 @@ operador para a tarefa em questão?
 - Nível 0:
 
 
-  - Os processos verticais não estão definidos explicitamente e são gerenciados por
-                  métodos informais ou ad-hoc.
+  - Os processos verticais não estão definidos explicitamente e são gerenciados por métodos informais ou ad-hoc.
   - Não há uso de dispositivos eletrônicos ou digitais no local.
 
 
 <!-- pág. original: 299/465 -->
-  - As instruções de trabalho são baseadas em papel ou comunicação verbal, sem
-             qualquer automação de processos repetitivos.
+  - As instruções de trabalho são baseadas em papel ou comunicação verbal, sem qualquer automação de processos repetitivos.
 
 
 - Nível 1:
 
 
-  - A informação é definida e executada por humanos, com o suporte de ferramentas
-             analógicas (como sistemas de rastreamento baseados em papel).
-  - Sistemas de OT (Tecnologia Operacional) e TI (Tecnologia da Informação) são
-             utilizados para executar tarefas pré-programadas baseadas em lógica estática, mas a
-             informação gerada é estática (e.g., PDFs, planilhas).
-  - Há introdução de TI no chão de fábrica e em outros lugares, mas os sistemas de TI e
-             OT operam isoladamente (silos).
+  - A informação é definida e executada por humanos, com o suporte de ferramentas analógicas (como sistemas de rastreamento baseados em papel).
+  - Sistemas de OT (Tecnologia Operacional) e TI (Tecnologia da Informação) são utilizados para executar tarefas pré-programadas baseadas em lógica estática, mas a informação gerada é estática (e.g., PDFs, planilhas).
+  - Há introdução de TI no chão de fábrica e em outros lugares, mas os sistemas de TI e OT operam isoladamente (silos).
 
 
 - Nível 2:
 
 
-  - Os processos verticais digitalizados são concluídos por humanos, com o suporte de
-             ferramentas digitais.
+  - Os processos verticais digitalizados são concluídos por humanos, com o suporte de ferramentas digitais.
   - Sistemas de TI e OT gerenciam processos, mas ainda em silos.
 
-  - Os sistemas são capazes de identificar desvios dos parâmetros predefinidos,
-             notificando os operadores.
-  - A empresa já trabalha com dados e documentos digitais que são amplamente
-             acessíveis.
+  - Os sistemas são capazes de identificar desvios dos parâmetros predefinidos, notificando os operadores.
+  - A empresa já trabalha com dados e documentos digitais que são amplamente acessíveis.
 
 
 - Nível 3:
 
 
-  - Agregação e visualização de dados em tempo quase real de diferentes sistemas de
-             origem (MES, ERP) são alcançadas.
+  - Agregação e visualização de dados em tempo quase real de diferentes sistemas de origem (MES, ERP) são alcançadas.
   - A informação é entregue aos funcionários de forma contextualizada.
 
-  - É criado um "sombra digital" (digital shadow) da situação atual da empresa, permitindo
-             que as decisões sejam baseadas em dados reais.
+  - É criado um "sombra digital" (digital shadow) da situação atual da empresa, permitindo que as decisões sejam baseadas em dados reais.
   - O sistema OT/IT consegue diagnosticar desvios e identificar causas potenciais.
 
-  - Dispositivos móveis e wearables são utilizados para integrar os funcionários à
-             plataforma digital.
+  - Dispositivos móveis e wearables são utilizados para integrar os funcionários à plataforma digital.
 
 
 <!-- pág. original: 300/465 -->
 - Nível 4:
 
 
-  - O sistema não apenas identifica desvios, mas também prevê estados futuros de ativos
-               e sistemas.
-  - O conhecimento adquirido é entregue aos funcionários de forma contextualizada e
-               adaptada para apoiar a tomada de decisões de forma complexa e rápida.
-  - Os funcionários aprimoram ativamente o sistema com seu próprio conhecimento no
-               interesse da melhoria contínua.
+  - O sistema não apenas identifica desvios, mas também prevê estados futuros de ativos e sistemas.
+  - O conhecimento adquirido é entregue aos funcionários de forma contextualizada e adaptada para apoiar a tomada de decisões de forma complexa e rápida.
+  - Os funcionários aprimoram ativamente o sistema com seu próprio conhecimento no interesse da melhoria contínua.
 
 
 - Nível 5:
 
 
-  - A interface fornece informações que permitem simular possíveis cenários futuros para
-               habilitar o suporte à decisão.
-  - Sistemas OT e IT integrados de ponta a ponta estão analisando ativamente e reagindo
-               aos dados.
-  - O sistema notifica o pessoal relevante de desvios potenciais e fornece informações
-               sobre as causas prováveis.
+  - A interface fornece informações que permitem simular possíveis cenários futuros para habilitar o suporte à decisão.
+  - Sistemas OT e IT integrados de ponta a ponta estão analisando ativamente e reagindo aos dados.
+  - O sistema notifica o pessoal relevante de desvios potenciais e fornece informações sobre as causas prováveis.
   - Esta etapa representa o estado de "Estar preparado" e entender "O que acontecerá?"
 
 
@@ -2127,13 +2104,9 @@ operador para a tarefa em questão?
 
   - O sistema atinge a capacidade de resposta autônoma.
 
-  - O processamento da informação é auto-aprendizagem, o que significa que os sistemas
-               de informação se adaptam continuamente às circunstâncias em mudança.
-  - Os sistemas podem executar decisões de forma autônoma para otimizar o desempenho
-               e a eficiência de recursos.
-  - A cultura da empresa demonstra um estilo de liderança democrático e confiança nos
-               sistemas, e os funcionários participam ativamente na moldagem das mudanças e na
-               documentação do conhecimento adquirido.
+  - O processamento da informação é auto-aprendizagem, o que significa que os sistemas de informação se adaptam continuamente às circunstâncias em mudança.
+  - Os sistemas podem executar decisões de forma autônoma para otimizar o desempenho e a eficiência de recursos.
+  - A cultura da empresa demonstra um estilo de liderança democrático e confiança nos sistemas, e os funcionários participam ativamente na moldagem das mudanças e na documentação do conhecimento adquirido.
   - O loop de aprendizado de interface é centrado no operador.
 
 ##### Amostragem
@@ -2200,29 +2173,23 @@ informação sensível ao contexto para orientar o operador na execução de tar
 - Nível 1:
 
 
-  - As interfaces existem, mas o design não é adaptado à tarefa específica ou ao contexto
-                do operador.
-  - A intervenção humana é significativa, e a informação é fornecida primariamente através
-                de ferramentas analógicas, como rastreamento baseado em papel.
+  - As interfaces existem, mas o design não é adaptado à tarefa específica ou ao contexto do operador.
+  - A intervenção humana é significativa, e a informação é fornecida primariamente através de ferramentas analógicas, como rastreamento baseado em papel.
 
 
 - Nível 2:
 
 
-  - As tecnologias de identificação e visualização são introduzidas, mas a informação
-                fornecida ainda é estática ou requer intervenção humana para interpretação.
+  - As tecnologias de identificação e visualização são introduzidas, mas a informação fornecida ainda é estática ou requer intervenção humana para interpretação.
   - As máquinas e sistemas conseguem interagir ou trocar informação de forma limitada.
 
 
 - Nível 3:
 
 
-  - Sistemas de assistência fornecem informações contextuais usando tecnologias de
-                Auto-ID (reconhecimento direto de objetos e seus atributos).
-  - O feedback é baseado em dados reais do ambiente de processo, em vez de apenas
-                planos ou previsões.
-  - Feedback multimodal (visual, auditivo, tátil) - característica moderna de HMIs sensíveis
-                ao contexto.
+  - Sistemas de assistência fornecem informações contextuais usando tecnologias de Auto-ID (reconhecimento direto de objetos e seus atributos).
+  - O feedback é baseado em dados reais do ambiente de processo, em vez de apenas planos ou previsões.
+  - Feedback multimodal (visual, auditivo, tátil) - característica moderna de HMIs sensíveis ao contexto.
 
 
 <!-- pág. original: 303/465 -->
@@ -2232,30 +2199,25 @@ informação sensível ao contexto para orientar o operador na execução de tar
 - Nível 4:
 
 
-  - O design das interfaces incorpora a visualização da análise de dados para ajudar o
-                operador a "entender" o que está acontecendo.
+  - O design das interfaces incorpora a visualização da análise de dados para ajudar o operador a "entender" o que está acontecendo.
   - Há um foco na usabilidade e em aspectos ergonômicos na integração de processos.
 
 
 - Nível 5:
 
 
-  - As informações nas interfaces ajudam o operador a prever potenciais desvios e
-                fornecem informações sobre as possíveis causas.
-  - As interfaces permitem que a tomada de decisões seja baseada em cenários futuros
-                simulados.
+  - As informações nas interfaces ajudam o operador a prever potenciais desvios e fornecem informações sobre as possíveis causas.
+  - As interfaces permitem que a tomada de decisões seja baseada em cenários futuros simulados.
   - Assistência proativa (interfaces que sugerem ação).
 
 
 - Nível 6:
 
 
-  - Os sistemas de assistência realizam a execução autônoma de decisões para otimizar o
-                desempenho e a eficiência.
+  - Os sistemas de assistência realizam a execução autônoma de decisões para otimizar o desempenho e a eficiência.
   - O sistema também permite intervenção e customização.
 
-  - As interfaces suportam a automação plug-and-play, permitindo que os processos de
-                produção automatizados sejam reconfiguráveis de forma rápida e fácil.
+  - As interfaces suportam a automação plug-and-play, permitindo que os processos de produção automatizados sejam reconfiguráveis de forma rápida e fácil.
 
 ##### Amostragem
 
@@ -2338,8 +2300,7 @@ Fábrica na otimização das atividades do operador?
 - Nível 1:
 
 
-  - Os sistemas executam tarefas pré-programadas, e a informação exibida é estática ou
-             não filtrada pelas necessidades do operador.
+  - Os sistemas executam tarefas pré-programadas, e a informação exibida é estática ou não filtrada pelas necessidades do operador.
   - O operador precisa interpretar, buscar e classificar a informação por si próprio.
 
   - Baixo impacto observado na eficiência do operador.
@@ -2348,31 +2309,27 @@ Fábrica na otimização das atividades do operador?
 - Nível 2:
 
 
-  - As interfaces trocam informação, mas o design não é adaptado ao contexto da tarefa e
-             não há agregação de dados em tempo real ou visualização abrangente.
+  - As interfaces trocam informação, mas o design não é adaptado ao contexto da tarefa e não há agregação de dados em tempo real ou visualização abrangente.
 
 
 - Nível 3:
 
 
-  - O sistema permite que o operador "veja" (seeing) o que está acontecendo (e.g., status
-             de produção, desvios) e tome decisões baseadas em dados reais (sombra digital)
+  - O sistema permite que o operador "veja" (seeing) o que está acontecendo (e.g., status de produção, desvios) e tome decisões baseadas em dados reais (sombra digital)
   - Ocorre o monitoramento de indicadores de desempenho humano e de sistema.
 
 
 - Nível 4:
 
 
-  - A informação é entregue ativamente (princípio push), otimizada e com acesso
-             controlado (e.g., apps para tarefas específicas).
+  - A informação é entregue ativamente (princípio push), otimizada e com acesso controlado (e.g., apps para tarefas específicas).
   - O impacto é mensurado (por exemplo, aumento de OEE, redução de erros).
 
 
 - Nível 5:
 
 
-  - O sistema começa a fornecer instruções para prevenir desvios, não apenas reagir a
-             eles.
+  - O sistema começa a fornecer instruções para prevenir desvios, não apenas reagir a eles.
   - Feedback contínuo de desempenho.
 
 
@@ -2380,11 +2337,8 @@ Fábrica na otimização das atividades do operador?
 
 
 <!-- pág. original: 308/465 -->
-  - O sistema de assistência adapta-se continuamente e executa decisões de forma
-                autônoma, minimizando a necessidade de intervenção humana e garantindo a
-                otimização contínua do desempenho e eficiência dos recursos.
-  - Otimização baseada em IA e personalização dinâmica das interfaces, conforme perfil de
-                operador.
+  - O sistema de assistência adapta-se continuamente e executa decisões de forma autônoma, minimizando a necessidade de intervenção humana e garantindo a otimização contínua do desempenho e eficiência dos recursos.
+  - Otimização baseada em IA e personalização dinâmica das interfaces, conforme perfil de operador.
 
 ##### Amostragem
 
@@ -3308,23 +3262,20 @@ mundo físico e digital?
 
   - Os ativos são interoperáveis.
 
-  - Sistemas embarcados com sensores, atuadores e unidades de processamento são
-                incorporados nos processos de interação e troca de dados.
+  - Sistemas embarcados com sensores, atuadores e unidades de processamento são incorporados nos processos de interação e troca de dados.
 
 
 - Nível 3:
 
 
-  - Foi estabelecida uma infraestrutura de rede segura (por exemplo, baseada em Ethernet
-                Industrial) para conectar os sistemas de controle e sensores.
+  - Foi estabelecida uma infraestrutura de rede segura (por exemplo, baseada em Ethernet Industrial) para conectar os sistemas de controle e sensores.
   - Dados são coletados e processados rapidamente, de forma contínua.
 
 
 - Nível 4:
 
 
-  - Ativos são capazes de comunicação em tempo real, trocando informação no momento
-                em que é gerada.
+  - Ativos são capazes de comunicação em tempo real, trocando informação no momento em que é gerada.
   - Essa informação está amplamente disponível para processos de otimização.
 
 
@@ -3332,18 +3283,15 @@ mundo físico e digital?
 - Nível 5:
 
 
-  - Existem processos para definição dos requisitos de dados relevantes e a seleção dos
-                 sensores recomendados.
-  - As redes existentes são escaláveis para acomodar modificações na composição dos
-                 equipamentos (e.g., adição de novos sensores).
+  - Existem processos para definição dos requisitos de dados relevantes e a seleção dos sensores recomendados.
+  - As redes existentes são escaláveis para acomodar modificações na composição dos equipamentos (e.g., adição de novos sensores).
   - Os sistemas executam tarefas preditivas para diagnóstico e prevenção de falhas.
 
 
 - Nível 6:
 
 
-  - Os sistemas utilizam os dados dos CPS para implementar automaticamente as ações
-                 correspondentes sem necessidade de intervenção humana.
+  - Os sistemas utilizam os dados dos CPS para implementar automaticamente as ações correspondentes sem necessidade de intervenção humana.
 
 ##### Amostragem
 
@@ -3412,42 +3360,34 @@ do chão de fábrica é eficiente e descentralizado?
 - Nível 2:
 
 
-  - Embora exista uma infraestrutura de conectividade disponível para a coleta de dados, o
-             processamento ocorre em unidades centralizadas.
-  - É comum a identificação de pontos únicos de falha (do inglês, single point of failures ou
-             SPOFs).
+  - Embora exista uma infraestrutura de conectividade disponível para a coleta de dados, o processamento ocorre em unidades centralizadas.
+  - É comum a identificação de pontos únicos de falha (do inglês, single point of failures ou SPOFs).
 
 
 - Nível 3:
 
 
-  - O processamento é realizado diretamente nos sistemas embarcados ligados aos
-             recursos técnicos de chão de fábrica.
+  - O processamento é realizado diretamente nos sistemas embarcados ligados aos recursos técnicos de chão de fábrica.
   - SPOFs são eliminados.
 
 
 - Nível 4:
 
 
-  - As soluções de processamento distribuído são implementadas para reduzir atrasos na
-             propagação do sinal e entrega de pacotes de rede.
-  - Os sistemas embarcados conseguem efetuar cálculos críticos em termos de tempo,
-             otimizando a comunicação.
+  - As soluções de processamento distribuído são implementadas para reduzir atrasos na propagação do sinal e entrega de pacotes de rede.
+  - Os sistemas embarcados conseguem efetuar cálculos críticos em termos de tempo, otimizando a comunicação.
 
 
 - Nível 5:
 
 
-  - Os sistemas de informação implementam mecanismos de detecção e predição de
-             falhas no processamento descentralizado de dados, provendo informações para tomada
-             de decisão.
+  - Os sistemas de informação implementam mecanismos de detecção e predição de falhas no processamento descentralizado de dados, provendo informações para tomada de decisão.
 
 
 - Nível 6:
 
 
-  - Os sistemas de informação executam decisões automaticamente para otimizar o
-             desempenho do processamento sem intervenção humana.
+  - Os sistemas de informação executam decisões automaticamente para otimizar o desempenho do processamento sem intervenção humana.
 
 
 <!-- pág. original: 315/465 -->
@@ -3517,8 +3457,7 @@ interfaces abertas e soluções para ativos legados?
 - Nível 1:
 
 
-  - Embora existam links formais de rede para ativos de produção, poucos ativos
-                implementam funcionalidades de integração de dados.
+  - Embora existam links formais de rede para ativos de produção, poucos ativos implementam funcionalidades de integração de dados.
   - A maioria dos equipamentos não é interoperável.
 
 
@@ -3527,18 +3466,15 @@ interfaces abertas e soluções para ativos legados?
 
   - Os ativos podem trocar informações sem restrições significativas.
 
-  - Protocolos padronizados (como o Internet Protocol IP, por exemplo) são utilizados no
-                chão de fábrica.
+  - Protocolos padronizados (como o Internet Protocol IP, por exemplo) são utilizados no chão de fábrica.
 
 
 - Nível 3:
 
 
 <!-- pág. original: 317/465 -->
-  - Existem iniciativas implementadas de integração com equipamentos e sistemas
-                legados.
-  - A conectividade suporta a Integração Vertical (troca de dados em toda a cadeia de
-                valor).
+  - Existem iniciativas implementadas de integração com equipamentos e sistemas legados.
+  - A conectividade suporta a Integração Vertical (troca de dados em toda a cadeia de valor).
 
 
 - Nível 4:
@@ -3548,24 +3484,20 @@ interfaces abertas e soluções para ativos legados?
 
   - A integração de dados entre ativos ocorre em tempo real.
 
-  - O controle de fluxo de dados está implementado para garantir a integridade da
-                informação trocada.
+  - O controle de fluxo de dados está implementado para garantir a integridade da informação trocada.
 
 
 - Nível 5:
 
 
-  - Existem análises preditivas implementadas, que permitem avaliar cenários de
-                integração de dados e determinar otimizações.
-  - As redes existentes são escaláveis, sendo facilmente configuradas para acomodar
-                modificações na composição de equipamentos e sistemas.
+  - Existem análises preditivas implementadas, que permitem avaliar cenários de integração de dados e determinar otimizações.
+  - As redes existentes são escaláveis, sendo facilmente configuradas para acomodar modificações na composição de equipamentos e sistemas.
 
 
 - Nível 6:
 
 
-  - As interfaces são abertas e altamente flexíveis, se adaptando a novos requisitos do
-                sistema de forma contínua.
+  - As interfaces são abertas e altamente flexíveis, se adaptando a novos requisitos do sistema de forma contínua.
 
 ##### Amostragem
 
@@ -3628,8 +3560,7 @@ real?
 - Nível 0:
 
 
-  - Não há processos definidos para utilização de dados de chão de fábrica com objetivos
-                estratégicos.
+  - Não há processos definidos para utilização de dados de chão de fábrica com objetivos estratégicos.
   - A tomada de decisão é baseada em métodos informais ou ad-hoc.
 
   - A transformação digital não é foco estratégico.
@@ -3638,8 +3569,7 @@ real?
 - Nível 1:
 
 
-  - Relatórios existentes baseiam-se em dados dos ativos digitais obtidos por
-                funcionalidades pré-programadas.
+  - Relatórios existentes baseiam-se em dados dos ativos digitais obtidos por funcionalidades pré-programadas.
   - Não há análises baseadas em cruzamento de dados de diferentes ativos.
 
 
@@ -3648,17 +3578,14 @@ real?
 
   - Relatórios apresentam informações obtidas a partir de dados de múltiplas fontes.
 
-  - Existem requisitos de negócio determinando quais dados devem ser coletados e
-                analisados.
-  - Sistemas de informação podem ser usados para identificar desvios dos parâmetros
-                predefinidos.
+  - Existem requisitos de negócio determinando quais dados devem ser coletados e analisados.
+  - Sistemas de informação podem ser usados para identificar desvios dos parâmetros predefinidos.
 
 
 - Nível 3:
 
 
-  - A indústria empreende iniciativas para coletar dados e implementar um modelo digital
-                atualizado dos ativos de chão de fábrica.
+  - A indústria empreende iniciativas para coletar dados e implementar um modelo digital atualizado dos ativos de chão de fábrica.
   - As decisões gerenciais são baseadas em dados reais.
 
 
@@ -3666,9 +3593,7 @@ real?
 - Nível 4:
 
 
-  - A informação obtida a partir de sensores e ativos de chão de fábrica é usada para
-                detectar ineficiências e sugerir áreas de melhoria, como por exemplo na redução de
-                resíduos.
+  - A informação obtida a partir de sensores e ativos de chão de fábrica é usada para detectar ineficiências e sugerir áreas de melhoria, como por exemplo na redução de resíduos.
 
 
 - Nível 5:
@@ -3676,21 +3601,18 @@ real?
 
   - Os sistemas empregam cada vez mais mecanismos de detecção e predição.
 
-  - São capazes de prever desvios e executar decisões de forma independente para
-                otimizar o desempenho.
+  - São capazes de prever desvios e executar decisões de forma independente para otimizar o desempenho.
 
 
 - Nível 6:
 
 
-  - Decisões referentes à correção de desvios e otimização da produção são
-                implementadas de forma autônoma pelo sistema.
+  - Decisões referentes à correção de desvios e otimização da produção são implementadas de forma autônoma pelo sistema.
   - O sistema é dotado de mecanismos de auto-aprendizado e auto-otimização.
 
 ##### Amostragem
 
-- Selecionar 5–10 artefatos referentes a processos relevantes (sincronização entre Digital
-        Shadow e processos físicos), atualizados nos últimos 90 dias
+- Selecionar 5–10 artefatos referentes a processos relevantes (sincronização entre Digital Shadow e processos físicos), atualizados nos últimos 90 dias
 #### Glossário
 [Sem glossário]
 ### I.8 Dimensão: Conectividade Corporativa
@@ -3798,16 +3720,13 @@ são interoperáveis em múltiplos protocolos e tecnologias de comunicação?
 <!-- pág. original: 324/465 -->
   - Os sistemas de TI podem simular possíveis cenários futuros para suporte à decisão.
 
-  - A arquitetura digital corporativa integra dados operacionais e administrativos de uma
-                  camada única de informação, permitindo análise preditiva.
+  - A arquitetura digital corporativa integra dados operacionais e administrativos de uma camada única de informação, permitindo análise preditiva.
 
 
 - Nível 6:
 
 
-  - As informações são utilizadas para implementar automaticamente as medidas
-                  correspondentes sem necessidade de intervenção humana, através do uso de IA ou
-                  orquestradores para decisão automática.
+  - As informações são utilizadas para implementar automaticamente as medidas correspondentes sem necessidade de intervenção humana, através do uso de IA ou orquestradores para decisão automática.
 
 ##### Amostragem
 
@@ -3877,33 +3796,27 @@ interconectar seus sistemas de TI?
 
 
 <!-- pág. original: 326/465 -->
-  - O uso generalizado de protocolos de rede padronizados (como o IP, por exemplo) no
-             chão de fábrica é um requisito chave.
+  - O uso generalizado de protocolos de rede padronizados (como o IP, por exemplo) no chão de fábrica é um requisito chave.
 
 
 - Nível 2:
 
 
-  - Existem evidências e artefatos documentando a padronização de interfaces e definição
-             de templates de dados.
+  - Existem evidências e artefatos documentando a padronização de interfaces e definição de templates de dados.
   - Os sistemas de informação começam a ser usados para identificar desvios.
 
 
 - Nível 3:
 
 
-  - Todos os sistemas implementados são especificados para atenderem padrões
-             específicos de interface e troca de dados.
-  - A aquisição de novos ativos inclui requisitos de interoperabilidade que garantem a
-             manutenção desses padrões.
+  - Todos os sistemas implementados são especificados para atenderem padrões específicos de interface e troca de dados.
+  - A aquisição de novos ativos inclui requisitos de interoperabilidade que garantem a manutenção desses padrões.
 
 
 - Nível 4:
 
 
-  - Existem padrões estabelecidos de interface e troca de dados documentados e
-             auditáveis que estão vigentes para todos os departamentos que necessitam de
-             integração com os ativos industriais.
+  - Existem padrões estabelecidos de interface e troca de dados documentados e auditáveis que estão vigentes para todos os departamentos que necessitam de integração com os ativos industriais.
 
 
 - Nível 5:
@@ -3911,16 +3824,14 @@ interconectar seus sistemas de TI?
 
   - A infraestrutura de rede e interfaces é escalável.
 
-  - A Capacidade Técnica Digital (DTC) inclui planejamento de necessidades e capacidade
-             da infraestrutura de TI em planos de médio a longo prazo.
+  - A Capacidade Técnica Digital (DTC) inclui planejamento de necessidades e capacidade da infraestrutura de TI em planos de médio a longo prazo.
   - Os sistemas utilizam dados padronizados para simular possíveis cenários futuros.
 
 
 - Nível 6:
 
 
-  - A infraestrutura é capaz de reorganização dinâmica e adaptação automática contínua à
-             integração de novos ativos e sistemas.
+  - A infraestrutura é capaz de reorganização dinâmica e adaptação automática contínua à integração de novos ativos e sistemas.
   - O sistema executa decisões de auto-otimização (por exemplo, em desempenho).
 
 
@@ -3989,15 +3900,13 @@ governança de dados formalizadas?
 - Nível 1:
 
 
-  - Existem links formais de rede para interconexão dos sistemas, entretanto não existem
-                especificações estruturadas para a troca de dados.
+  - Existem links formais de rede para interconexão dos sistemas, entretanto não existem especificações estruturadas para a troca de dados.
 
 
 - Nível 2:
 
 
-  - Os sistemas são interoperáveis, podendo interagir e trocar informações sem restrições
-                significativas.
+  - Os sistemas são interoperáveis, podendo interagir e trocar informações sem restrições significativas.
   - Há esforços básicos para gerenciar o risco de ameaças cibernéticas.
 
   - Catálogo de dados estruturados e não estruturados em consolidação.
@@ -4006,40 +3915,32 @@ governança de dados formalizadas?
 - Nível 3:
 
 
-  - Um framework com políticas de segurança está em vigor para proteger a rede
-                interoperável contra acesso indesejado e/ou disrupção.
+  - Um framework com políticas de segurança está em vigor para proteger a rede interoperável contra acesso indesejado e/ou disrupção.
 
 
 <!-- pág. original: 329/465 -->
-  - Políticas de governança de dados são sistematicamente desenvolvidas e mantidas para
-                orientar o processamento, armazenamento e gerenciamento de dados.
+  - Políticas de governança de dados são sistematicamente desenvolvidas e mantidas para orientar o processamento, armazenamento e gerenciamento de dados.
 
 
 - Nível 4:
 
 
-  - Há iniciativas para melhorar a qualidade dos dados e oferecer suporte à comunicação
-                em tempo real.
-  - Os dados são analisados para produzir conhecimento por meio de análise de causa
-                raiz.
+  - Há iniciativas para melhorar a qualidade dos dados e oferecer suporte à comunicação em tempo real.
+  - Os dados são analisados para produzir conhecimento por meio de análise de causa raiz.
 
 
 - Nível 5:
 
 
-  - A governança de dados é priorizada em todos os níveis e a empresa busca
-                conformidade com padrões internacionais para proteção de dados.
-  - Monitoramento contínuo de integridade e conformidade com base em normas (e.g., ISO
-                27001, LGPD)
+  - A governança de dados é priorizada em todos os níveis e a empresa busca conformidade com padrões internacionais para proteção de dados.
+  - Monitoramento contínuo de integridade e conformidade com base em normas (e.g., ISO 27001, LGPD)
 
 
 - Nível 6:
 
 
-  - O processamento e análise de dados incluem mecanismos de auto-aprendizado,
-                adaptando-se continuamente às circunstâncias.
-  - Os sistemas de TI são capazes de executar decisões de forma autônoma para otimizar
-                o desempenho e adaptar-se a mudanças.
+  - O processamento e análise de dados incluem mecanismos de auto-aprendizado, adaptando-se continuamente às circunstâncias.
+  - Os sistemas de TI são capazes de executar decisões de forma autônoma para otimizar o desempenho e adaptar-se a mudanças.
 
 ##### Amostragem
 
@@ -4116,55 +4017,47 @@ de fábrica (inclusive HVAC) para garantir a conectividade?
 - Nível 0:
 
 
-  - Os ativos e sistemas da instalação (como HVAC e iluminação) não estão conectados e
-                não são capazes de interagir ou trocar informação.
+  - Os ativos e sistemas da instalação (como HVAC e iluminação) não estão conectados e não são capazes de interagir ou trocar informação.
   - Os processos são gerenciados por métodos informais ou ad-hoc.
 
 
 - Nível 1:
 
 
-  - Existem links de rede formais (cabeados e/ou sem fio) que permitem a interação ou
-                troca de informação entre os ativos da instalação.
-  - Múltiplas tecnologias e protocolos de comunicação podem estar em uso sem a devida
-                integração.
+  - Existem links de rede formais (cabeados e/ou sem fio) que permitem a interação ou troca de informação entre os ativos da instalação.
+  - Múltiplas tecnologias e protocolos de comunicação podem estar em uso sem a devida integração.
 
 
 - Nível 2:
 
 
 <!-- pág. original: 333/465 -->
-  - O Internet Protocol (IP) está se tornando amplamente utilizado (e.g., IPv6), o que é um
-                requisito chave para a Internet of Things (IoT).
+  - O Internet Protocol (IP) está se tornando amplamente utilizado (e.g., IPv6), o que é um requisito chave para a Internet of Things (IoT).
 
 
 - Nível 3:
 
 
-  - A conectividade provê suporte à análise de dados locais para identificar e diagnosticar
-                as causas potenciais de desvios.
+  - A conectividade provê suporte à análise de dados locais para identificar e diagnosticar as causas potenciais de desvios.
 
 
 - Nível 4:
 
 
-  - A troca de dados disponíveis corporativamente em tempo real entre ativos e sistemas
-                da instalação ocorre de forma permanente.
+  - A troca de dados disponíveis corporativamente em tempo real entre ativos e sistemas da instalação ocorre de forma permanente.
   - Os dados estão disponíveis imediatamente após sua leitura/aquisição.
 
 
 - Nível 5:
 
 
-  - A rede suporta a aplicação de análise preditiva e modelos avançados para prever
-                futuros estados de ativos e sistemas (e, falhas no HVAC).
+  - A rede suporta a aplicação de análise preditiva e modelos avançados para prever futuros estados de ativos e sistemas (e, falhas no HVAC).
 
 
 - Nível 6:
 
 
-  - A rede permite interações dinâmicas e reconfiguráveis entre domínios, suportando a
-                execução autônoma de decisões para otimizar o desempenho da instalação.
+  - A rede permite interações dinâmicas e reconfiguráveis entre domínios, suportando a execução autônoma de decisões para otimizar o desempenho da instalação.
 
 ##### Amostragem
 
@@ -4226,8 +4119,7 @@ críticos da instalação e controle do ambiente (e.g., HVAC, iluminação) de f
 - Nível 1:
 
 
-  - Existem links de rede formais que permitem a interação ou troca de informação,
-                geralmente através de múltiplas tecnologias e protocolos.
+  - Existem links de rede formais que permitem a interação ou troca de informação, geralmente através de múltiplas tecnologias e protocolos.
   - A dependência da participação humana é evidente.
 
 
@@ -4252,27 +4144,23 @@ críticos da instalação e controle do ambiente (e.g., HVAC, iluminação) de f
 - Nível 4:
 
 
-  - TI/OT identificam desvios e diagnosticam as causas potenciais (e.g., por que o HVAC
-                está consumindo mais energia).
+  - TI/OT identificam desvios e diagnosticam as causas potenciais (e.g., por que o HVAC está consumindo mais energia).
 
 
 <!-- pág. original: 336/465 -->
-  - A integração vertical e horizontal dos processos e sistemas é estabelecida, resultando
-                  em diagnóstico automático de desvios de performance dos sistemas críticos.
+  - A integração vertical e horizontal dos processos e sistemas é estabelecida, resultando em diagnóstico automático de desvios de performance dos sistemas críticos.
 
 
 - Nível 5:
 
 
-  - A integração suporta modelos preditivos e análise avançada para prever futuros
-                  estados dos sistemas de controle (e.g., manutenção preditiva do chiller ou HVAC).
+  - A integração suporta modelos preditivos e análise avançada para prever futuros estados dos sistemas de controle (e.g., manutenção preditiva do chiller ou HVAC).
 
 
 - Nível 6:
 
 
-  - O sistema é capaz de executar decisões automaticamente para otimizar o desempenho
-                  e a eficiência dos recursos da instalação, sem intervenção humana.
+  - O sistema é capaz de executar decisões automaticamente para otimizar o desempenho e a eficiência dos recursos da instalação, sem intervenção humana.
 
 ##### Amostragem
 
@@ -4329,8 +4217,7 @@ acomodar novas composições de equipamentos, máquinas e sistemas de computador
 - Nível 0:
 
 
-  - Os sistemas (e.g., HVAC) não estão conectados e quaisquer modificações ou adições
-                  de equipamentos são tratadas de forma isolada, manual ou ad-hoc.
+  - Os sistemas (e.g., HVAC) não estão conectados e quaisquer modificações ou adições de equipamentos são tratadas de forma isolada, manual ou ad-hoc.
 
 
 - Nível 1:
@@ -4340,25 +4227,20 @@ acomodar novas composições de equipamentos, máquinas e sistemas de computador
 
 
 <!-- pág. original: 338/465 -->
-  - A integração de novos sistemas de controle ambiental é complexa e lenta devido à
-             incompatibilidade.
+  - A integração de novos sistemas de controle ambiental é complexa e lenta devido à incompatibilidade.
 
 
 - Nível 2:
 
 
-  - A infraestrutura permite adaptações e novas aquisições de equipamentos sem
-             restrições significativas de protocolo; contudo, a adaptação da rede a grandes
-             mudanças na composição de ativos é lenta e depende de planejamento específico.
+  - A infraestrutura permite adaptações e novas aquisições de equipamentos sem restrições significativas de protocolo; contudo, a adaptação da rede a grandes mudanças na composição de ativos é lenta e depende de planejamento específico.
 
 
 - Nível 3:
 
 
-  - Existem processos definidos e sequenciais para reconfiguração da rede; entretanto, tais
-             processos não são automatizados e ainda dependem de ações específicas.
-  - A expansão da coleta de dados em tempo real para novos ativos é uma funcionalidade
-             disponível.
+  - Existem processos definidos e sequenciais para reconfiguração da rede; entretanto, tais processos não são automatizados e ainda dependem de ações específicas.
+  - A expansão da coleta de dados em tempo real para novos ativos é uma funcionalidade disponível.
 
 
 - Nível 4:
@@ -4368,31 +4250,25 @@ acomodar novas composições de equipamentos, máquinas e sistemas de computador
 
   - O sistema ajusta automaticamente a capacidade de rede em função da carga de dados.
 
-  - Os sistemas de assistência diagnosticam o impacto de novos equipamentos na
-             operação.
+  - Os sistemas de assistência diagnosticam o impacto de novos equipamentos na operação.
   - A escalabilidade existe, mas a adaptação não é totalmente autônoma.
 
 
 - Nível 5:
 
 
-  - As redes existentes (cabeada e sem fio) podem ser configuradas de forma rápida e fácil
-             para acomodar quaisquer modificações na composição de equipamentos e sistemas da
-             instalação (provisionamento automatizado).
+  - As redes existentes (cabeada e sem fio) podem ser configuradas de forma rápida e fácil para acomodar quaisquer modificações na composição de equipamentos e sistemas da instalação (provisionamento automatizado).
   - A adição de novos ativos suporta a análise preditiva em toda a instalação.
 
 
 - Nível 6:
 
 
-  - A rede da instalação está convergente com as plataformas do Chão de Fábrica e
-             Corporativa, permitindo reconfigurações dinâmicas e contínuas (plug-and-play).
+  - A rede da instalação está convergente com as plataformas do Chão de Fábrica e Corporativa, permitindo reconfigurações dinâmicas e contínuas (plug-and-play).
 
 
 <!-- pág. original: 339/465 -->
-  - Novos ativos são integrados automaticamente em redes altamente autônomas que
-                  otimizam o desempenho da instalação sem intervenção humana (utilizando o
-                  aprendizado adaptativo e o balanceamento dinâmico de carga).
+  - Novos ativos são integrados automaticamente em redes altamente autônomas que otimizam o desempenho da instalação sem intervenção humana (utilizando o aprendizado adaptativo e o balanceamento dinâmico de carga).
 
 ##### Amostragem
 
@@ -4450,61 +4326,47 @@ incluindo equipamentos e sistemas de controle da Instalação?
 
   - Não há processos definidos de segurança de TI.
 
-  - Em muitos casos, os ativos sequer estão conectados, de modo que a segurança de TI é
-                irrelevante para este domínio.
+  - Em muitos casos, os ativos sequer estão conectados, de modo que a segurança de TI é irrelevante para este domínio.
 
 
 - Nível 1:
 
 
-  - Os ativos da instalação (como os controladores do HVAC e iluminação, por exemplo)
-                possuem sistemas de controle próprios e isolados, que executam tarefas
-                pré-programadas.
+  - Os ativos da instalação (como os controladores do HVAC e iluminação, por exemplo) possuem sistemas de controle próprios e isolados, que executam tarefas pré-programadas.
 
 
 - Nível 2:
 
 
-  - A administração de ativos não inclui controle de fluxo de dados formal ou validação
-                contínua.
-  - Embora os sistemas estejam conectados e sejam interoperáveis, a segurança de TI é
-                tratada de forma tempestiva, por solicitação de demanda.
+  - A administração de ativos não inclui controle de fluxo de dados formal ou validação contínua.
+  - Embora os sistemas estejam conectados e sejam interoperáveis, a segurança de TI é tratada de forma tempestiva, por solicitação de demanda.
 
 
 - Nível 3:
 
 
 <!-- pág. original: 341/465 -->
-  - Medidas de segurança de TI são formalmente estabelecidas e cobrem questões de
-                administração de ativos, incluindo a proteção de dados da instalação e o controle de
-                acesso de usuários.
-  - Existem políticas claras para proteger a rede de ativos interoperáveis da instalação
-                contra acesso ou disrupção indesejada.
+  - Medidas de segurança de TI são formalmente estabelecidas e cobrem questões de administração de ativos, incluindo a proteção de dados da instalação e o controle de acesso de usuários.
+  - Existem políticas claras para proteger a rede de ativos interoperáveis da instalação contra acesso ou disrupção indesejada.
 
 
 - Nível 4:
 
 
-  - A administração de ativos é suportada por sistemas de informação capazes de realizar
-                o controle do fluxo de dados em tempo real.
-  - Os sistemas conseguem identificar desvios relacionados a ativos (e.g., falhas de
-                autenticação de dispositivos) e diagnosticar causas potenciais.
+  - A administração de ativos é suportada por sistemas de informação capazes de realizar o controle do fluxo de dados em tempo real.
+  - Os sistemas conseguem identificar desvios relacionados a ativos (e.g., falhas de autenticação de dispositivos) e diagnosticar causas potenciais.
 
 
 - Nível 5:
 
 
-  - Os sistemas utilizam análise preditiva e IA/ML para prever vulnerabilidades futuras ou
-                falhas de segurança relacionadas à administração de ativos, como o risco de
-                comprometimento da identidade digital do ativo.
+  - Os sistemas utilizam análise preditiva e IA/ML para prever vulnerabilidades futuras ou falhas de segurança relacionadas à administração de ativos, como o risco de comprometimento da identidade digital do ativo.
 
 
 - Nível 6:
 
 
-  - Os sistemas de informação e segurança são auto-aprendizes e executam decisões
-                automaticamente para otimizar a segurança e a funcionalidade dos ativos,
-                adaptando-se continuamente às circunstâncias, sem intervenção humana.
+  - Os sistemas de informação e segurança são auto-aprendizes e executam decisões automaticamente para otimizar a segurança e a funcionalidade dos ativos, adaptando-se continuamente às circunstâncias, sem intervenção humana.
 
 ##### Amostragem
 
@@ -4583,68 +4445,53 @@ críticos da instalação?
 
   - Não há processos definidos de identificação/autenticação.
 
-  - Os sistemas de controle não estão conectados ou quando estão, o controle de acesso é
-                  inexistente.
+  - Os sistemas de controle não estão conectados ou quando estão, o controle de acesso é inexistente.
 
 
 - Nível 1:
 
 
 <!-- pág. original: 345/465 -->
-  - Os ativos da instalação estão conectados, mas a identificação e autenticação de
-             usuários são básicas (e.g., senhas simples, muitas vezes compartilhadas entre vários
-             usuários) e geralmente executam tarefas pré-programadas.
+  - Os ativos da instalação estão conectados, mas a identificação e autenticação de usuários são básicas (e.g., senhas simples, muitas vezes compartilhadas entre vários usuários) e geralmente executam tarefas pré-programadas.
 
 
 - Nível 2:
 
 
-  - A identificação/autenticação não é baseada em perfis de função (privilégios), e se
-             baseia em mecanismos muito simples (e.g., senhas).
+  - A identificação/autenticação não é baseada em perfis de função (privilégios), e se baseia em mecanismos muito simples (e.g., senhas).
   - A rede é vulnerável a acessos indesejados.
 
 
 - Nível 3:
 
 
-  - A infraestrutura implementa a identificação e autenticação de usuários de maneira
-             formal.
-  - Os mecanismos utilizados baseiam-se em perfis de função e credenciais únicas
-             (RBAC).
-  - O controle de acesso também permite que os funcionários sejam incluídos em
-             processos de comunicação de forma contextualizada.
+  - A infraestrutura implementa a identificação e autenticação de usuários de maneira formal.
+  - Os mecanismos utilizados baseiam-se em perfis de função e credenciais únicas (RBAC).
+  - O controle de acesso também permite que os funcionários sejam incluídos em processos de comunicação de forma contextualizada.
   - O log é centralizado.
 
 
 - Nível 4:
 
 
-  - O sistema de controle de acesso se integra aos demais sistemas da instalação,
-             podendo identificar e diagnosticar desvios ou tentativas de acesso não autorizado,
-             rastreando imediatamente a fonte humana ou digital.
+  - O sistema de controle de acesso se integra aos demais sistemas da instalação, podendo identificar e diagnosticar desvios ou tentativas de acesso não autorizado, rastreando imediatamente a fonte humana ou digital.
 
 
 - Nível 5:
 
 
-  - O sistema de controle de acesso usa análise preditiva para prever vulnerabilidades
-             relacionadas ao acesso de usuários ou identificar proativamente riscos de
-             comprometimento de credenciais, com base na análise comportamental do usuário.
+  - O sistema de controle de acesso usa análise preditiva para prever vulnerabilidades relacionadas ao acesso de usuários ou identificar proativamente riscos de comprometimento de credenciais, com base na análise comportamental do usuário.
 
 
 - Nível 6:
 
 
-  - O sistema de controle de acesso adapta as credenciais e privilégios dos usuários às
-             circunstâncias operacionais de forma automática
+  - O sistema de controle de acesso adapta as credenciais e privilégios dos usuários às circunstâncias operacionais de forma automática
 
 
 <!-- pág. original: 346/465 -->
-  - O sistema também se integra com outros domínios para executar decisões de
-                  segurança de forma autônoma (e.g., revogação automática de acesso em caso de
-                  risco).
-  - Existem mecanismos de detecção de intrusão adaptativos e capazes de aprender a
-                  partir de padrões comportamentais dos usuários.
+  - O sistema também se integra com outros domínios para executar decisões de segurança de forma autônoma (e.g., revogação automática de acesso em caso de risco).
+  - Existem mecanismos de detecção de intrusão adaptativos e capazes de aprender a partir de padrões comportamentais dos usuários.
   - Há integração com SIEM/SOC para resposta automática.
 
 ##### Amostragem
@@ -4700,15 +4547,13 @@ identificação e registro de desvios, falhas de segurança ou mau funcionamento
 - Nível 0:
 
 
-  - Sistemas de TI e OT não estão presentes, ou não há dispositivos eletrônicos ou digitais
-                sendo usados.
+  - Sistemas de TI e OT não estão presentes, ou não há dispositivos eletrônicos ou digitais sendo usados.
 
 
 - Nível 1:
 
 
-  - A validação de saúde dos sistemas se limita a funcionalidades estáticas de auto
-                diagnóstico, providas isoladamente pelos próprios equipamentos.
+  - A validação de saúde dos sistemas se limita a funcionalidades estáticas de auto diagnóstico, providas isoladamente pelos próprios equipamentos.
   - Não há capacidade de identificar desvios ou avaliar de forma ativa a saúde do sistema.
 
 
@@ -4724,9 +4569,7 @@ identificação e registro de desvios, falhas de segurança ou mau funcionamento
 - Nível 3:
 
 
-  - O framework de segurança contempla a proteção da rede e dos ativos, cobrindo
-                  formalmente a validação da saúde do sistema por meio de medidas claras de
-                  segurança de TI.
+  - O framework de segurança contempla a proteção da rede e dos ativos, cobrindo formalmente a validação da saúde do sistema por meio de medidas claras de segurança de TI.
 
 
 - Nível 4:
@@ -4734,24 +4577,20 @@ identificação e registro de desvios, falhas de segurança ou mau funcionamento
 
   - Os ativos e sistemas da instalação são capazes de comunicação em tempo real.
 
-  - Há medidas proativas para manter a validação de saúde do sistema e adaptá-la em
-                  resposta às circunstâncias.
+  - Há medidas proativas para manter a validação de saúde do sistema e adaptá-la em resposta às circunstâncias.
 
 
 - Nível 5:
 
 
-  - A validação da saúde do sistema é avançada, utilizando algoritmos e modelos
-                  avançados para prever falhas potenciais com antecedência.
+  - A validação da saúde do sistema é avançada, utilizando algoritmos e modelos avançados para prever falhas potenciais com antecedência.
 
 
 - Nível 6:
 
 
-  - Os sistemas de validação da saúde do sistema funcionam de forma autônoma e podem
-                  tomar decisões.
-  - Eles são dotados de mecanismos de aprendizado para otimizar o desempenho e a
-                  eficiência de recursos.
+  - Os sistemas de validação da saúde do sistema funcionam de forma autônoma e podem tomar decisões.
+  - Eles são dotados de mecanismos de aprendizado para otimizar o desempenho e a eficiência de recursos.
 
 ##### Amostragem
 
@@ -4809,16 +4648,13 @@ de controle da instalação?
 - Nível 0:
 
 
-  - Os ativos e sistemas da instalação não estão conectados e não há uso de sistemas de
-                TI/OT.
+  - Os ativos e sistemas da instalação não estão conectados e não há uso de sistemas de TI/OT.
 
 
 - Nível 1:
 
 
-  - Ainda que existam links formais de rede para ativos da instalação, a troca de dados
-                entre os sistemas de controle e os sistemas de TI é predominantemente gerenciada por
-                intervenção humana.
+  - Ainda que existam links formais de rede para ativos da instalação, a troca de dados entre os sistemas de controle e os sistemas de TI é predominantemente gerenciada por intervenção humana.
 
 
 - Nível 2:
@@ -4832,37 +4668,30 @@ de controle da instalação?
 - Nível 3:
 
 
-  - Existe um framework de segurança para proteger a rede e os ativos da instalação
-                contra disrupção.
-  - A informação é trocada continuamente entre os sistemas da cadeia de valor (integração
-                vertical).
+  - Existe um framework de segurança para proteger a rede e os ativos da instalação contra disrupção.
+  - A informação é trocada continuamente entre os sistemas da cadeia de valor (integração vertical).
   - Implementação de firewalls industriais e segmentação lógica.
 
 
 - Nível 4:
 
 
-  - O fluxo de dados da instalação é processado sem atraso e está disponível quase
-                imediatamente.
-  - O fluxo de dados permite que os sistemas de assistência façam diagnósticos de desvios
-                ou falhas de segurança no fluxo de dados.
+  - O fluxo de dados da instalação é processado sem atraso e está disponível quase imediatamente.
+  - O fluxo de dados permite que os sistemas de assistência façam diagnósticos de desvios ou falhas de segurança no fluxo de dados.
 
 
 - Nível 5:
 
 
 <!-- pág. original: 351/465 -->
-  - Os sistemas utilizam modelos preditivos para prever e prevenir vulnerabilidades ou
-                interrupções no fluxo de dados da instalação antes que ocorram.
+  - Os sistemas utilizam modelos preditivos para prever e prevenir vulnerabilidades ou interrupções no fluxo de dados da instalação antes que ocorram.
 
 
 - Nível 6:
 
 
-  - Os sistemas de segurança fazem uso intensivo de dados do próprio fluxo sob controle,
-                estabelecendo padrões seguros de operação.
-  - Eles também executam decisões automaticamente para otimizar o fluxo de dados e as
-                funcionalidades do sistema, sem intervenção humana.
+  - Os sistemas de segurança fazem uso intensivo de dados do próprio fluxo sob controle, estabelecendo padrões seguros de operação.
+  - Eles também executam decisões automaticamente para otimizar o fluxo de dados e as funcionalidades do sistema, sem intervenção humana.
 
 ##### Amostragem
 
@@ -4916,14 +4745,11 @@ cálculos críticos e ações em tempo real?
 
 ##### Métricas/KPIs
 
-- Latência de Análise: O tempo necessário para que a análise dos dados do evento seja
-        concluída.
-- Latência de Decisão: O tempo necessário para que a contramedida ou decisão correspondente
-        seja aprovada
+- Latência de Análise: O tempo necessário para que a análise dos dados do evento seja concluída.
+- Latência de Decisão: O tempo necessário para que a contramedida ou decisão correspondente seja aprovada
 - Latência de Ação: O tempo para que a contramedida entre em vigor.
 
-- Flexibilidade. A capacidade de adaptação às mudanças, frequentemente medida pela
-        capacidade de customização.
+- Flexibilidade. A capacidade de adaptação às mudanças, frequentemente medida pela capacidade de customização.
 
 ##### Sinais por nível
 
@@ -5000,11 +4826,8 @@ cálculos críticos e ações em tempo real?
 
 - Amostragem Seleção Estratificada de Processos Críticos
 
-- Processos de Alto Valor Agregado Identifique os equipamentos considerados "cérebros" da
-       operação
-- Análise de Lotes Específicos Amostra de Pessoas (Entrevistas): Entreviste o Engenheiro de
-       Automação Converse com o Operador Sênior Entreviste o Analista de Dados ou Cientista de
-       Dados
+- Processos de Alto Valor Agregado Identifique os equipamentos considerados "cérebros" da operação
+- Análise de Lotes Específicos Amostra de Pessoas (Entrevistas): Entreviste o Engenheiro de Automação Converse com o Operador Sênior Entreviste o Analista de Dados ou Cientista de Dados
 
 
 <!-- pág. original: 356/465 -->
@@ -5029,65 +4852,35 @@ volume de dados transmitidos para sistemas centrais?
 
 ##### Artefatos e onde buscar
 
-- • Configurações de Software de Borda (Edge Software Configuration):
-
-- ◦ Onde buscar: Departamentos de Automação, Engenharia de TI/OT.
-
-- ◦ O que verificar: A lógica de programação nos gateways de IoT ou PCs industriais. Procurar
-        especificamente por funções de agregação (ex: Average(1min)), filtragem (ex: bandas mortas,
-        filtros de média móvel) ou lógica condicional de envio (ex: "enviar dados apenas se a variação
-        for > 5%").
-- • Logs de Tráfego de Rede e Consumo de Dados:
-
-- ◦ Onde buscar: Departamento de TI (Administradores de rede, Painéis de Provedor de Nuvem).
-
-- ◦ O que verificar: O volume de dados (em MB/GB) transmitido pela rede do chão de fábrica.
-        Comparar o volume de dados brutos que poderia ser gerado (ex: um sensor de vibração de alta
-        frequência gerando 1GB/hora) com o volume realmente transmitido. Uma grande diferença é a
-        evidência do pré-processamento.
-- • Diagramas de Arquitetura de Fluxo de Dados:
-
-- ◦ Onde buscar: Departamentos de TI, Automação ou Engenharia.
-
-- ◦ O que verificar: Se o diagrama mostra os dados dos sensores sendo enviados primeiro para
-        um dispositivo de borda (ex: IPC, Edge Gateway) e depois para o sistema central (MES,
-        Scada, Nuvem). Verificar se há anotações como "dados agregados" ou "dados filtrados" nesse
-        fluxo.
-- • Especificações Técnicas dos Dispositivos de Borda:
-
-- ◦ Onde buscar: Departamentos de Automação ou Engenharia.
-
-- O que verificar: Se os dispositivos no chão de fábrica (além dos CLPs básicos) possuem
-        capacidade de processamento (CPU, RAM) suficiente para executar essa filtragem e
-        agregação localmente.
+- Configurações de Software de Borda (Edge Software Configuration):
+  - Onde buscar: Departamentos de Automação, Engenharia de TI/OT.
+  - O que verificar: A lógica de programação nos gateways de IoT ou PCs industriais. Procurar especificamente por funções de agregação (ex: Average(1min)), filtragem (ex: bandas mortas, filtros de média móvel) ou lógica condicional de envio (ex: "enviar dados apenas se a variação for > 5%").
+- Logs de Tráfego de Rede e Consumo de Dados:
+  - Onde buscar: Departamento de TI (Administradores de rede, Painéis de Provedor de Nuvem).
+  - O que verificar: O volume de dados (em MB/GB) transmitido pela rede do chão de fábrica. Comparar o volume de dados brutos que poderia ser gerado (ex: um sensor de vibração de alta frequência gerando 1GB/hora) com o volume realmente transmitido. Uma grande diferença é a evidência do pré-processamento.
+- Diagramas de Arquitetura de Fluxo de Dados:
+  - Onde buscar: Departamentos de TI, Automação ou Engenharia.
+  - O que verificar: Se o diagrama mostra os dados dos sensores sendo enviados primeiro para um dispositivo de borda (ex: IPC, Edge Gateway) e depois para o sistema central (MES, Scada, Nuvem). Verificar se há anotações como "dados agregados" ou "dados filtrados" nesse fluxo.
+- Especificações Técnicas dos Dispositivos de Borda:
+  - Onde buscar: Departamentos de Automação ou Engenharia.
+  - O que verificar: Se os dispositivos no chão de fábrica (além dos CLPs básicos) possuem capacidade de processamento (CPU, RAM) suficiente para executar essa filtragem e agregação localmente.
 
 ##### Métricas/KPIs
 
-- • Taxa de Redução de Dados (Data Reduction Ratio):
-
+- Taxa de Redução de Dados (Data Reduction Ratio):
 
 <!-- pág. original: 358/465 -->
-- ◦ Descrição: (Volume de dados brutos gerados pelos sensores) / (Volume de dados
-        transmitidos para sistemas centrais).
-- ◦ Sinal: Uma taxa alta (ex: 100:1) indica que apenas dados relevantes ou agregados estão
-        sendo enviados.
-- • Utilização da Largura de Banda da Rede (Network Bandwidth Utilization):
-
-- ◦ Descrição: O percentual da rede OT/TI consumido pelo envio de dados de sensores.
-
-- ◦ Sinal: Baixa utilização apesar da existência de milhares de pontos de dados, indicando
-        processamento eficiente na borda.
-- • Custo de Transmissão e Armazenamento em Nuvem:
-
-- ◦ Descrição: O custo monetário (ex: R$ por mês) pago a provedores de nuvem para ingestão e
-        armazenamento de dados de IoT.
-- ◦ Sinal: Custos controlados ou reduzidos, mesmo com o aumento do número de sensores,
-        devido ao envio apenas de dados valiosos.
-- • Qualidade dos Dados no Sistema Central (Data Quality):
-
-- ◦ Descrição: Mede a proporção de dados úteis versus "ruído" (dados redundantes, espúrios ou
-        irrelevantes) no banco de dados central.
-- • Sinal: Alta qualidade, pois a filtragem de ruído é feita na origem (no equipamento).
+  - Descrição: (Volume de dados brutos gerados pelos sensores) / (Volume de dados transmitidos para sistemas centrais).
+  - Sinal: Uma taxa alta (ex: 100:1) indica que apenas dados relevantes ou agregados estão sendo enviados.
+- Utilização da Largura de Banda da Rede (Network Bandwidth Utilization):
+  - Descrição: O percentual da rede OT/TI consumido pelo envio de dados de sensores.
+  - Sinal: Baixa utilização apesar da existência de milhares de pontos de dados, indicando processamento eficiente na borda.
+- Custo de Transmissão e Armazenamento em Nuvem:
+  - Descrição: O custo monetário (ex: R$ por mês) pago a provedores de nuvem para ingestão e armazenamento de dados de IoT.
+  - Sinal: Custos controlados ou reduzidos, mesmo com o aumento do número de sensores, devido ao envio apenas de dados valiosos.
+- Qualidade dos Dados no Sistema Central (Data Quality):
+  - Descrição: Mede a proporção de dados úteis versus "ruído" (dados redundantes, espúrios ou irrelevantes) no banco de dados central.
+  - Sinal: Alta qualidade, pois a filtragem de ruído é feita na origem (no equipamento).
 
 ##### Sinais por nível
 
@@ -5100,8 +4893,7 @@ volume de dados transmitidos para sistemas centrais?
 - Nível 1:
 
 
-  - Uso de Arquivos Manuais/Planilha: Os dados são coletados, mas armazenados
-                localmente e movidos manualmente
+  - Uso de Arquivos Manuais/Planilha: Os dados são coletados, mas armazenados localmente e movidos manualmente
   - Não há transmissão de dados em tempo real
 
 
@@ -5109,71 +4901,50 @@ volume de dados transmitidos para sistemas centrais?
 
 
 <!-- pág. original: 359/465 -->
-  - Dados em Silos Descentralizados: Os dados são registrados em silos locais (ex: cartão
-             SD de um CLP), mas não são enviados para sistemas centrais, ou são enviados com
-             alta latência
+  - Dados em Silos Descentralizados: Os dados são registrados em silos locais (ex: cartão SD de um CLP), mas não são enviados para sistemas centrais, ou são enviados com alta latência
 
 
 - Nível 3:
 
 
-  - Streaming de Dados Brutos (Sem Filtro): Todo o fluxo de dados brutos de alta
-             frequência dos sensores é enviado diretamente para um sistema central ou nuvem
-             ("data lake")
-  - O sinal é o alto tráfego de rede e a necessidade de processamento pesado no sistema
-             central para "limpar" os dados
+  - Streaming de Dados Brutos (Sem Filtro): Todo o fluxo de dados brutos de alta frequência dos sensores é enviado diretamente para um sistema central ou nuvem ("data lake")
+  - O sinal é o alto tráfego de rede e a necessidade de processamento pesado no sistema central para "limpar" os dados
 
 
 - Nível 4:
 
 
-  - Pré-Processamento por Agregação/Filtragem: O dispositivo de borda executa filtragem
-             de ruído e agregação (ex: calcula médias, máximos, mínimos) e envia apenas esses
-             dados agregados em intervalos regulares (ex: a cada 1 minuto) para sistemas centrais
+  - Pré-Processamento por Agregação/Filtragem: O dispositivo de borda executa filtragem de ruído e agregação (ex: calcula médias, máximos, mínimos) e envia apenas esses dados agregados em intervalos regulares (ex: a cada 1 minuto) para sistemas centrais
   - O sinal é um tráfego de rede baixo e previsível
 
 
 - Nível 5:
 
 
-  - Processamento por Exceção (Envio de Insights): Os dispositivos de borda monitoram os
-             dados brutos, mas só enviam dados para o sistema central quando uma anomalia ou
-             evento de interesse é detectado
-  - O sinal é um tráfego de rede muito baixo, quase nulo, com picos apenas durante
-             eventos
+  - Processamento por Exceção (Envio de Insights): Os dispositivos de borda monitoram os dados brutos, mas só enviam dados para o sistema central quando uma anomalia ou evento de interesse é detectado
+  - O sinal é um tráfego de rede muito baixo, quase nulo, com picos apenas durante eventos
 
 
 - Nível 6:
 
 
-  - Processamento Autônomo (Envio de Logs): O dispositivo de borda detecta anomalias,
-             toma decisões autônomas e envia aos sistemas centrais apenas um log da ação
-             tomada (ex: "Parâmetro X ajustado às 10:32")
+  - Processamento Autônomo (Envio de Logs): O dispositivo de borda detecta anomalias, toma decisões autônomas e envia aos sistemas centrais apenas um log da ação tomada (ex: "Parâmetro X ajustado às 10:32")
   - É o nível máximo de redução de dados
 
 
 <!-- pág. original: 360/465 -->
 ##### Amostragem
 
-- Recomenda-se uma Amostragem Intencional (Propositiva) focada nos sensores que geram
-          maior volume de dados
-- • Seleção de Processos (Estratificação): Identificar 1-2 processos que utilizam sensores de alta
-          frequência (ex: análise de vibração, acústica, termografia, sistemas de visão de alta
-          velocidade), pois são os maiores geradores de dados e onde o pré-processamento é mais
-          necessário
-- • Seleção de Sensores: Dentro desses processos, focar a análise em 1-3 sensores específicos
-          de alta frequência
-- • Seleção de Evidências (Triangulação): ◦ Artefatos: Solicitar os diagramas de arquitetura de
-          rede e as especificações do dispositivo (gateway/CLP) conectado a esses sensores específicos
-- ◦ Dados (Amostra Comparativa): Solicitar dois conjuntos de dados para o mesmo sensor
-          durante um período de 5 minutos: ▪ Um dump dos dados brutos (logados localmente no
-          dispositivo de borda)
-- ▪ Um export dos dados que chegaram ao banco de dados central (nuvem/MES)
-
-- A diferença de volume e formato entre os dois é a prova concreta do pré-processamento
-
-- • Entrevistas: Conversar com o Engenheiro de Automação sobre a lógica de filtragem
-          implementada e com o Administrador de Rede sobre o impacto no tráfego de dados
+- Recomenda-se uma Amostragem Intencional (Propositiva) focada nos sensores que geram maior volume de dados
+- Seleção de Processos (Estratificação): Identificar 1-2 processos que utilizam sensores de alta frequência (ex: análise de vibração, acústica, termografia, sistemas de visão de alta velocidade), pois são os maiores geradores de dados e onde o pré-processamento é mais necessário
+- Seleção de Sensores: Dentro desses processos, focar a análise em 1-3 sensores específicos de alta frequência
+- Seleção de Evidências (Triangulação):
+  - Artefatos: Solicitar os diagramas de arquitetura de rede e as especificações do dispositivo (gateway/CLP) conectado a esses sensores específicos
+  - Dados (Amostra Comparativa): Solicitar dois conjuntos de dados para o mesmo sensor durante um período de 5 minutos:
+    - Um dump dos dados brutos (logados localmente no dispositivo de borda)
+    - Um export dos dados que chegaram ao banco de dados central (nuvem/MES)
+  - A diferença de volume e formato entre os dois é a prova concreta do pré-processamento
+- Entrevistas: Conversar com o Engenheiro de Automação sobre a lógica de filtragem implementada e com o Administrador de Rede sobre o impacto no tráfego de dados
 
 ##### I.10.1.3 Questão: Em que medida a sua organização utiliza o processamento...
 Em que medida a sua organização utiliza o processamento descentralizado (Edge/embarcado) para
@@ -5197,55 +4968,27 @@ segurança) que não podem depender da latência da rede central?
 ##### Artefatos e onde buscar
 
 - Lógica de Programação de Controladores (CLP, PAC, IPC):
-
-- Onde buscar: Departamentos de Automação ou Engenharia de Manutenção.
-
-- O que verificar: O código-fonte ou os blocos de função nos controladores locais (embarcados
-         na máquina). Procurar por evidências de cálculos complexos (ex: algoritmos de controle
-         preditivo, fusão de sensores, modelos de otimização) que rodam dentro do controlador da
-         máquina, em vez de em um servidor central.
+  - Onde buscar: Departamentos de Automação ou Engenharia de Manutenção.
+  - O que verificar: O código-fonte ou os blocos de função nos controladores locais (embarcados na máquina). Procurar por evidências de cálculos complexos (ex: algoritmos de controle preditivo, fusão de sensores, modelos de otimização) que rodam dentro do controlador da máquina, em vez de em um servidor central.
 - Diagramas de Arquitetura de Controle e Topologia de Rede:
-
-- Onde buscar: Departamentos de TI, Automação ou Engenharia.
-
+  - Onde buscar: Departamentos de TI, Automação ou Engenharia.
 
 <!-- pág. original: 362/465 -->
-- O que verificar: Se o "loop de controle" (Sensor -> Processador -> Atuador) está fechado
-        localmente no equipamento. O artefato deve mostrar que as ações críticas de controle não
-        dependem de um "round-trip" (ida e volta) de dados para um sistema SCADA, MES ou nuvem.
+  - O que verificar: Se o "loop de controle" (Sensor -> Processador -> Atuador) está fechado localmente no equipamento. O artefato deve mostrar que as ações críticas de controle não dependem de um "round-trip" (ida e volta) de dados para um sistema SCADA, MES ou nuvem.
 - Documentação de Análise de Risco e Intertravamentos de Segurança:
-
-- Onde buscar: Departamentos de Segurança do Trabalho ou Engenharia.
-
-- O que verificar: A matriz de segurança e os diagramas de intertravamento. Comprovar que as
-        lógicas de segurança críticas (ex: parada de emergência, cortinas de luz, controle de robôs)
-        são executadas em processadores de segurança dedicados e locais, garantindo resposta em
-        tempo real independente da rede.
+  - Onde buscar: Departamentos de Segurança do Trabalho ou Engenharia.
+  - O que verificar: A matriz de segurança e os diagramas de intertravamento. Comprovar que as lógicas de segurança críticas (ex: parada de emergência, cortinas de luz, controle de robôs) são executadas em processadores de segurança dedicados e locais, garantindo resposta em tempo real independente da rede.
 - Especificações Técnicas de Processo (ETs):
-
-- Onde buscar: Departamento de Engenharia de Processo.
-
-- O que verificar: Requisitos formais que exigem processamento em tempo real. Procurar por
-        especificações como "tempo de resposta do loop de controle < 10ms" ou "taxa de atualização
-        de dados de segurança".
+  - Onde buscar: Departamento de Engenharia de Processo.
+  - O que verificar: Requisitos formais que exigem processamento em tempo real. Procurar por especificações como "tempo de resposta do loop de controle < 10ms" ou "taxa de atualização de dados de segurança".
 
 ##### Métricas/KPIs
 
-- Latência de Ação (Action Latency): O tempo medido (em milissegundos) entre a detecção de
-        um evento crítico pelo sensor e a resposta física do atuador. Em sistemas descentralizados,
-        esse valor deve ser extremamente baixo e determinístico.
-- Tempo de Ciclo do Loop de Controle (Control Loop Cycle Time): O tempo de "scan" do
-        processador local que executa a lógica. Mede a velocidade com que o sistema pode reavaliar e
-        corrigir o processo.
-- Disponibilidade da Função de Controle em "Ilhamento": Percentual de tempo que o
-        equipamento continua executando sua lógica de controle complexa e segura após a
-        desconexão da rede central. A meta deve ser 100%.
-- Jitter (Variação da Latência): A variação no tempo de resposta. Para controle em tempo real, o
-        jitter (variação) baixo é tão importante quanto a latência baixa. O processamento local elimina o
-        jitter causado pela rede.
-- Índice de Capabilidade do Processo (Cp/Cpk): Embora seja uma métrica de qualidade, um Cpk
-        alto e estável é um forte indicador de que o controle em tempo real está efetivamente
-        minimizando desvios do processo.
+- Latência de Ação (Action Latency): O tempo medido (em milissegundos) entre a detecção de um evento crítico pelo sensor e a resposta física do atuador. Em sistemas descentralizados, esse valor deve ser extremamente baixo e determinístico.
+- Tempo de Ciclo do Loop de Controle (Control Loop Cycle Time): O tempo de "scan" do processador local que executa a lógica. Mede a velocidade com que o sistema pode reavaliar e corrigir o processo.
+- Disponibilidade da Função de Controle em "Ilhamento": Percentual de tempo que o equipamento continua executando sua lógica de controle complexa e segura após a desconexão da rede central. A meta deve ser 100%.
+- Jitter (Variação da Latência): A variação no tempo de resposta. Para controle em tempo real, o jitter (variação) baixo é tão importante quanto a latência baixa. O processamento local elimina o jitter causado pela rede.
+- Índice de Capabilidade do Processo (Cp/Cpk): Embora seja uma métrica de qualidade, um Cpk alto e estável é um forte indicador de que o controle em tempo real está efetivamente minimizando desvios do processo.
 
 ##### Sinais por nível
 
@@ -5259,8 +5002,7 @@ segurança) que não podem depender da latência da rede central?
 - Nível 1:
 
 
-  - Uso de Arquivos Manuais/Planilha: O operador lê um sensor analógico, consulta uma
-             planilha e faz um ajuste manual
+  - Uso de Arquivos Manuais/Planilha: O operador lê um sensor analógico, consulta uma planilha e faz um ajuste manual
   - Latência de horas ou minutos
 
 
@@ -5269,64 +5011,46 @@ segurança) que não podem depender da latência da rede central?
 
   - O sensor envia dados para um sistema SCADA/MES central
 
-  - Um operador (ou o sistema central) analisa e envia um comando de volta para a
-             máquina
+  - Um operador (ou o sistema central) analisa e envia um comando de volta para a máquina
   - A latência da rede é alta e impede o controle em tempo real
 
 
 - Nível 3:
 
 
-  - O CLP local executa lógicas de intertravamento simples e controle PID básico (loops
-             fechados)
+  - O CLP local executa lógicas de intertravamento simples e controle PID básico (loops fechados)
   - Isso é o padrão, mas não inclui cálculos complexos ou preditivos
 
 
 - Nível 4:
 
 
-  - O dispositivo de borda (ex: IPC, CLP avançado) executa cálculos complexos (ex: fusão
-             de múltiplos sensores, fórmulas matemáticas) localmente para otimizar um processo em
-             tempo real, garantindo baixa latência
+  - O dispositivo de borda (ex: IPC, CLP avançado) executa cálculos complexos (ex: fusão de múltiplos sensores, fórmulas matemáticas) localmente para otimizar um processo em tempo real, garantindo baixa latência
 
 
 - Nível 5:
 
 
-  - O dispositivo de borda executa modelos de otimização complexos (ex: Controle de
-             Processo Avançado - APC) em tempo real, ajustando múltiplos parâmetros
-             interdependentes para maximizar a eficiência, sem depender da rede central
+  - O dispositivo de borda executa modelos de otimização complexos (ex: Controle de Processo Avançado - APC) em tempo real, ajustando múltiplos parâmetros interdependentes para maximizar a eficiência, sem depender da rede central
 
 
 - Nível 6:
 
 
 <!-- pág. original: 364/465 -->
-  - Os sistemas embarcados executam processamento complexo (ex: IA, modelos de
-                segurança) em tempo real para tomar decisões autônomas críticas, garantindo a
-                operação segura e otimizada mesmo durante uma falha completa da rede central
+  - Os sistemas embarcados executam processamento complexo (ex: IA, modelos de segurança) em tempo real para tomar decisões autônomas críticas, garantindo a operação segura e otimizada mesmo durante uma falha completa da rede central
 
 ##### Amostragem
 
-- Recomenda-se uma Amostragem Intencional (Propositiva), focada em processos onde a
-        latência de controle é intrinsecamente crítica
-- Seleção de Processos (Estratificação): Identificar 1-3 processos que sejam: Críticos para
-        Segurança: Onde um atraso de milissegundos pode causar um acidente (ex: prensas, robôs
-        colaborativos, reatores químicos)
-- Críticos para a Qualidade (Alta Precisão): Onde um atraso de milissegundos degrada o produto
-        (ex: usinagem CNC de 5 eixos, soldagem a laser, sistemas de visão em alta velocidade)
-- Críticos para a Velocidade (Alta Cadência): Onde o controle precisa ser local para acompanhar
-        a velocidade física da linha (ex: sistemas "pick-and-place" de eletrônicos, linhas de envase)
-- Seleção de Evidências (Triangulação): Artefatos: Solicitar os diagramas de malha de controle
-        avançado (para processos de precisão) ou os diagrama de intertravamento de segurança (para
-        processos de segurança)
+- Recomenda-se uma Amostragem Intencional (Propositiva), focada em processos onde a latência de controle é intrinsecamente crítica
+- Seleção de Processos (Estratificação): Identificar 1-3 processos que sejam:
+  - Críticos para Segurança: Onde um atraso de milissegundos pode causar um acidente (ex: prensas, robôs colaborativos, reatores químicos)
+  - Críticos para a Qualidade (Alta Precisão): Onde um atraso de milissegundos degrada o produto (ex: usinagem CNC de 5 eixos, soldagem a laser, sistemas de visão em alta velocidade)
+  - Críticos para a Velocidade (Alta Cadência): Onde o controle precisa ser local para acompanhar a velocidade física da linha (ex: sistemas "pick-and-place" de eletrônicos, linhas de envase)
+- Seleção de Evidências (Triangulação): Artefatos: Solicitar os diagramas de malha de controle avançado (para processos de precisão) ou os diagrama de intertravamento de segurança (para processos de segurança)
 - Teste de "Ilhamento" (Se possível): O método de amostragem mais eficaz é um teste prático
-
-- Desconectar (ou simular a falha) da rede central do equipamento selecionado e observar se a
-        lógica de controle complexa e a segurança continuam operando perfeitamente
-- Entrevistas: Conversar com o Engenheiro de Segurança de Máquinas, Engenheiro de
-        Automação ou Engenheiro de Processo Sênior responsável pela operação do equipamento
-        selecionado
+  - Desconectar (ou simular a falha) da rede central do equipamento selecionado e observar se a lógica de controle complexa e a segurança continuam operando perfeitamente
+- Entrevistas: Conversar com o Engenheiro de Segurança de Máquinas, Engenheiro de Automação ou Engenheiro de Processo Sênior responsável pela operação do equipamento selecionado
 #### Glossário
 [Sem glossário]
 ### I.11 Dimensão: Inteligência Corporativa
@@ -5437,8 +5161,7 @@ são fundamentadas em dados e evidências, e não apenas em experiência ou hier
 - Nível 6:
 
 
-  - Aprendizado organizacional contínuo, com sistemas e pessoas evoluindo
-                  conjuntamente
+  - Aprendizado organizacional contínuo, com sistemas e pessoas evoluindo conjuntamente
 
 ##### Amostragem
 
@@ -5709,8 +5432,7 @@ decisões e orientar comportamentos?
 
 
 <!-- pág. original: 375/465 -->
-  - Sistemas e pessoas atuam de forma proativa e autônoma para garantir ética e
-                 confiança
+  - Sistemas e pessoas atuam de forma proativa e autônoma para garantir ética e confiança
 
 ##### Amostragem
 
@@ -5878,8 +5600,7 @@ de decisão?
 - Nível 0:
 
 
-  - A equipe reage aos problemas (ex: quebra de máquina) apenas depois que eles
-                ocorrem
+  - A equipe reage aos problemas (ex: quebra de máquina) apenas depois que eles ocorrem
   - A discussão sobre as causas é baseada em "achismos"
 
 
@@ -5887,47 +5608,38 @@ de decisão?
 
 
 <!-- pág. original: 381/465 -->
-  - A equipe reage aos problemas (ex: quebra de máquina) apenas depois que eles
-               ocorrem
+  - A equipe reage aos problemas (ex: quebra de máquina) apenas depois que eles ocorrem
   - A discussão sobre as causas é baseada em "achismos"
 
 
 - Nível 2:
 
 
-  - Existem planilhas ou relatórios básicos que mostram dados de produção passados, mas
-               a equipe leva tempo para cruzar informações e entender o que aconteceu
+  - Existem planilhas ou relatórios básicos que mostram dados de produção passados, mas a equipe leva tempo para cruzar informações e entender o que aconteceu
 
 
 - Nível 3:
 
 
-  - Telas e painéis na fábrica mostram em tempo real o status da produção e alertam
-               visualmente quando um indicador (ex: velocidade da linha) sai do padrão
+  - Telas e painéis na fábrica mostram em tempo real o status da produção e alertam visualmente quando um indicador (ex: velocidade da linha) sai do padrão
 
 
 - Nível 4:
 
 
-  - Diante de um problema de qualidade, a equipe utiliza ferramentas que analisam dados
-               de processo de diversas fontes para apontar as prováveis causas, como a variação de
-               um parâmetro específico
+  - Diante de um problema de qualidade, a equipe utiliza ferramentas que analisam dados de processo de diversas fontes para apontar as prováveis causas, como a variação de um parâmetro específico
 
 
 - Nível 5:
 
 
-  - O sistema de manutenção envia uma ordem de serviço para inspecionar um motor,
-               informando que há 85% de chance de ele falhar nas próximas 48 horas com base na
-               análise de dados de vibração e temperatura
+  - O sistema de manutenção envia uma ordem de serviço para inspecionar um motor, informando que há 85% de chance de ele falhar nas próximas 48 horas com base na análise de dados de vibração e temperatura
 
 
 - Nível 6:
 
 
-  - O sistema de planejamento, ao prever um possível atraso na entrega de um pedido
-               devido a uma redução na eficiência de uma máquina, automaticamente reajusta a
-               sequência de produção para minimizar o impacto, sem intervenção humana
+  - O sistema de planejamento, ao prever um possível atraso na entrega de um pedido devido a uma redução na eficiência de uma máquina, automaticamente reajusta a sequência de produção para minimizar o impacto, sem intervenção humana
 
 ##### Amostragem
 
@@ -6012,38 +5724,31 @@ Qual é a abrangência da análise automatizada de dados?
 - Nível 2:
 
 
-  - O gerente de produção vê o OEE de todas as linhas em um painel, mas não sabe o
-             custo financeiro de uma parada
+  - O gerente de produção vê o OEE de todas as linhas em um painel, mas não sabe o custo financeiro de uma parada
 
 
 - Nível 3:
 
 
-  - O gerente da fábrica consegue ver em um dashboard qual linha está sendo o gargalo e
-             como isso afeta o plano de produção geral do dia
+  - O gerente da fábrica consegue ver em um dashboard qual linha está sendo o gargalo e como isso afeta o plano de produção geral do dia
 
 
 - Nível 4:
 
 
-  - O gerente financeiro (Controller) recebe um relatório que mostra como a queda de
-             eficiência de 5% na Linha 3 aumentou o custo real do "Pedido X" em 2%
+  - O gerente financeiro (Controller) recebe um relatório que mostra como a queda de eficiência de 5% na Linha 3 aumentou o custo real do "Pedido X" em 2%
 
 
 - Nível 5:
 
 
-  - O sistema de compras dispara um alerta de risco, informando que a produção está 10%
-             acima do planejado e que, se o fornecedor "Y" não adiantar a entrega, a linha irá parar
-             em 48 horas
+  - O sistema de compras dispara um alerta de risco, informando que a produção está 10% acima do planejado e que, se o fornecedor "Y" não adiantar a entrega, a linha irá parar em 48 horas
 
 
 - Nível 6:
 
 
-  - O sistema analisa a previsão de vendas, a capacidade real da fábrica e o custo de
-             energia (variável), e sugere automaticamente um novo mix de produção para o próximo
-             turno para maximizar a margem de lucro
+  - O sistema analisa a previsão de vendas, a capacidade real da fábrica e o custo de energia (variável), e sugere automaticamente um novo mix de produção para o próximo turno para maximizar a margem de lucro
 
 
 <!-- pág. original: 385/465 -->
@@ -6127,8 +5832,7 @@ Qual é a natureza dos sistemas de análise de dados?
 - Nível 3:
 
 
-  - "Nós programamos o sistema para alertar sempre que a pressão X e a temperatura Y
-             saem da faixa que o engenheiro definiu
+  - "Nós programamos o sistema para alertar sempre que a pressão X e a temperatura Y saem da faixa que o engenheiro definiu
 
 
 - Nível 4:
@@ -6142,9 +5846,7 @@ Qual é a natureza dos sistemas de análise de dados?
 - Nível 5:
 
 
-  - "O sistema de IA analisou 6 meses de dados e descobriu que a maioria das nossas
-             falhas de qualidade acontece 3 horas após a troca de turno, mas apenas quando
-             usamos o material do Fornecedor B
+  - "O sistema de IA analisou 6 meses de dados e descobriu que a maioria das nossas falhas de qualidade acontece 3 horas após a troca de turno, mas apenas quando usamos o material do Fornecedor B
   - Não sabíamos disso"6
 
 
@@ -6153,8 +5855,7 @@ Qual é a natureza dos sistemas de análise de dados?
 
   - "O algoritmo que otimiza o consumo de energia do forno se ajusta sozinho
 
-  - Ele percebe a variação na umidade da matéria-prima e recalcula os parâmetros de
-             queima em tempo real, sem ninguém pedir
+  - Ele percebe a variação na umidade da matéria-prima e recalcula os parâmetros de queima em tempo real, sem ninguém pedir
 
 
 <!-- pág. original: 388/465 -->
@@ -6234,8 +5935,7 @@ para a tomada de decisão?
 - Nível 2:
 
 
-  - "Toda manhã, na reunião das 8h, olhamos o relatório da produção do dia anterior para
-               definir as ações de hoje
+  - "Toda manhã, na reunião das 8h, olhamos o relatório da produção do dia anterior para definir as ações de hoje
 
 
 - Nível 3:
@@ -6247,24 +5947,19 @@ para a tomada de decisão?
 - Nível 4:
 
 
-  - "O painel ficou vermelho 3 segundos depois que a máquina parou, e o operador já
-               recebeu o alarme no tablet dele
+  - "O painel ficou vermelho 3 segundos depois que a máquina parou, e o operador já recebeu o alarme no tablet dele
 
 
 - Nível 5:
 
 
-  - "O sistema detectou uma vibração anômala e imediatamente simulou o impacto disso
-               na ordem de produção, recomendando ao planejador uma troca de ferramenta na
-               próxima parada programada
+  - "O sistema detectou uma vibração anômala e imediatamente simulou o impacto disso na ordem de produção, recomendando ao planejador uma troca de ferramenta na próxima parada programada
 
 
 - Nível 6:
 
 
-  - "O sistema detectou a variação na viscosidade do material e ajustou automaticamente a
-               velocidade da linha para manter a qualidade do produto, sem que ninguém precisasse
-               intervir
+  - "O sistema detectou a variação na viscosidade do material e ajustou automaticamente a velocidade da linha para manter a qualidade do produto, sem que ninguém precisasse intervir
 
 ##### Amostragem
 
@@ -6385,8 +6080,7 @@ relevantes e contextualizadas para apoiar decisões em diferentes níveis (opera
 - Nível 6:
 
 
-  - Recomendação adaptativa em tempo real, decisões automatizadas ou semi
-                automatizadas
+  - Recomendação adaptativa em tempo real, decisões automatizadas ou semi automatizadas
 
 
 <!-- pág. original: 395/465 -->
@@ -9127,8 +8821,7 @@ autonomia, a curiosidade e a experimentação digital entre os colaboradores?
 - Nível 5:
 
 
-  - Uso de dados e IA para recomendações personalizadas e integração do conhecimento
-                  em bases formais
+  - Uso de dados e IA para recomendações personalizadas e integração do conhecimento em bases formais
 
 
 - Nível 6:
@@ -9317,8 +9010,7 @@ operacionais, de gestão e inovação da organização?
 - Nível 5:
 
 
-  - Otimização algorítmica ou baseada em IA de programas de treinamento conforme
-                dados operacionais
+  - Otimização algorítmica ou baseada em IA de programas de treinamento conforme dados operacionais
 
 
 <!-- pág. original: 274/465 -->
@@ -11166,8 +10858,7 @@ automação, análise de dados), como normalmente ocorre o processo de decisão?
 - Nível 5:
 
 
-  - decisões amparadas por predições/simulações (risco de falha, demanda, ROI) +
-                  critérios preventivos
+  - decisões amparadas por predições/simulações (risco de falha, demanda, ROI) + critérios preventivos
 
 
 - Nível 6:
@@ -11861,8 +11552,7 @@ Lean, SAFe, etc.) para a transformação organizacional?
 - Nível 3:
 
 
-  - contratação de consultores especializados para implementar práticas ágeis em uma
-             área piloto (ex: TI)
+  - contratação de consultores especializados para implementar práticas ágeis em uma área piloto (ex: TI)
   - liderança acompanha mas depende fortemente de orientação externa
 
   - aprendizado pela observação
@@ -11871,8 +11561,7 @@ Lean, SAFe, etc.) para a transformação organizacional?
 - Nível 4:
 
 
-  - liderança lidera a expansão de práticas ágeis para múltiplas áreas sem dependência
-             crítica de consultores
+  - liderança lidera a expansão de práticas ágeis para múltiplas áreas sem dependência crítica de consultores
   - customiza frameworks para o contexto da empresa
 
   - toma decisões informadas sobre onde e como aplicar agilidade
@@ -13163,8 +12852,7 @@ Qual o nível de transparência e visibilidade das metas individuais, de equipe 
 
 
 <!-- pág. original: 167/465 -->
-  - sistema centralizado onde todos podem buscar e visualizar metas de qualquer
-                  pessoa/área
+  - sistema centralizado onde todos podem buscar e visualizar metas de qualquer pessoa/área
 
 
 - Nível 5:
@@ -13180,8 +12868,7 @@ Qual o nível de transparência e visibilidade das metas individuais, de equipe 
 - Nível 6:
 
 
-  - visualização de rede de metas mostrando como trabalho individual conecta-se a
-                  objetivos coletivos
+  - visualização de rede de metas mostrando como trabalho individual conecta-se a objetivos coletivos
   - gamificação de progresso visível
 
 ##### Amostragem
@@ -14459,47 +14146,38 @@ Como a comunicação e a troca de informações são estruturadas e gerenciadas 
 - Nível 1:
 
 
-  - Existem pastas compartilhadas em um servidor, mas a organização é caótica e o
-                controle de versão é manual
+  - Existem pastas compartilhadas em um servidor, mas a organização é caótica e o controle de versão é manual
 
 
 - Nível 2:
 
 
-  - A empresa adota um chat corporativo, mas ele é usado principalmente para conversas
-                informais, enquanto a comunicação e as decisões importantes continuam por e-mail
+  - A empresa adota um chat corporativo, mas ele é usado principalmente para conversas informais, enquanto a comunicação e as decisões importantes continuam por e-mail
 
 
 - Nível 3:
 
 
 <!-- pág. original: 40/465 -->
-  - As equipes de projeto possuem seus próprios canais ou grupos na plataforma de
-                colaboração, onde centralizam discussões e arquivos
+  - As equipes de projeto possuem seus próprios canais ou grupos na plataforma de colaboração, onde centralizam discussões e arquivos
 
 
 - Nível 4:
 
 
-  - A aprovação de uma requisição de compra gera notificações automáticas para os
-                aprovadores, e todo o histórico fica registrado no sistema, de forma transparente e
-                auditável
+  - A aprovação de uma requisição de compra gera notificações automáticas para os aprovadores, e todo o histórico fica registrado no sistema, de forma transparente e auditável
 
 
 - Nível 5:
 
 
-  - Ao abrir uma ordem de manutenção para uma máquina específica, o sistema
-                automaticamente cria um grupo de comunicação com o técnico, o supervisor de
-                produção e o planejador de manutenção, compartilhando a documentação técnica
-                relevante
+  - Ao abrir uma ordem de manutenção para uma máquina específica, o sistema automaticamente cria um grupo de comunicação com o técnico, o supervisor de produção e o planejador de manutenção, compartilhando a documentação técnica relevante
 
 
 - Nível 6:
 
 
-  - O sistema de comunicação identifica gargalos em processos de aprovação e sugere a
-                delegação de tarefas ou a redefinição do fluxo para otimizar o tempo de resposta
+  - O sistema de comunicação identifica gargalos em processos de aprovação e sugere a delegação de tarefas ou a redefinição do fluxo para otimizar o tempo de resposta
 
 ##### Amostragem
 
@@ -14566,45 +14244,38 @@ Como se dá a comunicação com Parceiros?
 - Nível 1:
 
 
-  - O departamento de compras envia e-mails em massa com planilhas de previsão para
-                os fornecedores
+  - O departamento de compras envia e-mails em massa com planilhas de previsão para os fornecedores
 
 
 - Nível 2:
 
 
-  - O fornecedor reclama que precisa entrar "todo dia" no portal para ver se há algo novo,
-                pois não recebe notificações
+  - O fornecedor reclama que precisa entrar "todo dia" no portal para ver se há algo novo, pois não recebe notificações
 
 
 - Nível 3:
 
 
 <!-- pág. original: 43/465 -->
-  - Um fornecedor anexa a Nota Fiscal diretamente no pedido dentro do portal, e o sistema
-                 interno de recebimento é notificado
+  - Um fornecedor anexa a Nota Fiscal diretamente no pedido dentro do portal, e o sistema interno de recebimento é notificado
 
 
 - Nível 4:
 
 
-  - O pedido de compra é enviado do ERP da empresa e recebido diretamente no sistema
-                 de vendas do fornecedor, sem intervenção humana
+  - O pedido de compra é enviado do ERP da empresa e recebido diretamente no sistema de vendas do fornecedor, sem intervenção humana
 
 
 - Nível 5:
 
 
-  - O planejador de produção da empresa consegue ver, em seu próprio sistema, o status
-                 de produção (real) do item que está sendo fabricado no fornecedor
+  - O planejador de produção da empresa consegue ver, em seu próprio sistema, o status de produção (real) do item que está sendo fabricado no fornecedor
 
 
 - Nível 6:
 
 
-  - O sistema detecta um atraso na produção de um fornecedor A (via dados em tempo
-                 real) e automaticamente gera uma ordem de compra de emergência para o fornecedor
-                 B
+  - O sistema detecta um atraso na produção de um fornecedor A (via dados em tempo real) e automaticamente gera uma ordem de compra de emergência para o fornecedor B
 
 ##### Amostragem
 
@@ -14666,44 +14337,38 @@ Como se dá normalmente a comunicação entre os funcionários?
 - Nível 1:
 
 
-  - O operador consulta uma pasta de plástico com folhas de processo e com anotações
-                manuais possivelmente desatualizadas
+  - O operador consulta uma pasta de plástico com folhas de processo e com anotações manuais possivelmente desatualizadas
 
 
 - Nível 2:
 
 
-  - O operador precisa usar o computador do setor para abrir a "Pasta P" na rede, navegar
-                até o modelo do produto e abrir o PDF da instrução
+  - O operador precisa usar o computador do setor para abrir a "Pasta P" na rede, navegar até o modelo do produto e abrir o PDF da instrução
 
 
 - Nível 3:
 
 
-  - Ao dar "play" na ordem de produção no terminal da máquina, a tela exibe
-                automaticamente as especificações e parâmetros daquela Ordem de Produção
+  - Ao dar "play" na ordem de produção no terminal da máquina, a tela exibe automaticamente as especificações e parâmetros daquela Ordem de Produção
 
 
 - Nível 4:
 
 
-  - O operador do controle de qualidade escaneia o código de barras da peça e o monitor
-                exibe uma imagem destacando os 3 pontos exatos que ele deve medir
+  - O operador do controle de qualidade escaneia o código de barras da peça e o monitor exibe uma imagem destacando os 3 pontos exatos que ele deve medir
 
 
 - Nível 5:
 
 
-  - O técnico de manutenção usa um tablet ou óculos AR que projeta setas indicando qual
-                componente da máquina deve ser inspecionado ou substituído
+  - O técnico de manutenção usa um tablet ou óculos AR que projeta setas indicando qual componente da máquina deve ser inspecionado ou substituído
 
 
 <!-- pág. original: 46/465 -->
 - Nível 6:
 
 
-  - O operador de montagem é guiado por luzes (pick-by-light) e, ao tentar pegar a peça
-                errada, o sistema emite um alerta sonoro e visual antes que o erro ocorra
+  - O operador de montagem é guiado por luzes (pick-by-light) e, ao tentar pegar a peça errada, o sistema emite um alerta sonoro e visual antes que o erro ocorra
 
 ##### Amostragem
 
@@ -14779,15 +14444,13 @@ Como a estrutura organizacional da empresa apoia a colaboração e a formação 
 - Nível 0:
 
 
-  - Estrutura organizacional tradicional e rígida, voltada para a operação eficiente de
-                departamentos individuais isolados (silos)
+  - Estrutura organizacional tradicional e rígida, voltada para a operação eficiente de departamentos individuais isolados (silos)
 
 
 - Nível 1:
 
 
-  - A empresa possui uma estrutura organizacional tradicional focada na eficiência
-                departamental
+  - A empresa possui uma estrutura organizacional tradicional focada na eficiência departamental
 
 
 - Nível 2:
@@ -14795,8 +14458,7 @@ Como a estrutura organizacional da empresa apoia a colaboração e a formação 
 
   - Métodos tradicionais de gerenciamento de projetos são empregados
 
-  - A abordagem para mudança, embora estruturada, é pesada e carece de agilidade,
-                dificultando ajustes rápidos
+  - A abordagem para mudança, embora estruturada, é pesada e carece de agilidade, dificultando ajustes rápidos
 
 
 - Nível 3:
@@ -14819,17 +14481,14 @@ Como a estrutura organizacional da empresa apoia a colaboração e a formação 
 - Nível 5:
 
 
-  - A estrutura organizacional é modificada para que a capacidade possa ser rapidamente
-                  ajustada a novas situações
+  - A estrutura organizacional é modificada para que a capacidade possa ser rapidamente ajustada a novas situações
 
 
 - Nível 6:
 
 
-  - Comunidades flexíveis e gerenciamento ágil de projetos criam uma organização
-                  orgânica
-  - O trabalho é executado por funcionários com as habilidades corretas,
-                  independentemente da hierarquia ou departamento
+  - Comunidades flexíveis e gerenciamento ágil de projetos criam uma organização orgânica
+  - O trabalho é executado por funcionários com as habilidades corretas, independentemente da hierarquia ou departamento
 
 ##### Amostragem
 
@@ -14889,8 +14548,7 @@ dos funcionários para apoiar a formação de equipes flexíveis?
 
   - A identificação de competências é totalmente informal
 
-  - Os gestores dependem da memória ou de perguntar a outros gestores ("quem sabe
-                fazer X?")
+  - Os gestores dependem da memória ou de perguntar a outros gestores ("quem sabe fazer X?")
   - Não há repositório digital de competências
 
 
@@ -14899,10 +14557,8 @@ dos funcionários para apoiar a formação de equipes flexíveis?
 
   - Listas estáticas e isoladas
 
-  - O RH ou os departamentos mantêm planilhas básicas listando funcionários e seus
-                cargos ou treinamentos concluídos
-  - Essas listas não são centralizadas, não são pesquisáveis e ficam rapidamente
-                desatualizadas
+  - O RH ou os departamentos mantêm planilhas básicas listando funcionários e seus cargos ou treinamentos concluídos
+  - Essas listas não são centralizadas, não são pesquisáveis e ficam rapidamente desatualizadas
 
 
 - Nível 2:
@@ -14910,10 +14566,8 @@ dos funcionários para apoiar a formação de equipes flexíveis?
 
   - Repositório passivo
 
-  - Existe um sistema de RH (como um SIRH) onde as competências podem ser
-                registradas (muitas vezes apenas para avaliações de desempenho)
-  - O sistema funciona como um "currículo" digital, mas não é usado ativamente para
-                formar equipes no dia a dia
+  - Existe um sistema de RH (como um SIRH) onde as competências podem ser registradas (muitas vezes apenas para avaliações de desempenho)
+  - O sistema funciona como um "currículo" digital, mas não é usado ativamente para formar equipes no dia a dia
 
 
 - Nível 3:
@@ -14923,9 +14577,7 @@ dos funcionários para apoiar a formação de equipes flexíveis?
 
 
 <!-- pág. original: 52/465 -->
-  - A empresa utiliza ferramentas de comunicação (como intranet ou chat corporativo) onde
-               os funcionários podem preencher seus próprios perfis, incluindo um campo opcional de
-               "habilidades"
+  - A empresa utiliza ferramentas de comunicação (como intranet ou chat corporativo) onde os funcionários podem preencher seus próprios perfis, incluindo um campo opcional de "habilidades"
   - A busca é simples e a qualidade da informação depende inteiramente do funcionário
 
 
@@ -14934,10 +14586,8 @@ dos funcionários para apoiar a formação de equipes flexíveis?
 
   - Transparência ativa
 
-  - Plataformas de colaboração baseadas em TI fornecem transparência sobre os perfis de
-               competências dos funcionários
-  - É possível pesquisar ativamente por habilidades (ex: "especialista em Python") e ver os
-               perfis de quem as possui
+  - Plataformas de colaboração baseadas em TI fornecem transparência sobre os perfis de competências dos funcionários
+  - É possível pesquisar ativamente por habilidades (ex: "especialista em Python") e ver os perfis de quem as possui
 
 
 - Nível 5:
@@ -14945,11 +14595,8 @@ dos funcionários para apoiar a formação de equipes flexíveis?
 
   - Suporte à alocação (Assignment Management)
 
-  - As plataformas de TI facilitam ativamente a comunicação e apoiam a gestão de
-               alocação
-  - Os gestores podem ver não apenas quem tem a competência, mas também verificar a
-               disponibilidade (taxa de alocação) e o envolvimento atual dessa pessoa em outras
-               comunidades ou projetos
+  - As plataformas de TI facilitam ativamente a comunicação e apoiam a gestão de alocação
+  - Os gestores podem ver não apenas quem tem a competência, mas também verificar a disponibilidade (taxa de alocação) e o envolvimento atual dessa pessoa em outras comunidades ou projetos
 
 
 - Nível 6:
@@ -14957,11 +14604,8 @@ dos funcionários para apoiar a formação de equipes flexíveis?
 
   - Alocação inteligente e dinâmica
 
-  - O sistema de TI sugere ativamente especialistas para novas tarefas com base nos
-               requisitos do projeto
-  - Ele usa dados (ex: projetos anteriores, feedback de 360º) para classificar o nível de
-               proficiência e pode até identificar lacunas de competência na equipe e sugerir
-               treinamentos rápidos
+  - O sistema de TI sugere ativamente especialistas para novas tarefas com base nos requisitos do projeto
+  - Ele usa dados (ex: projetos anteriores, feedback de 360º) para classificar o nível de proficiência e pode até identificar lacunas de competência na equipe e sugerir treinamentos rápidos
 
 ##### Amostragem
 
@@ -15017,8 +14661,7 @@ equipes flexíveis e multifuncionais?
 - Nível 0:
 
 
-  - O trabalho em projetos multifuncionais é visto como "trabalho extra" ou uma distração
-                  das "metas reais" do departamento
+  - O trabalho em projetos multifuncionais é visto como "trabalho extra" ou uma distração das "metas reais" do departamento
   - Não há reconhecimento formal
 
 
@@ -15026,8 +14669,7 @@ equipes flexíveis e multifuncionais?
 
 
 <!-- pág. original: 55/465 -->
-  - As metas são 100% definidas pelo gerente departamental e focadas em métricas de
-             eficiência locais (mentalidade de silo)
+  - As metas são 100% definidas pelo gerente departamental e focadas em métricas de eficiência locais (mentalidade de silo)
   - O desempenho em uma equipe multifuncional não tem impacto formal na avaliação
 
 
@@ -15036,17 +14678,14 @@ equipes flexíveis e multifuncionais?
 
   - A avaliação de desempenho é tradicional
 
-  - O gerente departamental pode, se quiser, pedir um feedback informal ao líder de um
-             projeto, mas esse feedback não tem peso estruturado e não afeta bônus ou promoções
+  - O gerente departamental pode, se quiser, pedir um feedback informal ao líder de um projeto, mas esse feedback não tem peso estruturado e não afeta bônus ou promoções
 
 
 - Nível 3:
 
 
-  - O sistema de metas começa a incluir objetivos multidimensionais, como "eficiência do
-             processo" ou "colaboração"
-  - O trabalho em comunidades é incentivado como uma forma de "desenvolvimento
-             pessoal", mas as metas financeiras ainda são departamentais
+  - O sistema de metas começa a incluir objetivos multidimensionais, como "eficiência do processo" ou "colaboração"
+  - O trabalho em comunidades é incentivado como uma forma de "desenvolvimento pessoal", mas as metas financeiras ainda são departamentais
 
 
 - Nível 4:
@@ -15054,30 +14693,24 @@ equipes flexíveis e multifuncionais?
 
   - O sistema de avaliação de desempenho é formalmente matricial
 
-  - O feedback do líder da comunidade/projeto é um input obrigatório e tem peso definido
-             na avaliação final do funcionário
+  - O feedback do líder da comunidade/projeto é um input obrigatório e tem peso definido na avaliação final do funcionário
 
 
 - Nível 5:
 
 
-  - A maior parte das metas de desempenho está diretamente atrelada aos resultados e
-             entregas da comunidade/equipe, e não às metas do departamento funcional
+  - A maior parte das metas de desempenho está diretamente atrelada aos resultados e entregas da comunidade/equipe, e não às metas do departamento funcional
   - A empresa começa a medir ativamente o "sucesso das equipes de especialistas"
 
 
 - Nível 6:
 
 
-  - O sistema de remuneração (bônus) é diretamente atrelado ao desempenho da
-             comunidade
+  - O sistema de remuneração (bônus) é diretamente atrelado ao desempenho da comunidade
 
 
 <!-- pág. original: 56/465 -->
-  - A empresa possui uma "controladoria financeira de comunidades" para medir o valor
-               entregue por elas, e o departamento funcional age principalmente como um centro de
-               competência para desenvolvimento de carreira, não como o principal avaliador de
-               resultados
+  - A empresa possui uma "controladoria financeira de comunidades" para medir o valor entregue por elas, e o departamento funcional age principalmente como um centro de competência para desenvolvimento de carreira, não como o principal avaliador de resultados
 
 ##### Amostragem
 
@@ -15154,8 +14787,7 @@ flexíveis possam tomar decisões rapidamente?
 
 ##### Artefatos e onde buscar
 
-- Manuais de metodologia de gestão de projetos (ex: verificando se usam PMBOK, Scrum,
-         SAFe, etc.).
+- Manuais de metodologia de gestão de projetos (ex: verificando se usam PMBOK, Scrum, SAFe, etc.).
 - Quadros Kanban ou backlogs de Scrum (digitais ou físicos, como Trello, Jira, Azure DevOps).
 
 - Atas de reuniões de Sprint Planning ou Sprint Review.
@@ -15186,17 +14818,14 @@ flexíveis possam tomar decisões rapidamente?
 
   - As equipes recebem instruções detalhadas e não têm autoridade para tomar decisões
 
-  - Qualquer desvio ou problema exige a paralisação e a consulta a um supervisor, que
-                toma todas as decisões
+  - Qualquer desvio ou problema exige a paralisação e a consulta a um supervisor, que toma todas as decisões
 
 
 - Nível 1:
 
 
-  - Processos de desenvolvimento inflexíveis e convencionais (ex: modelo em cascata /
-                waterfall) são a norma
-  - Os requisitos são definidos rigidamente no início e as equipes não têm permissão para
-                alterá-los
+  - Processos de desenvolvimento inflexíveis e convencionais (ex: modelo em cascata / waterfall) são a norma
+  - Os requisitos são definidos rigidamente no início e as equipes não têm permissão para alterá-los
 
 
 - Nível 2:
@@ -15204,9 +14833,7 @@ flexíveis possam tomar decisões rapidamente?
 
   - A empresa usa métodos tradicionais de gerenciamento de projetos
 
-  - Embora haja um "gerente de projeto", ele atua como um controlador, e todas as
-                decisões sobre escopo, tempo ou custo devem ser escaladas para um comitê de
-                direção ou para a gerência sênior
+  - Embora haja um "gerente de projeto", ele atua como um controlador, e todas as decisões sobre escopo, tempo ou custo devem ser escaladas para um comitê de direção ou para a gerência sênior
 
 
 - Nível 3:
@@ -15214,29 +14841,22 @@ flexíveis possam tomar decisões rapidamente?
 
   - A organização começa a usar "ciclos de feedback de alta frequência"
 
-  - As equipes podem desenvolver protótipos rapidamente, mas a autoridade para validar e
-                agir sobre o feedback obtido (ex: mudar o produto) ainda é centralizada na gerência
+  - As equipes podem desenvolver protótipos rapidamente, mas a autoridade para validar e agir sobre o feedback obtido (ex: mudar o produto) ainda é centralizada na gerência
 
 
 - Nível 4:
 
 
-  - Abordagens de gestão ágil, como o Scrum, são implementadas formalmente nas
-                equipes
-  - As equipes têm autoridade para gerenciar seu próprio backlog e tomar decisões táticas
-                dentro de um Sprint, mas decisões estratégicas (ex: orçamento do projeto, metas de
-                longo prazo) permanecem centralizadas
+  - Abordagens de gestão ágil, como o Scrum, são implementadas formalmente nas equipes
+  - As equipes têm autoridade para gerenciar seu próprio backlog e tomar decisões táticas dentro de um Sprint, mas decisões estratégicas (ex: orçamento do projeto, metas de longo prazo) permanecem centralizadas
 
 
 <!-- pág. original: 60/465 -->
 - Nível 5:
 
 
-  - O gerenciamento ágil é amplamente utilizado e os direitos de decisão são
-                descentralizados
-  - As equipes são autorizadas a tomar decisões significativas (ex: alterar recursos, ajustar
-                prioridades de curto prazo) para responder rapidamente ao feedback, sem precisar da
-                aprovação da alta administração
+  - O gerenciamento ágil é amplamente utilizado e os direitos de decisão são descentralizados
+  - As equipes são autorizadas a tomar decisões significativas (ex: alterar recursos, ajustar prioridades de curto prazo) para responder rapidamente ao feedback, sem precisar da aprovação da alta administração
 
 
 - Nível 6:
@@ -15244,9 +14864,7 @@ flexíveis possam tomar decisões rapidamente?
 
   - A organização opera com gestão ágil em escala e alta autonomia
 
-  - As comunidades flexíveis têm autoridade para tomar decisões descentralizadas que
-                afetam até mesmo a estratégia (ex: pivotar a funcionalidade de um produto com base
-                em dados de uso), alinhando-se rapidamente às mudanças do ambiente
+  - As comunidades flexíveis têm autoridade para tomar decisões descentralizadas que afetam até mesmo a estratégia (ex: pivotar a funcionalidade de um produto com base em dados de uso), alinhando-se rapidamente às mudanças do ambiente
 
 ##### Amostragem
 
@@ -16099,54 +15717,44 @@ Qual é a atitude e o nível de autonomia dos funcionários para iniciar e imple
 - Nível 0:
 
 
-  - Funcionários afirmam: "Eu apenas faço o que me mandam" ou "A gestão decide tudo,
-                não adianta sugerir"
+  - Funcionários afirmam: "Eu apenas faço o que me mandam" ou "A gestão decide tudo, não adianta sugerir"
 
 
 - Nível 1:
 
 
-  - Funcionários afirmam: "Eu apenas faço o que me mandam" ou "A gestão decide tudo,
-                não adianta sugerir"
+  - Funcionários afirmam: "Eu apenas faço o que me mandam" ou "A gestão decide tudo, não adianta sugerir"
 
 
 - Nível 2:
 
 
-  - Existem caixas de sugestão, mas os funcionários relatam que raramente veem suas
-                ideias implementadas ou recebem feedback
+  - Existem caixas de sugestão, mas os funcionários relatam que raramente veem suas ideias implementadas ou recebem feedback
 
 
 - Nível 3:
 
 
-  - Operadores relatam problemas e sugerem soluções, mas afirmam que precisam
-                esperar dias ou semanas pela aprovação da gerência ou engenharia para implementar
-                qualquer mudança
+  - Operadores relatam problemas e sugerem soluções, mas afirmam que precisam esperar dias ou semanas pela aprovação da gerência ou engenharia para implementar qualquer mudança
 
 
 - Nível 4:
 
 
-  - Equipes de linha de frente demonstram autonomia para mudanças locais (ex:
-                organização do local de trabalho), mas mudanças de processo maiores ainda são
-                iniciadas e controladas pela gestão
+  - Equipes de linha de frente demonstram autonomia para mudanças locais (ex: organização do local de trabalho), mas mudanças de processo maiores ainda são iniciadas e controladas pela gestão
 
 
 - Nível 5:
 
 
-  - Um operador identifica uma falha recorrente e tem autoridade para parar, testar uma
-                solução e documentar a mudança para a equipe, iniciando o processo por conta própria
+  - Um operador identifica uma falha recorrente e tem autoridade para parar, testar uma solução e documentar a mudança para a equipe, iniciando o processo por conta própria
 
 
 <!-- pág. original: 181/465 -->
 - Nível 6:
 
 
-  - As equipes operacionais têm metas de melhoria e autonomia para experimentar, falhar
-                  e implementar mudanças de processo em tempo real, comunicando as mudanças
-                  horizontalmente
+  - As equipes operacionais têm metas de melhoria e autonomia para experimentar, falhar e implementar mudanças de processo em tempo real, comunicando as mudanças horizontalmente
 
 ##### Amostragem
 
@@ -16200,16 +15808,14 @@ propõe ou tenta implementar uma mudança?
 - Nível 0:
 
 
-  - Funcionários relatam: "Eu nem me dou ao trabalho de sugerir", "Na última vez que
-                  tentei, levei uma bronca por parar a linha" ou "A gestão não gosta que a gente se meta"
+  - Funcionários relatam: "Eu nem me dou ao trabalho de sugerir", "Na última vez que tentei, levei uma bronca por parar a linha" ou "A gestão não gosta que a gente se meta"
 
 
 <!-- pág. original: 183/465 -->
 - Nível 1:
 
 
-  - Funcionários relatam: "Eu nem me dou ao trabalho de sugerir", "Na última vez que
-               tentei, levei uma bronca por parar a linha" ou "A gestão não gosta que a gente se meta"
+  - Funcionários relatam: "Eu nem me dou ao trabalho de sugerir", "Na última vez que tentei, levei uma bronca por parar a linha" ou "A gestão não gosta que a gente se meta"
 
 
 - Nível 2:
@@ -16223,15 +15829,13 @@ propõe ou tenta implementar uma mudança?
 - Nível 3:
 
 
-  - "Meu chefe disse 'ótima ideia', mas falou que 'não temos tempo para isso agora' e o
-               assunto morreu
+  - "Meu chefe disse 'ótima ideia', mas falou que 'não temos tempo para isso agora' e o assunto morreu
 
 
 - Nível 4:
 
 
-  - "Conseguimos mudar o layout da nossa célula, mas quando sugerimos alterar o fluxo
-               de TI, a gerência sênior assumiu o projeto e perdemos o controle
+  - "Conseguimos mudar o layout da nossa célula, mas quando sugerimos alterar o fluxo de TI, a gerência sênior assumiu o projeto e perdemos o controle
 
 
 - Nível 5:
@@ -16239,15 +15843,13 @@ propõe ou tenta implementar uma mudança?
 
   - "Eu disse ao meu gerente que nosso processo estava gerando refugo
 
-  - Ele me deu 4 horas de 'tempo de máquina' e um colega da manutenção para testar
-               minha nova ideia
+  - Ele me deu 4 horas de 'tempo de máquina' e um colega da manutenção para testar minha nova ideia
 
 
 - Nível 6:
 
 
-  - "Nosso gerente nos pergunta diariamente: 'O que está bloqueando sua mudança?' O
-               trabalho dele é nos ajudar a implementar nossas próprias ideias o mais rápido possível
+  - "Nosso gerente nos pergunta diariamente: 'O que está bloqueando sua mudança?' O trabalho dele é nos ajudar a implementar nossas próprias ideias o mais rápido possível
 
 ##### Amostragem
 
@@ -16304,15 +15906,13 @@ mesmo que não seja explicitamente solicitado?
 - Nível 0:
 
 
-  - "Eu sou pago para operar esta máquina, não para consertá-la", "Esse é o trabalho da
-                  engenharia
+  - "Eu sou pago para operar esta máquina, não para consertá-la", "Esse é o trabalho da engenharia
 
 
 - Nível 1:
 
 
-  - "Eu sou pago para operar esta máquina, não para consertá-la", "Esse é o trabalho da
-                  engenharia
+  - "Eu sou pago para operar esta máquina, não para consertá-la", "Esse é o trabalho da engenharia
 
 
 - Nível 2:
@@ -16337,15 +15937,13 @@ mesmo que não seja explicitamente solicitado?
 - Nível 4:
 
 
-  - "Eu vi que o sensor falhava, então passei um tempo pensando em uma solução e
-               apresentei um esboço ao meu gerente
+  - "Eu vi que o sensor falhava, então passei um tempo pensando em uma solução e apresentei um esboço ao meu gerente
 
 
 - Nível 5:
 
 
-  - "Quando vi o problema, eu mesmo documentei o que estava acontecendo, chamei o
-               time e comecei a testar uma solução
+  - "Quando vi o problema, eu mesmo documentei o que estava acontecendo, chamei o time e comecei a testar uma solução
   - Eu sou o responsável por fazer isso funcionar"
 
 
@@ -16413,15 +16011,13 @@ Qual é a abordagem predominante da organização para implementar mudanças?
 - Nível 0:
 
 
-  - "Se o procedimento diz 'A', fazemos 'A'", "Se você tentar fazer 'B', mesmo que seja
-                melhor, você está errado
+  - "Se o procedimento diz 'A', fazemos 'A'", "Se você tentar fazer 'B', mesmo que seja melhor, você está errado
 
 
 - Nível 1:
 
 
-  - "Se o procedimento diz 'A', fazemos 'A'", "Se você tentar fazer 'B', mesmo que seja
-                melhor, você está errado
+  - "Se o procedimento diz 'A', fazemos 'A'", "Se você tentar fazer 'B', mesmo que seja melhor, você está errado
 
 
 - Nível 2:
@@ -16446,8 +16042,7 @@ Qual é a abordagem predominante da organização para implementar mudanças?
 
   - "Implementamos a mudança
 
-  - Mês que vem, na reunião de gestão, vamos olhar os KPIs para ver se deu certo e
-                decidir o próximo passo
+  - Mês que vem, na reunião de gestão, vamos olhar os KPIs para ver se deu certo e decidir o próximo passo
 
 
 - Nível 5:
@@ -16469,8 +16064,7 @@ Qual é a abordagem predominante da organização para implementar mudanças?
 
   - Nossa meta é testar 3 pequenas mudanças esta semana
 
-  - A primeira falhou em 1 hora (o que foi ótimo, aprendemos rápido), a segunda está
-                funcionando e vamos escalar
+  - A primeira falhou em 1 hora (o que foi ótimo, aprendemos rápido), a segunda está funcionando e vamos escalar
 
 ##### Amostragem
 
@@ -16541,8 +16135,7 @@ descentralizada para maximizar a eficácia e a eficiência da tomada de decisão
 
 
 <!-- pág. original: 192/465 -->
-  - As decisões são tomadas de forma ad-hoc, reativa, e baseadas primariamente na
-             intuição da gestão
+  - As decisões são tomadas de forma ad-hoc, reativa, e baseadas primariamente na intuição da gestão
   - A autoridade é totalmente centralizada
 
 
@@ -16551,15 +16144,13 @@ descentralizada para maximizar a eficácia e a eficiência da tomada de decisão
 
   - A tomada de decisão é centralizada
 
-  - A TI é usada de forma isolada (ex: planilhas locais), o que não suporta a tomada de
-             decisão descentralizada
+  - A TI é usada de forma isolada (ex: planilhas locais), o que não suporta a tomada de decisão descentralizada
 
 
 - Nível 2:
 
 
-  - Os sistemas de TI estão conectados, permitindo a partilha básica de informação (ex:
-             dados de engenharia para a produção)
+  - Os sistemas de TI estão conectados, permitindo a partilha básica de informação (ex: dados de engenharia para a produção)
   - No entanto, a autoridade de decisão permanece centralizada na gestão
 
 
@@ -16568,8 +16159,7 @@ descentralizada para maximizar a eficácia e a eficiência da tomada de decisão
 
   - A visibilidade é alcançada (existe um "digital shadow")
 
-  - As informações sobre o estado atual dos processos estão disponíveis, mas a
-             autoridade para agir sobre essas informações ainda é predominantemente centralizada
+  - As informações sobre o estado atual dos processos estão disponíveis, mas a autoridade para agir sobre essas informações ainda é predominantemente centralizada
 
 
 - Nível 4:
@@ -16579,8 +16169,7 @@ descentralizada para maximizar a eficácia e a eficiência da tomada de decisão
 
   - a empresa entende por que os eventos ocorrem
 
-  - Esta transparência sobre as consequências permite que a gestão delegue decisões,
-             possibilitando ações descentralizadas mais rápidas e alinhadas aos objetivos
+  - Esta transparência sobre as consequências permite que a gestão delegue decisões, possibilitando ações descentralizadas mais rápidas e alinhadas aos objetivos
 
 
 - Nível 5:
@@ -16590,8 +16179,7 @@ descentralizada para maximizar a eficácia e a eficiência da tomada de decisão
 
 
 <!-- pág. original: 193/465 -->
-  - Poderes de decisão ajustados são formalmente delegados a níveis operacionais
-                 (descentralizados) com base nessas previsões
+  - Poderes de decisão ajustados são formalmente delegados a níveis operacionais (descentralizados) com base nessas previsões
 
 
 - Nível 6:
@@ -16601,9 +16189,7 @@ descentralizada para maximizar a eficácia e a eficiência da tomada de decisão
 
   - A empresa atinge o equilíbrio ideal entre centralização e descentralização
 
-  - Decisões de rotina são automatizadas (delegadas a sistemas de TI), e as equipes
-                 operacionais são totalmente capacitadas para tomar decisões descentralizadas
-                 complexas de forma rápida e eficaz
+  - Decisões de rotina são automatizadas (delegadas a sistemas de TI), e as equipes operacionais são totalmente capacitadas para tomar decisões descentralizadas complexas de forma rápida e eficaz
 
 ##### Amostragem
 
@@ -16689,15 +16275,13 @@ operadores humanos para sistemas de TI (automação)?
 - Nível 5:
 
 
-  - Sistemas oferecem recomendações de ação (capacidade preditiva) que requerem
-                aprovação humana
+  - Sistemas oferecem recomendações de ação (capacidade preditiva) que requerem aprovação humana
 
 
 - Nível 6:
 
 
-  - Sistemas têm autonomia para tomar e executar decisões táticas (ex: reordenar
-                produção, ajustar parâmetros de máquina) sem aprovação humana
+  - Sistemas têm autonomia para tomar e executar decisões táticas (ex: reordenar produção, ajustar parâmetros de máquina) sem aprovação humana
 
 
 <!-- pág. original: 196/465 -->
@@ -16782,15 +16366,13 @@ integrada e contextualizada para fundamentar suas decisões?
 - Nível 5:
 
 
-  - O sistema envia um alerta ao gestor: "Atenção: Risco de 80% de atraso na Ordem X se
-                 a Máquina Y não for ajustada em 1h"
+  - O sistema envia um alerta ao gestor: "Atenção: Risco de 80% de atraso na Ordem X se a Máquina Y não for ajustada em 1h"
 
 
 - Nível 6:
 
 
-  - O sistema alerta o operador da Máquina Y com a instrução de ajuste exata, já prevendo
-                 o problema antes que o gestor precise intervir
+  - O sistema alerta o operador da Máquina Y com a instrução de ajuste exata, já prevendo o problema antes que o gestor precise intervir
 
 ##### Amostragem
 
@@ -16922,8 +16504,7 @@ Qual o nível atual da 'Governança de Dados' na sua organização?
 - Nível 6:
 
 
-  - A empresa participa de ecossistemas de dados com parceiros, baseada em sua forte
-                  estrutura de governança
+  - A empresa participa de ecossistemas de dados com parceiros, baseada em sua forte estrutura de governança
   - a tomada de decisão automatizada é uma realidade em diversos processos
 
 ##### Amostragem
@@ -16989,15 +16570,13 @@ Como se dá a Gestão de Dados Mestres (MDM)?
 - Nível 1:
 
 
-  - Equipes financeiras e de logística gastam dias no fechamento do mês para "bater" os
-                números de diferentes relatórios
+  - Equipes financeiras e de logística gastam dias no fechamento do mês para "bater" os números de diferentes relatórios
 
 
 - Nível 2:
 
 
-  - O departamento de engenharia cadastra o produto no PLM, e o departamento
-                fiscal/logística recadastra o mesmo produto no ERP, com códigos diferentes
+  - O departamento de engenharia cadastra o produto no PLM, e o departamento fiscal/logística recadastra o mesmo produto no ERP, com códigos diferentes
 
 
 - Nível 3:
@@ -17011,22 +16590,19 @@ Como se dá a Gestão de Dados Mestres (MDM)?
 - Nível 4:
 
 
-  - Ao cadastrar um novo cliente, o sistema consulta ativamente o MDM para evitar
-                duplicatas
+  - Ao cadastrar um novo cliente, o sistema consulta ativamente o MDM para evitar duplicatas
 
 
 - Nível 5:
 
 
-  - O sistema MDM é auditável e rastreia quem alterou o quê e quando, garantindo a
-                governança preditiva
+  - O sistema MDM é auditável e rastreia quem alterou o quê e quando, garantindo a governança preditiva
 
 
 - Nível 6:
 
 
-  - A empresa consegue consolidar dados de uma nova aquisição (empresa) em seu
-                sistema MDM em tempo recorde, adaptando-se rapidamente
+  - A empresa consegue consolidar dados de uma nova aquisição (empresa) em seu sistema MDM em tempo recorde, adaptando-se rapidamente
 
 
 <!-- pág. original: 205/465 -->
@@ -17096,8 +16672,7 @@ Como se dá a Gestão da Qualidade de Dados (DQM)?
 
 
 <!-- pág. original: 207/465 -->
-  - O analista de BI passa 80% do tempo "limpando" planilhas antes de poder iniciar uma
-               análise
+  - O analista de BI passa 80% do tempo "limpando" planilhas antes de poder iniciar uma análise
 
 
 - Nível 2:
@@ -17109,29 +16684,25 @@ Como se dá a Gestão da Qualidade de Dados (DQM)?
 - Nível 3:
 
 
-  - Um gestor de logística consegue ver um gráfico que mostra: "Nos últimos 30 dias, 12%
-               dos pedidos foram cadastrados sem a informação do transportador"
+  - Um gestor de logística consegue ver um gráfico que mostra: "Nos últimos 30 dias, 12% dos pedidos foram cadastrados sem a informação do transportador"
 
 
 - Nível 4:
 
 
-  - Criação de uma task-force para analisar por que o campo "transportador" não está
-               sendo preenchido no sistema de vendas e implementar uma correção no sistema
+  - Criação de uma task-force para analisar por que o campo "transportador" não está sendo preenchido no sistema de vendas e implementar uma correção no sistema
 
 
 - Nível 5:
 
 
-  - O sistema de vendas agora torna o campo "transportador" obrigatório e valida o código
-               digitado contra a tabela de transportadoras ativas, impedindo o erro
+  - O sistema de vendas agora torna o campo "transportador" obrigatório e valida o código digitado contra a tabela de transportadoras ativas, impedindo o erro
 
 
 - Nível 6:
 
 
-  - O sistema identifica um volume atípico de pedidos para um CEP inexistente, bloqueia
-               preventivamente o faturamento para esse CEP e notifica o administrador do sistema
+  - O sistema identifica um volume atípico de pedidos para um CEP inexistente, bloqueia preventivamente o faturamento para esse CEP e notifica o administrador do sistema
 
 ##### Amostragem
 
@@ -17192,8 +16763,7 @@ Há Padronização de Interfaces de Dados?
 - Nível 0:
 
 
-  - O funcionário de logística digita manualmente o pedido do CRM no sistema de
-                faturamento (WMS/ERP)
+  - O funcionário de logística digita manualmente o pedido do CRM no sistema de faturamento (WMS/ERP)
 
 
 - Nível 1:
@@ -17208,36 +16778,31 @@ Há Padronização de Interfaces de Dados?
 
 
 <!-- pág. original: 210/465 -->
-  - O sistema de vendas envia um arquivo XML para um diretório, que o sistema de
-                logística "lê" a cada 30 minutos
+  - O sistema de vendas envia um arquivo XML para um diretório, que o sistema de logística "lê" a cada 30 minutos
 
 
 - Nível 3:
 
 
-  - A máquina nova no chão de fábrica é conectada à rede via OPC-UA, e seus dados
-                aparecem no MES sem um projeto de software customizado
+  - A máquina nova no chão de fábrica é conectada à rede via OPC-UA, e seus dados aparecem no MES sem um projeto de software customizado
 
 
 - Nível 4:
 
 
-  - A equipe de marketing cria um novo app móvel em dias, consumindo a mesma "API de
-                Clientes" que o portal web utiliza
+  - A equipe de marketing cria um novo app móvel em dias, consumindo a mesma "API de Clientes" que o portal web utiliza
 
 
 - Nível 5:
 
 
-  - Quando um pedido é aprovado no ERP, um "evento" é disparado, e os sistemas de
-                logística, financeiro e CRM são notificados instantaneamente via interfaces
+  - Quando um pedido é aprovado no ERP, um "evento" é disparado, e os sistemas de logística, financeiro e CRM são notificados instantaneamente via interfaces
 
 
 - Nível 6:
 
 
-  - Um novo fornecedor logístico (3PL) se conecta diretamente ao barramento de eventos
-                da empresa em 24h para receber pedidos e enviar status de entrega
+  - Um novo fornecedor logístico (3PL) se conecta diretamente ao barramento de eventos da empresa em 24h para receber pedidos e enviar status de entrega
 
 ##### Amostragem
 
@@ -17254,8 +16819,7 @@ Há Padronização de Interfaces de Dados?
 ## ANEXO II - GUIA DE AVALIAÇÃO DE MATURIDADE DA INDÚSTRIA 4.0
 
 <!-- pág. original: 405/465 -->
-ANEXO II - GUIA DE AVALIAÇÃO DE MATURIDADE
-DA INDÚSTRIA 4.0
+ANEXO II - GUIA DE AVALIAÇÃO DE MATURIDADE DA INDÚSTRIA 4.0
 
 
 
@@ -17269,62 +16833,42 @@ DA INDÚSTRIA 4.0
 
 
 <!-- pág. original: 406/465 -->
-  Sumário Executivo
-Este guia apresenta um modelo de medição e processo completo e estruturado para a avaliação da
-maturidade de organizações industriais em relação à Indústria 4.0 . O guia inspira-se na Portaria
-Inmetro nº 171, de 2026, ou substituta, para aplicar a avaliação de maturidade em indústrias através
-de três blocos, oito pilares e 16 dimensões, utilizando um índice e uma escala de maturidade de 6
-níveis (1 a 6).
+  Sumário Executivo Este guia apresenta um modelo de medição e processo completo e estruturado para a avaliação da maturidade de organizações industriais em relação à Indústria 4.0 . O guia inspira-se na Portaria Inmetro nº 171, de 2026, ou substituta, para aplicar a avaliação de maturidade em indústrias através de três blocos, oito pilares e 16 dimensões, utilizando um índice e uma escala de maturidade de 6 níveis (1 a 6).
 
 
 <!-- pág. original: 407/465 -->
 ### II.1 Visão Geral
-O Processo de avaliação proposto visa medir a maturidade de uma organização industrial em relação
-sob a perspectiva dos conceitos inerentes à indústria 4.0. Sobre os benefícios e a aplicabilidade das
-avaliações, podemos destacar:
+O Processo de avaliação proposto visa medir a maturidade de uma organização industrial em relação sob a perspectiva dos conceitos inerentes à indústria 4.0. Sobre os benefícios e a aplicabilidade das avaliações, podemos destacar:
 
 
 #### II.1.1 Benefícios da Avaliação
-   •   Diagnóstico Objetivo: Aferir o nível de maturidade da organização em uma escala
-        padronizada de 0 a 6.
-   •   Visão Holística: Avaliar 16 dimensões distribuídas em 3 blocos sócio-técnicos (Processo,
-        Tecnologia e Organização).
-   •   Identificação de Lacunas: Detectar áreas críticas (dimensões) que necessitam de maior
-        atenção e investimentos.
-   •   Priorização de Investimentos: Orientar decisões sobre onde alocar recursos para maximizar
-        resultados.
-   •   Benchmarking: Permitir comparações entre diferentes unidades organizacionais ou ao longo
-        do tempo.
+   •   Diagnóstico Objetivo: Aferir o nível de maturidade da organização em uma escala padronizada de 0 a 6.
+   •   Visão Holística: Avaliar 16 dimensões distribuídas em 3 blocos sócio-técnicos (Processo, Tecnologia e Organização).
+   •   Identificação de Lacunas: Detectar áreas críticas (dimensões) que necessitam de maior atenção e investimentos.
+   •   Priorização de Investimentos: Orientar decisões sobre onde alocar recursos para maximizar resultados.
+   •   Benchmarking: Permitir comparações entre diferentes unidades organizacionais ou ao longo do tempo.
    •   Roadmap de Transformação: Apoiar a definição de um plano estruturado de evolução.
-   •   Engajamento de Stakeholders: Criar uma linguagem comum para discussão sobre Indústria
-        4.0.
+   •   Engajamento de Stakeholders: Criar uma linguagem comum para discussão sobre Indústria 4.0.
 
 
 #### II.1.2 Aplicabilidade
-As avaliações são aplicáveis a qualquer indústria engajada em iniciativas de transformação digital.
-Elas permitem a avaliação e comparações sob diferentes perspectivas. Dentre elas podemos destacar:
+As avaliações são aplicáveis a qualquer indústria engajada em iniciativas de transformação digital. Elas permitem a avaliação e comparações sob diferentes perspectivas. Dentre elas podemos destacar:
 
-   •   Setores industriais: Por exemplo, eletroeletrônicos, farmacêutico, automotivo, e outros
-        setores de manufatura de bens;
-   •   Portes de organização: Desde pequenas e médias empresas até grandes corporações
-        multinacionais;
-   •   Níveis de maturidade: Organizações em qualquer estágio de transformação digital, desde
-        iniciantes até avançadas;
-   •   Escopo de avaliação: Pode ser aplicado a uma planta industrial específica, a uma unidade de
-        negócio ou organização como um todo.
+   •   Setores industriais: Por exemplo, eletroeletrônicos, farmacêutico, automotivo, e outros setores de manufatura de bens;
+   •   Portes de organização: Desde pequenas e médias empresas até grandes corporações multinacionais;
+   •   Níveis de maturidade: Organizações em qualquer estágio de transformação digital, desde iniciantes até avançadas;
+   •   Escopo de avaliação: Pode ser aplicado a uma planta industrial específica, a uma unidade de negócio ou organização como um todo.
 
 
 <!-- pág. original: 408/465 -->
 ### II.2 Objetivo e Escopo
 
 #### II.2.1 Objetivo
-Este documento descreve o Modelo de Medição e o Processo de Avaliação de Maturidade da
-Indústria 4.0, definidos de forma a:
+Este documento descreve o Modelo de Medição e o Processo de Avaliação de Maturidade da Indústria 4.0, definidos de forma a:
 
    •   Permitirem a avaliação objetiva e sistemática das capacidades da organização;
    •   Permitirem a atribuição de um Índice de Maturidade com base no resultado da avaliação;
-   •   Serem aplicáveis a indústrias de bens, por exemplo, eletroeletrônicos, farmacêutica e
-        automotivo, etc.;
+   •   Serem aplicáveis a indústrias de bens, por exemplo, eletroeletrônicos, farmacêutica e automotivo, etc.;
    •   Fornecer um método replicável e auditável de avaliação;
    •   Gerar evidências documentadas que suportem os resultados da avaliação.
 
@@ -17352,47 +16896,32 @@ Para os propósitos deste guia, aplicam-se os seguintes termos e definições:
 
 
 #### II.3.1 Termos Gerais
-Indústria 4.0: Paradigma de manufatura que integra tecnologias digitais avançadas, sistemas
-ciber-físicos, Internet das Coisas e análise de dados para criar fábricas inteligentes e cadeias de valor
-conectadas.
+Indústria 4.0: Paradigma de manufatura que integra tecnologias digitais avançadas, sistemas ciber-físicos, Internet das Coisas e análise de dados para criar fábricas inteligentes e cadeias de valor conectadas.
 
-Maturidade: Grau de efetividade e eficiência com que uma organização implementa e utiliza
-processos, tecnologias e práticas relacionadas à Indústria 4.0.
+Maturidade: Grau de efetividade e eficiência com que uma organização implementa e utiliza processos, tecnologias e práticas relacionadas à Indústria 4.0.
 
-Avaliação: Processo repetível e sistemático de examinar e julgar o nível de maturidade de uma
-organização em relação a critérios estabelecidos.
+Avaliação: Processo repetível e sistemático de examinar e julgar o nível de maturidade de uma organização em relação a critérios estabelecidos.
 
-Evidência Objetiva: Dados que suportam a existência ou veracidade de algo, podendo ser obtidos
-através de observação, artefatos, medição, teste ou outros meios.
+Evidência Objetiva: Dados que suportam a existência ou veracidade de algo, podendo ser obtidos através de observação, artefatos, medição, teste ou outros meios.
 
 
 #### II.3.2 Termos do Modelo de Medição da Maturidade da Indústria 4.0
 
-Bloco: Agrupamento de mais alto nível que representa uma área fundamental da transformação digital
-do ponto de vista sócio-técnico. O Modelo de Medição da Maturidade da Indústria 4.0 (MA-I4.0) possui
-3 blocos: Processo, Tecnologia e Organização.
+Bloco: Agrupamento de mais alto nível que representa uma área fundamental da transformação digital do ponto de vista sócio-técnico. O Modelo de Medição da Maturidade da Indústria 4.0 (MA-I4.0) possui 3 blocos: Processo, Tecnologia e Organização.
 
-Pilar: Uma segmentação conceitual de nível intermediário dentro de um bloco, representando
-subdivisões facilmente observáveis, nas quais as empresas devem focar para se tornarem
-organizações preparadas para a Indústria 4.0. O MA-I4.0 possui 8 pilares.
+Pilar: Uma segmentação conceitual de nível intermediário dentro de um bloco, representando subdivisões facilmente observáveis, nas quais as empresas devem focar para se tornarem organizações preparadas para a Indústria 4.0. O MA-I4.0 possui 8 pilares.
 
-Dimensão: Área de avaliação específica dentro de um pilar, representando o constructo ou uma
-variável mensurável de alto nível de abstração. O MA-I4.0 possui 16 dimensões.
+Dimensão: Área de avaliação específica dentro de um pilar, representando o constructo ou uma variável mensurável de alto nível de abstração. O MA-I4.0 possui 16 dimensões.
 
-Capacidade: São medidas que visam qualitativamente caracterizar e operacionalizar as dimensões. O
-MA-I4.0 possui 27 capacidades. Uma capacidade é avaliada por uma ou mais questões em uma
-escala ordinal de 0 a 6.
+Capacidade: São medidas que visam qualitativamente caracterizar e operacionalizar as dimensões. O MA-I4.0 possui 27 capacidades. Uma capacidade é avaliada por uma ou mais questões em uma escala ordinal de 0 a 6.
 
-Nível de Maturidade: Grau de evolução de uma dimensão, medido em uma escala de 0 (inexistente)
-a 6 (adaptativo).
+Nível de Maturidade: Grau de evolução de uma dimensão, medido em uma escala de 0 (inexistente) a 6 (adaptativo).
 
-Índice de Maturidade: Valor numérico final que representa o nível geral de maturidade 4.0 da
-organização, calculado através de média ponderada das dimensões.
+Índice de Maturidade: Valor numérico final que representa o nível geral de maturidade 4.0 da organização, calculado através de média ponderada das dimensões.
 
 
 #### II.3.3 Termos do Processo de Avaliação
-Avaliador Líder: Profissional responsável por planejar, conduzir e documentar a avaliação de
-maturidade.
+Avaliador Líder: Profissional responsável por planejar, conduzir e documentar a avaliação de maturidade.
 
 
 <!-- pág. original: 410/465 -->
@@ -17402,20 +16931,16 @@ Patrocinador: Executivo da organização avaliada que autoriza e apoia a realiza
 
 Participante: Profissional da organização avaliada que fornece informações durante a avaliação.
 
-Escopo da Avaliação: Definição clara dos limites organizacionais, geográficos e funcionais da
-avaliação.
+Escopo da Avaliação: Definição clara dos limites organizacionais, geográficos e funcionais da avaliação.
 
-Plano de Avaliação: Documento que descreve como a avaliação será conduzida, incluindo
-cronograma, recursos e métodos.
+Plano de Avaliação: Documento que descreve como a avaliação será conduzida, incluindo cronograma, recursos e métodos.
 
-Relatório de Auditoria: Documento que apresenta os resultados da avaliação, incluindo o índice de
-maturidade, pontuações por dimensão e recomendações.
+Relatório de Auditoria: Documento que apresenta os resultados da avaliação, incluindo o índice de maturidade, pontuações por dimensão e recomendações.
 
 
 <!-- pág. original: 411/465 -->
 ### II.4 Visão Geral do Processo de Avaliação
-O Processo de avaliação para o MA-I4.0 é estruturado em quatro subprocessos principais,
-inspirados na norma ISO/IEC 33020:
+O Processo de avaliação para o MA-I4.0 é estruturado em quatro subprocessos principais, inspirados na norma ISO/IEC 33020:
 
 
 #### II.4.1 Diagrama do Processo
@@ -17429,8 +16954,7 @@ inspirados na norma ISO/IEC 33020:
 
 #### II.4.2 Descrição de Alto Nível dos Subprocessos
 
-Subprocesso 1: Preparar a Avaliação
-Objetivo: Planejar e organizar todos os aspectos da avaliação.
+Subprocesso 1: Preparar a Avaliação Objetivo: Planejar e organizar todos os aspectos da avaliação.
 
 Atividades principais:
 
@@ -17447,8 +16971,7 @@ Produtos gerados:
    •   Lista de participantes
    •   Questionários e checklists
 
-Subprocesso 2: Realizar Avaliação Inicial
-Objetivo: Coletar informações preliminares e realizar uma primeira análise.
+Subprocesso 2: Realizar Avaliação Inicial Objetivo: Coletar informações preliminares e realizar uma primeira análise.
 
 
 <!-- pág. original: 412/465 -->
@@ -17467,8 +16990,7 @@ Produtos gerados:
    •   Lista de evidências coletadas
    •   Relatório preliminar de achados
 
-Subprocesso 3: Realizar Avaliação Final
-Objetivo: Validar as informações coletadas e atribuir os níveis de maturidade.
+Subprocesso 3: Realizar Avaliação Final Objetivo: Validar as informações coletadas e atribuir os níveis de maturidade.
 
 Atividades principais:
 
@@ -17485,8 +17007,7 @@ Produtos gerados:
    •   Lista de pontos fortes
    •   Lista de oportunidades de melhoria
 
-Subprocesso 4: Documentar Resultados
-Objetivo: Formalizar e comunicar os resultados da avaliação.
+Subprocesso 4: Documentar Resultados Objetivo: Formalizar e comunicar os resultados da avaliação.
 
 Atividades principais:
 
@@ -17513,12 +17034,12 @@ Produtos gerados:
 
 #### II.5.1 Subprocesso 1: Preparar a Realização da Avaliação
 
-##### 5.1.1 Atividade 1.1: Estabelecer o Compromisso para a Avaliação
+##### II.5.1.1 Atividade: Estabelecer o Compromisso para a Avaliação
 Objetivo: Obter o comprometimento formal da organização para a realização da avaliação.
 
 Tarefas:
 
-Tarefa 1.1.1: Identificar o Patrocinador da Avaliação
+II.5.1.1.1 Tarefa: Identificar o Patrocinador da Avaliação
 
    •   Identificar o executivo que autorizará e apoiará a avaliação
    •   Garantir que o patrocinador tenha autoridade e influência adequadas
@@ -17533,7 +17054,7 @@ Critérios de Saída:
    •   Patrocinador identificado e comprometido
    •   Carta de compromisso assinada
 
-Tarefa 1.1.2: Definir o Propósito e Escopo da Avaliação
+II.5.1.1.2 Tarefa: Definir o Propósito e Escopo da Avaliação
 
    •   Definir claramente por que a avaliação está sendo realizada
    •   Estabelecer os limites organizacionais (unidades, departamentos)
@@ -17550,7 +17071,7 @@ Critérios de Saída:
    •   Documento de escopo aprovado
    •   Limites da avaliação claramente definidos
 
-Tarefa 1.1.3: Definir Restrições da Avaliação
+II.5.1.1.3 Tarefa: Definir Restrições da Avaliação
 
    •   Identificar restrições de tempo (prazo para conclusão)
    •   Identificar restrições de orçamento
@@ -17569,12 +17090,12 @@ Critérios de Saída:
    •   Lista de restrições documentada
    •   Plano de mitigação de restrições elaborado
 
-##### 6.1.2 Atividade 1.2: Selecionar e Preparar a Equipe de Avaliação
+##### II.5.1.2 Atividade: Selecionar e Preparar a Equipe de Avaliação
 Objetivo: Formar uma equipe competente para conduzir a avaliação.
 
 Tarefas:
 
-Tarefa 1.2.1: Selecionar o Avaliador Líder
+II.5.1.2.1 Tarefa: Selecionar o Avaliador Líder
 
    •   Identificar profissional com conhecimento em Indústria 4.0
    •   Verificar experiência em avaliações de maturidade
@@ -17589,12 +17110,11 @@ Critérios de Saída:
 
    •   Avaliador Líder designado
 
-Tarefa 1.2.2: Selecionar Avaliadores Adicionais
+II.5.1.2.2 Tarefa: Selecionar Avaliadores Adicionais
 
    •   Determinar o tamanho necessário da equipe com base no escopo
    •   Identificar profissionais com conhecimentos complementares
-   •   Garantir cobertura de conhecimento nos blocos áreas de Processo, Tecnologia e
-        Organizacional
+   •   Garantir cobertura de conhecimento nos blocos áreas de Processo, Tecnologia e Organizacional
    •   Formalizar as designações
 
 Critérios de Entrada:
@@ -17610,7 +17130,7 @@ Critérios de Saída:
 <!-- pág. original: 416/465 -->
    •   Papéis e responsabilidades definidos
 
-Tarefa 1.2.3: Preparar a Equipe de Avaliação
+II.5.1.2.3 Tarefa: Preparar a Equipe de Avaliação
 
    •   Realizar reunião de alinhamento da equipe
    •   Revisar o MA-I4.0 e os critérios de avaliação
@@ -17627,12 +17147,12 @@ Critérios de Saída:
    •   Equipe alinhada e preparada
    •   Materiais de referência distribuídos
 
-##### 5.1.3 Atividade 1.3: Elaborar o Plano de Avaliação
+##### II.5.1.3 Atividade: Elaborar o Plano de Avaliação
 Objetivo: Documentar como a avaliação será conduzida.
 
 Tarefas:
 
-Tarefa 1.3.1: Identificar os Participantes da Avaliação
+II.5.1.3.1 Tarefa: Identificar os Participantes da Avaliação
 
    •   Identificar gestores e profissionais-chave em cada área
    •   Garantir representação de todas as áreas relevantes ao escopo
@@ -17648,7 +17168,7 @@ Critérios de Saída:
    •   Lista de participantes elaborada
    •   Compromisso de participação obtido
 
-Tarefa 1.3.2: Definir Métodos de Coleta de Dados
+II.5.1.3.2 Tarefa: Definir Métodos de Coleta de Dados
 
    •   Selecionar métodos apropriados (entrevistas, questionários, observação, análise documental)
    •   Definir quando cada método será utilizado
@@ -17665,7 +17185,7 @@ Critérios de Saída:
    •   Métodos de coleta definidos
    •   Instrumentos preparados
 
-Tarefa 1.3.3: Elaborar o Cronograma da Avaliação
+II.5.1.3.3 Tarefa: Elaborar o Cronograma da Avaliação
 
    •   Definir datas para cada atividade do Processo
    •   Alocar tempo adequado para cada entrevista/atividade
@@ -17681,7 +17201,7 @@ Critérios de Saída:
 
    •   Cronograma elaborado e aprovado
 
-Tarefa 1.3.4: Consolidar o Plano de Avaliação
+II.5.1.3.4 Tarefa: Consolidar o Plano de Avaliação
 
    •   Documentar todos os elementos do planejamento
    •   Incluir: escopo, objetivos, equipe, participantes, métodos, cronograma, restrições
@@ -17696,12 +17216,12 @@ Critérios de Saída:
 
    •   Plano de Avaliação completo e aprovado
 
-##### 5.1.4 Atividade 1.4: Comunicar a Avaliação
+##### II.5.1.4 Atividade: Comunicar a Avaliação
 Objetivo: Informar os stakeholders sobre a avaliação e obter seu engajamento.
 
 Tarefas:
 
-Tarefa 1.4.1: Preparar Material de Comunicação
+II.5.1.4.1 Tarefa: Preparar Material de Comunicação
 
    •   Elaborar apresentação sobre a avaliação
 
@@ -17718,7 +17238,7 @@ Critérios de Saída:
 
    •   Material de comunicação preparado
 
-Tarefa 1.4.2: Realizar Reunião de Abertura
+II.5.1.4.2 Tarefa: Realizar Reunião de Abertura
 
    •   Convocar reunião com patrocinador e principais stakeholders
    •   Apresentar o propósito, escopo e Processo da avaliação
@@ -17735,7 +17255,7 @@ Critérios de Saída:
    •   Reunião de abertura realizada
    •   Stakeholders informados e engajados
 
-Tarefa 1.4.3: Comunicar aos Participantes
+II.5.1.4.3 Tarefa: Comunicar aos Participantes
 
    •   Enviar convites formais aos participantes
    •   Fornecer informações sobre o Processo
@@ -17754,12 +17274,12 @@ Critérios de Saída:
 <!-- pág. original: 419/465 -->
 #### II.5.2 Subprocesso 2: Realizar a Avaliação Inicial
 
-##### 5.2.1 Atividade 2.1: Coletar Informações Documentais
+##### II.5.2.1 Atividade: Coletar Informações Documentais
 Objetivo: Obter informações preliminares através de documentos existentes.
 
 Tarefas:
 
-Tarefa 2.1.1: Solicitar Documentação Relevante
+II.5.2.1.1 Tarefa: Solicitar Documentação Relevante
 
    •   Elaborar lista de documentos necessários
    •   Solicitar formalmente à organização
@@ -17783,7 +17303,7 @@ Critérios de Saída:
 
    •   Documentação solicitada e recebida
 
-Tarefa 2.1.2: Analisar a Documentação
+II.5.2.1.2 Tarefa: Analisar a Documentação
 
    •   Revisar cada documento recebido
    •   Extrair informações relevantes para cada dimensão do MA-I4.0
@@ -17802,12 +17322,12 @@ Critérios de Saída:
 
 
 <!-- pág. original: 420/465 -->
-##### 5.2.2 Atividade 2.2: Conduzir Entrevistas e Observações
+##### II.5.2.2 Atividade: Conduzir Entrevistas e Observações
 Objetivo: Coletar informações através de interação direta com os participantes.
 
 Tarefas:
 
-Tarefa 2.2.1: Realizar Entrevistas Estruturadas
+II.5.2.2.1 Tarefa: Realizar Entrevistas Estruturadas
 
    •   Conduzir entrevistas conforme cronograma
    •   Utilizar roteiros preparados
@@ -17825,7 +17345,7 @@ Critérios de Saída:
    •   Entrevistas realizadas
    •   Registros de entrevistas documentados
 
-Tarefa 2.2.2: Aplicar Questionários
+II.5.2.2.2 Tarefa: Aplicar Questionários
 
    •   Distribuir questionários aos participantes
    •   Fornecer instruções claras de preenchimento
@@ -17842,7 +17362,7 @@ Critérios de Saída:
 
    •   Questionários preenchidos e coletados
 
-Tarefa 2.2.3: Realizar Observações In Loco
+II.5.2.2.3 Tarefa: Realizar Observações In Loco
 
    •   Visitar áreas operacionais (chão de fábrica, escritórios)
    •   Observar processos em execução
@@ -17862,12 +17382,12 @@ Critérios de Saída:
    •   Observações realizadas
    •   Registros de observações documentados
 
-##### 5.2.3 Atividade 2.3: Consolidar Informações Coletadas
+##### II.5.2.3 Atividade: Consolidar Informações Coletadas
 Objetivo: Organizar e estruturar todas as informações coletadas.
 
 Tarefas:
 
-Tarefa 2.3.1: Organizar Evidências por Dimensão
+II.5.2.3.1 Tarefa: Organizar Evidências por Dimensão
 
    •   Criar uma matriz de evidências
    •   Classificar cada evidência coletada por dimensão do MA-I4.0
@@ -17882,7 +17402,7 @@ Critérios de Saída:
 
    •   Matriz de evidências elaborada
 
-Tarefa 2.3.2: Realizar Análise Preliminar
+II.5.2.3.2 Tarefa: Realizar Análise Preliminar
 
    •   Revisar evidências para cada dimensão
    •   Fazer uma avaliação preliminar do nível de maturidade
@@ -17900,7 +17420,7 @@ Critérios de Saída:
 
 
 <!-- pág. original: 422/465 -->
-Tarefa 2.3.3: Elaborar Relatório Preliminar
+II.5.2.3.3 Tarefa: Elaborar Relatório Preliminar
 
    •   Documentar achados preliminares
    •   Incluir avaliações preliminares por dimensão
@@ -17920,12 +17440,12 @@ Critérios de Saída:
 
 #### II.5.3 Subprocesso 3: Realizar a Avaliação Final
 
-##### 5.3.1 Atividade 3.1: Validar Informações Coletadas
+##### II.5.3.1 Atividade: Validar Informações Coletadas
 Objetivo: Garantir a precisão e completude das informações.
 
 Tarefas:
 
-Tarefa 3.1.1: Esclarecer Questões Pendentes
+II.5.3.1.1 Tarefa: Esclarecer Questões Pendentes
 
    •   Agendar reuniões de esclarecimento
    •   Apresentar questões identificadas
@@ -17942,7 +17462,7 @@ Critérios de Saída:
    •   Questões esclarecidas
    •   Evidências adicionais coletadas
 
-Tarefa 3.1.2: Validar Achados com Participantes
+II.5.3.1.2 Tarefa: Validar Achados com Participantes
 
    •   Apresentar achados preliminares aos participantes
 
@@ -17960,12 +17480,12 @@ Critérios de Saída:
 
    •   Achados validados pelos participantes
 
-##### 5.3.2 Atividade 3.2: Atribuir Níveis de Maturidade
+##### II.5.3.2 Atividade: Atribuir Níveis de Maturidade
 Objetivo: Determinar o nível de maturidade de cada dimensão.
 
 Tarefas:
 
-Tarefa 3.2.1: Avaliar Cada Dimensão Individualmente
+II.5.3.2.1 Tarefa: Avaliar Cada Dimensão Individualmente
 
    •   Para cada uma das 16 dimensões:
            ● Revisar todas as evidências coletadas
@@ -17984,7 +17504,7 @@ Critérios de Saída:
    •   Nível de maturidade atribuído a cada dimensão
    •   Justificativas documentadas
 
-Tarefa 3.2.2: Revisar Consistência das Avaliações
+II.5.3.2.2 Tarefa: Revisar Consistência das Avaliações
 
    •   Revisar todas as 16 avaliações em conjunto
    •   Verificar consistência entre dimensões relacionadas
@@ -18001,12 +17521,12 @@ Critérios de Saída:
 
    •   Avaliações consistentes e consensuadas
 
-##### 5.3.3 Atividade 3.3: Calcular o índice de maturidade
+##### II.5.3.3 Atividade: Calcular o índice de maturidade
 Objetivo: Calcular o índice geral de maturidade da organização.
 
 Tarefas:
 
-Tarefa 3.3.1: Calcular Médias dos Pilares
+II.5.3.3.1 Tarefa: Calcular Médias dos Pilares
 
    •   Para cada um dos 8 pilares:
            ● Somar as notas das dimensões do pilar
@@ -18021,7 +17541,7 @@ Critérios de Saída:
 
    •   Médias dos 8 pilares calculadas
 
-Tarefa 3.3.2: Calcular Médias dos Blocos
+II.5.3.3.2 Tarefa: Calcular Médias dos Blocos
 
    •   Para cada um dos 3 blocos:
            ● Somar as médias dos pilares do bloco
@@ -18036,7 +17556,7 @@ Critérios de Saída:
 
    •   Médias dos 3 blocos calculadas
 
-Tarefa 3.3.3: Calcular o índice de maturidade Final
+II.5.3.3.3 Tarefa: Calcular o índice de maturidade Final
 
    •   Calcular a média aritmética das dimensões
    •   Registrar o índice de maturidade final (0 a 6)
@@ -18053,12 +17573,12 @@ Critérios de Saída:
    •   índice de maturidade final calculado
    •   Nível geral de maturidade determinado
 
-##### 5.3.4 Atividade 3.4: Identificar Pontos Fortes e Oportunidades
+##### II.5.3.4 Atividade: Identificar Pontos Fortes e Oportunidades
 Objetivo: Analisar os resultados e gerar insights.
 
 Tarefas:
 
-Tarefa 3.4.1: Identificar Pontos Fortes
+II.5.3.4.1 Tarefa: Identificar Pontos Fortes
 
    •   Identificar dimensões com níveis mais altos
    •   Identificar práticas exemplares observadas
@@ -18073,7 +17593,7 @@ Critérios de Saída:
 
    •   Lista de pontos fortes documentada
 
-Tarefa 3.4.2: Identificar Oportunidades de Melhoria
+II.5.3.4.2 Tarefa: Identificar Oportunidades de Melhoria
 
    •   Identificar dimensões com níveis mais baixos
    •   Identificar lacunas críticas
@@ -18088,7 +17608,7 @@ Critérios de Saída:
 
    •   Lista de oportunidades de melhoria documentada
 
-Tarefa 3.4.3: Elaborar Recomendações
+II.5.3.4.3 Tarefa: Elaborar Recomendações
 
    •   Desenvolver recomendações específicas e acionáveis
    •   Priorizar recomendações (curto, médio, longo prazo)
@@ -18111,12 +17631,12 @@ Critérios de Saída:
 
 #### II.5.4 Subprocesso 4: Documentar os Resultados da Avaliação
 
-##### 5.4.1 Atividade 4.1: Elaborar o Relatório Final
+##### II.5.4.1 Atividade: Elaborar o Relatório Final
 Objetivo: Documentar formalmente os resultados da avaliação.
 
 Tarefas:
 
-Tarefa 4.1.1: Estruturar o Relatório
+II.5.4.1.1 Tarefa: Estruturar o Relatório
 
    •   Utilizar o modelo de relatório padrão (APÊNDICE B)
    •   Incluir todas as seções obrigatórias
@@ -18130,7 +17650,7 @@ Critérios de Saída:
 
    •   Estrutura do relatório definida
 
-Tarefa 4.1.2: Redigir o Relatório
+II.5.4.1.2 Tarefa: Redigir o Relatório
 
    •   Redigir sumário executivo
    •   Documentar metodologia utilizada
@@ -18150,7 +17670,7 @@ Critérios de Saída:
 
    •   Relatório redigido
 
-Tarefa 4.1.3: Revisar e Aprovar o Relatório
+II.5.4.1.3 Tarefa: Revisar e Aprovar o Relatório
 
    •   Revisar o relatório pela equipe de avaliação
    •   Corrigir erros e inconsistências
@@ -18165,12 +17685,12 @@ Critérios de Saída:
 
    •   Relatório final aprovado
 
-##### 5.4.2 Atividade 4.2: Apresentar os Resultados
+##### II.5.4.2 Atividade: Apresentar os Resultados
 Objetivo: Comunicar os resultados aos stakeholders.
 
 Tarefas:
 
-Tarefa 4.2.1: Preparar Apresentação Executiva
+II.5.4.2.1 Tarefa: Preparar Apresentação Executiva
 
    •   Criar apresentação resumida dos resultados
    •   Focar em insights e recomendações
@@ -18185,7 +17705,7 @@ Critérios de Saída:
 
    •   Apresentação executiva preparada
 
-Tarefa 4.2.2: Realizar Reunião de Apresentação
+II.5.4.2.2 Tarefa: Realizar Reunião de Apresentação
 
    •   Agendar reunião com patrocinador e stakeholders-chave
    •   Apresentar os resultados
@@ -18204,7 +17724,7 @@ Critérios de Saída:
    •   Resultados apresentados
    •   Feedback coletado
 
-Tarefa 4.2.3: Entregar o Relatório Final
+II.5.4.2.3 Tarefa: Entregar o Relatório Final
 
    •   Entregar formalmente o relatório ao patrocinador
    •   Distribuir cópias conforme acordado
@@ -18218,12 +17738,12 @@ Critérios de Saída:
 
    •   Relatório final entregue
 
-##### 5.4.3 Atividade 4.3: Arquivar a Documentação
+##### II.5.4.3 Atividade: Arquivar a Documentação
 Objetivo: Preservar a documentação da avaliação para referência futura.
 
 Tarefas:
 
-Tarefa 4.3.1: Organizar a Documentação
+II.5.4.3.1 Tarefa: Organizar a Documentação
 
    •   Compilar todos os artefatos da avaliação
    •   Organizar em estrutura lógica
@@ -18240,7 +17760,7 @@ Critérios de Saída:
 
    •   Documentação organizada
 
-Tarefa 4.3.2: Arquivar a Documentação
+II.5.4.3.2 Tarefa: Arquivar a Documentação
 
 
 <!-- pág. original: 429/465 -->
@@ -18262,8 +17782,7 @@ Critérios de Saída:
 ### II.6 Papéis e Responsabilidades
 
 #### II.6.1 Avaliador Líder
-Descrição: Profissional responsável por planejar, conduzir e documentar a avaliação de maturidade
-I4.0.
+Descrição: Profissional responsável por planejar, conduzir e documentar a avaliação de maturidade I4.0.
 
 Responsabilidades:
 
@@ -18375,76 +17894,39 @@ Competências requeridas:
 ### II.7 Estrutura do Modelo de Maturidade da Indústria 4.0 (MA-I4.0): Estrutura Completa
 
 #### II.7.1 Visão Geral
-O MA-I4.0 foi desenvolvido para ajudar empresas de manufatura a avaliar sua atual prontidão para a
-Indústria 4.0 e ajudar a desenvolver um roadmap de transformação digital. O método identifica 3
-blocos (ou áreas) de construção fundamentais que qualquer fábrica ou planta deve considerar para se
-transformar em uma organização preparada para a Indústria 4.0.
+O MA-I4.0 foi desenvolvido para ajudar empresas de manufatura a avaliar sua atual prontidão para a Indústria 4.0 e ajudar a desenvolver um roadmap de transformação digital. O método identifica 3 blocos (ou áreas) de construção fundamentais que qualquer fábrica ou planta deve considerar para se transformar em uma organização preparada para a Indústria 4.0.
 
 
 #### II.7.2 Blocos do MA-I4.0
 
-##### 7.2.1 Processo
+##### II.7.2.1 Processo
 
-Definição: O bloco de Processo abrange a integração de processos dentro das operações da
-empresa, ao longo da cadeia de suprimentos e através do ciclo de vida do produto.
+Definição: O bloco de Processo abrange a integração de processos dentro das operações da empresa, ao longo da cadeia de suprimentos e através do ciclo de vida do produto.
 
-Importância: Para maximizar valor, a tecnologia deve sempre ser aplicada em conjunto com
-processos efetivos e bem desenhados. Usar tecnologia para digitalizar um processo mal desenhado
-resultará apenas em um processo digital mal desenhado. Por outro lado, aplicar tecnologia a um
-processo bem desenvolvido aumentará sua eficiência e permitirá a criação de valor.
+Importância: Para maximizar valor, a tecnologia deve sempre ser aplicada em conjunto com processos efetivos e bem desenhados. Usar tecnologia para digitalizar um processo mal desenhado resultará apenas em um processo digital mal desenhado. Por outro lado, aplicar tecnologia a um processo bem desenvolvido aumentará sua eficiência e permitirá a criação de valor.
 
-Foco: A Indústria 4.0 expandiu o conceito de melhoria de processos para focar na integração de
-processos dentro das operações da empresa (Operação), cadeia de suprimentos (Cadeia de
-Suprimentos) e ciclo de vida do produto (Ciclo de Vida de Produto). À medida que os processos se
-tornam integrados, eles convergem em um sistema unificado onde dados são compartilhados,
-processados e integrados através das camadas de gestão de produto, produção e empresa da
-organização.
+Foco: A Indústria 4.0 expandiu o conceito de melhoria de processos para focar na integração de processos dentro das operações da empresa (Operação), cadeia de suprimentos (Cadeia de Suprimentos) e ciclo de vida do produto (Ciclo de Vida de Produto). À medida que os processos se tornam integrados, eles convergem em um sistema unificado onde dados são compartilhados, processados e integrados através das camadas de gestão de produto, produção e empresa da organização.
 
-##### 7.2.2 Tecnologia
+##### II.7.2.2 Tecnologia
 
-Definição: O bloco de Tecnologia abrange as tecnologias digitais que habilitam a Indústria 4.0,
-incluindo automação, conectividade e inteligência.
+Definição: O bloco de Tecnologia abrange as tecnologias digitais que habilitam a Indústria 4.0, incluindo automação, conectividade e inteligência.
 
-Importância: O avanço tecnológico tem sido a pedra angular das últimas três grandes revoluções
-industriais. A descoberta da energia a vapor possibilitou a primeira revolução industrial, enquanto
-inovações em energia elétrica catalisaram a segunda. De forma similar, a Indústria 3.0 foi
-impulsionada pelo advento da eletrônica e Tecnologia da Informação (TI), que permitiram às empresas
-alcançar um grau inigualável de precisão e eficiência através da automação.
+Importância: O avanço tecnológico tem sido a pedra angular das últimas três grandes revoluções industriais. A descoberta da energia a vapor possibilitou a primeira revolução industrial, enquanto inovações em energia elétrica catalisaram a segunda. De forma similar, a Indústria 3.0 foi impulsionada pelo advento da eletrônica e Tecnologia da Informação (TI), que permitiram às empresas alcançar um grau inigualável de precisão e eficiência através da automação.
 
-Foco: A tecnologia permanece crítica na Indústria 4.0. Novas tecnologias digitais, como computação
-em nuvem, machine learning e Internet das Coisas (IoT), estão criando um cenário industrial
-hiper-conectado, onde ativos físicos e equipamentos são integrados com sistemas empresariais para
-permitir a constante e dinâmica troca e análise de dados. Para realizar suas ambições de Indústria 4.0,
-um alto grau de automação, conectividade ubíqua e sistemas inteligentes são necessários. Para
+Foco: A tecnologia permanece crítica na Indústria 4.0. Novas tecnologias digitais, como computação em nuvem, machine learning e Internet das Coisas (IoT), estão criando um cenário industrial hiper-conectado, onde ativos físicos e equipamentos são integrados com sistemas empresariais para permitir a constante e dinâmica troca e análise de dados. Para realizar suas ambições de Indústria 4.0, um alto grau de automação, conectividade ubíqua e sistemas inteligentes são necessários. Para refletir isso, o bloco de Tecnologia foi segmentado nos 3 pilares de Automação, Conectividade e Inteligência.
 
+##### II.7.2.3 Organização
 
-<!-- pág. original: 434/465 -->
- refletir isso, o bloco de Tecnologia foi segmentado nos 3 pilares de Automação, Conectividade e
- Inteligência.
+ Definição: O bloco de Organização abrange as pessoas, estruturas e sistemas de gestão que permitem à organização executar efetivamente sua estratégia de Indústria 4.0.
 
-##### 7.2.3 Organização
+ Importância: A organização é o terceiro bloco da Indústria 4.0. Frequentemente subestimada, a Organização desempenha um papel igualmente importante ao lado de Tecnologia e Processos. Para permanecer relevante diante da crescente competição na Indústria 4.0, as empresas devem adaptar suas estruturas organizacionais e Processos para permitir que sua força de trabalho acompanhe o ritmo.
 
- Definição: O bloco de Organização abrange as pessoas, estruturas e sistemas de gestão que
- permitem à organização executar efetivamente sua estratégia de Indústria 4.0.
-
- Importância: A organização é o terceiro bloco da Indústria 4.0. Frequentemente subestimada, a
- Organização desempenha um papel igualmente importante ao lado de Tecnologia e Processos. Para
- permanecer relevante diante da crescente competição na Indústria 4.0, as empresas devem adaptar
- suas estruturas organizacionais e Processos para permitir que sua força de trabalho acompanhe o
- ritmo.
-
- Foco: A Indústria 4.0 demanda um foco maior em dois componentes-chave que podem afetar a
- efetividade de uma organização. O primeiro componente são as pessoas que compõem a organização
- — toda a força de trabalho desde a alta gestão até às equipes operacionais. O segundo componente
- são os sistemas institucionais que governam como a empresa funciona. Ambos os componentes
- devem ser levados em conta para colher plenamente os benefícios da Indústria 4.0. O bloco de
- Organização foi segmentado nos pilares de Prontidão de Talento, Estrutura e Gestão.
+ Foco: A Indústria 4.0 demanda um foco maior em dois componentes-chave que podem afetar a efetividade de uma organização. O primeiro componente são as pessoas que compõem a organização — toda a força de trabalho desde a alta gestão até às equipes operacionais. O segundo componente são os sistemas institucionais que governam como a empresa funciona. Ambos os componentes devem ser levados em conta para colher plenamente os benefícios da Indústria 4.0. O bloco de Organização foi segmentado nos pilares de Prontidão de Talento, Estrutura e Gestão.
 
 
 #### II.7.3 Os 8 Pilares
 
- Na Tabela 1, há uma breve descrição dos oito pilares, indicando como estão distribuídos pelos 3
- blocos do MA-I4.0.
+ Na Tabela 1, há uma breve descrição dos oito pilares, indicando como estão distribuídos pelos 3 blocos do MA-I4.0.
 
 *Tabela 1. Os pilares distribuídos pelos 3 blocos do MA-I4.0*
 
@@ -18462,8 +17944,7 @@ um alto grau de automação, conectividade ubíqua e sistemas inteligentes são 
 
 #### II.7.4 As 16 Dimensões de Avaliação
 
-    Na Tabela 2, são brevemente descritas as dimensões, bem como são indicadas as duas distribuições
-    dentro dos pilares e blocos do MA-I4.0.
+    Na Tabela 2, são brevemente descritas as dimensões, bem como são indicadas as duas distribuições dentro dos pilares e blocos do MA-I4.0.
 
 *Tabela 2. 16 dimensões do MA-I4.0.*
 
@@ -18494,13 +17975,9 @@ O cálculo do índice de maturidade (idx4.0) é realizado através da média ari
 
 #### II.8.2 Passo 1: Avaliar Cada Capacidade (0 a 6)
 
-Neste passo, cada capacidade é avaliada por um conjunto de questões em que os itens de respostas
-são valorados em uma escala ordinal que varia de 0 a 6. Os valores do nível em cada uma das
-respostas são utilizados como valores para se obter uma média aritmética dessas respostas,
-resultando na Nota da Capacidade (NC).
+Neste passo, cada capacidade é avaliada por um conjunto de questões em que os itens de respostas são valorados em uma escala ordinal que varia de 0 a 6. Os valores do nível em cada uma das respostas são utilizados como valores para se obter uma média aritmética dessas respostas, resultando na Nota da Capacidade (NC).
 
-A Escala de Níveis é indicada a seguir, bem como a taxonomia de conceitos que podem definir um
-determinado nível.
+A Escala de Níveis é indicada a seguir, bem como a taxonomia de conceitos que podem definir um determinado nível.
 
    •   Nível 0: Inexistente / Indefinido / Nenhum
    •   Nível 1: Inicial / Definido / Básico / Conectado / Computadorizado
@@ -18510,14 +17987,12 @@ determinado nível.
    •   Nível 5: Inteligente / Real-Time / Preditivo
    •   Nível 6: Otimizado / Adaptativo
 
-Nota: A nomenclatura específica dos níveis varia conforme a dimensão. Consulte o APÊNDICE A para
-os critérios detalhados de cada nível para cada dimensão.
+Nota: A nomenclatura específica dos níveis varia conforme a dimensão. Consulte o APÊNDICE A para os critérios detalhados de cada nível para cada dimensão.
 
 
 #### II.8.3 Passo 2: Calcular a Média de Cada Dimensão
 
-Cada uma das 16 dimensões é avaliada individualmente por um conjunto de questões relacionadas. A
-Média da Dimensão (MD) é calculada como a média aritmética das notas dessas questões.
+Cada uma das 16 dimensões é avaliada individualmente por um conjunto de questões relacionadas. A Média da Dimensão (MD) é calculada como a média aritmética das notas dessas questões.
 
 Fórmula:
 
@@ -18531,18 +18006,13 @@ Fórmula:
 
 
 <!-- pág. original: 439/465 -->
- Atenção: Todas as médias das dimensões devem ser calculadas obedecendo as regras de
- arredondamentos para duas (2) casas decimais.
+ Atenção: Todas as médias das dimensões devem ser calculadas obedecendo as regras de arredondamentos para duas (2) casas decimais.
 
 
 
 #### II.8.4 Passo 4: Calcular o Índice MA-I4.0
 
- O Índice MA-I4.0 (idx4.0) é calculado como a média aritmética das médias das dimensões. Nesse
- caso, cada dimensão tem contribuição de 1/16 (6.25%) no índice final e os pesos atribuídos a cada
- bloco podem ser calculados, multiplicando o número de dimensões contidas em cada bloco por essa
- contribuição. Assim, os pesos de cada bloco na construção do índice final são apresentados na tabela
- a seguir:
+ O Índice MA-I4.0 (idx4.0) é calculado como a média aritmética das médias das dimensões. Nesse caso, cada dimensão tem contribuição de 1/16 (6.25%) no índice final e os pesos atribuídos a cada bloco podem ser calculados, multiplicando o número de dimensões contidas em cada bloco por essa contribuição. Assim, os pesos de cada bloco na construção do índice final são apresentados na tabela a seguir:
 
 *Tabela 3. Pesos atribuídos a cada bloco devido as suas dimensões.*
 
@@ -18554,9 +18024,7 @@ Fórmula:
 | Total | 100% (1,00) | |
 
 
- Nota: Em avaliações ad-hoc, os pesos podem ser ajustados conforme o contexto específico da
- organização ou indústria, desde que a soma seja sempre 1,00 (100%). Entretanto, para efeitos de
- avaliações e benchmarkings oficiais, deve-se sempre adotar os pesos apresentados na Tabela 3.
+ Nota: Em avaliações ad-hoc, os pesos podem ser ajustados conforme o contexto específico da organização ou indústria, desde que a soma seja sempre 1,00 (100%). Entretanto, para efeitos de avaliações e benchmarkings oficiais, deve-se sempre adotar os pesos apresentados na Tabela 3.
 
  Fórmula:
 
@@ -18567,8 +18035,7 @@ Fórmula:
 
                                  •   MDj = Média da j-ésima Dimensão
 
- Atenção: O índice idx4.0 deve ser calculado obedecendo as regras de arredondamentos
- para duas (2) casas decimais.
+ Atenção: O índice idx4.0 deve ser calculado obedecendo as regras de arredondamentos para duas (2) casas decimais.
 
 
 <!-- pág. original: 440/465 -->
@@ -18597,16 +18064,14 @@ Fórmula:
 
  Desta forma:
 
-          idx4.0 = ( 3,00 + 2,00 + 3,00 + 3,00 + 2,00 + 2,00 + 3,00 + 3,00 + 3,00 + 3,00 + 2,00 + 3,00 +
-          2,00 + 3,00 + 2,00 + 2,00) /16 = 2,56
+          idx4.0 = ( 3,00 + 2,00 + 3,00 + 3,00 + 2,00 + 2,00 + 3,00 + 3,00 + 3,00 + 3,00 + 2,00 + 3,00 + 2,00 + 3,00 + 2,00 + 2,00) /16 = 2,56
 
           idx4.0 = 2,56
 
 
 #### II.8.5 Interpretação do Índice Final
 
- O índice idx4.0 final varia de 0,00 a 6,00 e deve ser interpretado conforme os níveis de maturidade
- descritos na Tabela 5, a seguir:
+ O índice idx4.0 final varia de 0,00 a 6,00 e deve ser interpretado conforme os níveis de maturidade descritos na Tabela 5, a seguir:
 
 
 
@@ -18624,25 +18089,18 @@ Fórmula:
 
 
 
- Interpretação Final: A organização está no Nível 3: Padronizado, com um índice idx4.0 de 2,56.
- Possui processos bem definidos e sistemas digitais implementados, com integração inicial entre
- sistemas.
+ Interpretação Final: A organização está no Nível 3: Padronizado, com um índice idx4.0 de 2,56. Possui processos bem definidos e sistemas digitais implementados, com integração inicial entre sistemas.
 
 
 #### II.8.7 Visualização dos Resultados
 
- Além dos cálculos usados para se chegar ao índice idx4.0, os resultados da avaliação devem ser
- apresentados através de múltiplas visualizações para facilitar sua compreensão. Dessa forma, as
- seções a seguir trazem algumas orientações.
+ Além dos cálculos usados para se chegar ao índice idx4.0, os resultados da avaliação devem ser apresentados através de múltiplas visualizações para facilitar sua compreensão. Dessa forma, as seções a seguir trazem algumas orientações.
 
-##### 8.7.1 Gráfico Radar
+##### II.8.7.1 Gráfico Radar
 
- Embora não sejam diretamente utilizados para o cálculo do índice idx4.0 de uma organização, a
- utilização de gráficos radar com as médias para os três blocos ou os 8 pilares permite visualizar
- rapidamente os pontos fortes e fracos da organização.
+ Embora não sejam diretamente utilizados para o cálculo do índice idx4.0 de uma organização, a utilização de gráficos radar com as médias para os três blocos ou os 8 pilares permite visualizar rapidamente os pontos fortes e fracos da organização.
 
- Desse modo, em avaliações oficiais é requerido que o avaliador apresente a visualização desses
- resultados à organização avaliada.
+ Desse modo, em avaliações oficiais é requerido que o avaliador apresente a visualização desses resultados à organização avaliada.
 
 
 <!-- pág. original: 442/465 -->
@@ -18653,17 +18111,14 @@ Exemplos:
 
                   Figura 2. Gráficos radar para os pilares do exemplo da Tabela 4.
 
-Da ilustração acima, podemos concluir, por exemplo, que as principais deficiências da organização
-avaliada são nas dimensões “Cadeia de Suprimentos” e “Estrutura e Gestão”. Já em termos dos
-blocos sócio-técnicos, podemos dizer que o bloco “Organização” é o mais atrasado.
+Da ilustração acima, podemos concluir, por exemplo, que as principais deficiências da organização avaliada são nas dimensões “Cadeia de Suprimentos” e “Estrutura e Gestão”. Já em termos dos blocos sócio-técnicos, podemos dizer que o bloco “Organização” é o mais atrasado.
 
 
 
 
-##### 8.7.2 Gráfico de Barras por Dimensão
+##### II.8.7.2 Gráfico de Barras por Dimensão
 
-Por outro lado, mostrar as MDs das 16 dimensões, diretamente relacionadas ao índice idx4.0, em um
-gráfico de barras permite identificar rapidamente as dimensões mais e menos maduras.
+Por outro lado, mostrar as MDs das 16 dimensões, diretamente relacionadas ao índice idx4.0, em um gráfico de barras permite identificar rapidamente as dimensões mais e menos maduras.
 
 
 <!-- pág. original: 443/465 -->
@@ -18681,9 +18136,7 @@ Em avaliações e benchmarkings oficiais, também é requerido que o avaliador a
 <!-- pág. original: 444/465 -->
 #### II.8.8 Dados de Suporte Usados nos Gráficos
 
- Os dados utilizados na construção do gráficos também devem ser formatados e apresentados em
- tabelas, como nos exemplos a seguir, para conferência da organização avaliada. Considerando os
- dados da Tabela 4 e os gráficos das Figuras 2, 3 e 4, temos os exemplos das Tabelas 6 e 7.
+ Os dados utilizados na construção do gráficos também devem ser formatados e apresentados em tabelas, como nos exemplos a seguir, para conferência da organização avaliada. Considerando os dados da Tabela 4 e os gráficos das Figuras 2, 3 e 4, temos os exemplos das Tabelas 6 e 7.
 
 *Tabela 6. Dados de Suporte a Gráficos: Médias dos Pilares*
 
@@ -18708,8 +18161,7 @@ Em avaliações e benchmarkings oficiais, também é requerido que o avaliador a
 
 
 
- Atenção: Todos os dados e cálculos efetuados e apresentados na visualização de
- resultados devem obedecer as regras de arredondamento com duas (2) casas decimais.
+ Atenção: Todos os dados e cálculos efetuados e apresentados na visualização de resultados devem obedecer as regras de arredondamento com duas (2) casas decimais.
 
 
 

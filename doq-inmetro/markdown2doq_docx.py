@@ -41,6 +41,12 @@ LOGO_PATH = SCRIPT_DIR / "inmetro-logo.png"
 DOC_CODE = "DOQ-DIMCI-020"
 DOC_REV = "REV. 01"
 
+# Rodapé institucional (modelo MOD-Gabin-039). Referências ainda a confirmar
+# (decisão §5.2 do PLANO_TEMPLATE_CONFORMIDADE) — deixadas fora por ora.
+FOOTER_TEXT = (
+    "DOQ-DIMCI-020 - Rev. 01 – Publicado Jun/2026 – Responsabilidade: Dmtic"
+)
+
 
 # ---------------------------------------------------------------------------
 # Low level XML helpers
@@ -301,6 +307,37 @@ def add_header_spacer(header):
     spacer = header.add_paragraph()
     spacer.paragraph_format.space_before = Pt(0)
     spacer.paragraph_format.space_after = Cm(0.5)
+
+
+def set_paragraph_top_border(paragraph, color='000000', sz='4'):
+    """Linha fina acima do parágrafo (usada como separador do rodapé)."""
+    pPr = paragraph._p.get_or_add_pPr()
+    pBdr = pPr.find(qn('w:pBdr'))
+    if pBdr is None:
+        pBdr = OxmlElement('w:pBdr')
+        pPr.append(pBdr)
+    top = OxmlElement('w:top')
+    top.set(qn('w:val'), 'single')
+    top.set(qn('w:sz'), sz)
+    top.set(qn('w:space'), '4')
+    top.set(qn('w:color'), color)
+    pBdr.append(top)
+
+
+def build_footer(section):
+    """Rodapé institucional (modelo MOD-Gabin-039): linha fina + texto de
+    codificação em Arial 8 pt, negrito, replicado em todas as páginas
+    (F-2 do PLANO). Aplicado tanto na seção da capa quanto na do corpo."""
+    footer = section.footer
+    footer.is_linked_to_previous = False
+    p = footer.paragraphs[0] if footer.paragraphs else footer.add_paragraph()
+    p.text = ''
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    set_paragraph_top_border(p)
+    run = p.add_run(FOOTER_TEXT)
+    run.bold = True
+    run.font.size = Pt(8)
+    run.font.name = 'Arial'
 
 
 def add_logo_run(paragraph, size_cm=2.6):
@@ -620,6 +657,7 @@ def convert(md_path, docx_path):
 
     setup_styles(doc)
     build_cover_header(section)
+    build_footer(section)
 
     builder = MarkdownDocxBuilder(doc)
 
@@ -708,6 +746,7 @@ def convert(md_path, docx_path):
                 new_section.header_distance = section.header_distance
                 new_section.footer_distance = section.footer_distance
                 build_header(new_section)
+                build_footer(new_section)
                 started_body_section = True
                 insert_toc_placeholder(doc, builder)
                 add_page_break(doc)

@@ -487,6 +487,7 @@ class MarkdownDocxBuilder:
     # -- paragraph -------------------------------------------------------
     def add_paragraph_text(self, text):
         stripped_text = text.strip()
+        was_in_criterios_block = self._current_subsection in INDENTED_BULLET_PARAGRAPH_TEXTS
         # 'Critérios de Entrada:' / 'Critérios de Saída:' (ANEXO II) também
         # abrem um bloco cujos bullets recebem recuo extra; qualquer outro
         # parágrafo comum encerra o bloco (seja de 'Sinais por nível' etc.,
@@ -501,6 +502,14 @@ class MarkdownDocxBuilder:
             # O próprio rótulo ('Critérios de Entrada:'/'Critérios de
             # Saída:') também recebe o recuo extra, não só seus bullets.
             p.paragraph_format.left_indent = Cm(0.5 + INDENTED_BULLET_EXTRA_CM)
+            # Sem espaço abaixo: o rótulo deve colar no primeiro bullet
+            # logo em seguida (sem linha em branco entre eles).
+            p.paragraph_format.space_after = Pt(0)
+        elif was_in_criterios_block:
+            # Saindo do bloco de bullets de Critérios de Entrada/Saída: dá
+            # respiro antes do próximo texto comum (o parágrafo anterior era
+            # um bullet com space_after=2pt, pequeno demais).
+            p.paragraph_format.space_before = Pt(8)
         add_runs(p, text, base_size=11)
         return p
 

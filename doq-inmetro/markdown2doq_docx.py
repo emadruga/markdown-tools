@@ -491,11 +491,16 @@ class MarkdownDocxBuilder:
         # abrem um bloco cujos bullets recebem recuo extra; qualquer outro
         # parágrafo comum encerra o bloco (seja de 'Sinais por nível' etc.,
         # seja de Critérios).
-        if stripped_text.lower() in INDENTED_BULLET_PARAGRAPH_TEXTS:
+        is_criterios_label = stripped_text.lower() in INDENTED_BULLET_PARAGRAPH_TEXTS
+        if is_criterios_label:
             self._current_subsection = stripped_text.lower()
         else:
             self._current_subsection = None
         p = self.doc.add_paragraph()
+        if is_criterios_label:
+            # O próprio rótulo ('Critérios de Entrada:'/'Critérios de
+            # Saída:') também recebe o recuo extra, não só seus bullets.
+            p.paragraph_format.left_indent = Cm(0.5 + INDENTED_BULLET_EXTRA_CM)
         add_runs(p, text, base_size=11)
         return p
 

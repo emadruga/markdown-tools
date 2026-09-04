@@ -48,10 +48,14 @@ BODY_FONT = "Times New Roman"
 BODY_PT = 12
 # O rodapé é a única exceção do template: Arial 8 pt (ver build_footer).
 
-# Rodapé institucional (modelo MOD-Gabin-039). Referências ainda a confirmar
-# (decisão §5.2 do PLANO_TEMPLATE_CONFORMIDADE) — deixadas fora por ora.
-FOOTER_TEXT = (
-    "DOQ-DIMCI-020 - Rev. 01 – Publicado Jun/2026 – Responsabilidade: Dmtic"
+# Rodapé institucional (modelo MOD-Gabin-039): texto fixo antes e depois do
+# campo de paginação dinâmico (– Pg.X/X, inserido via add_field em
+# build_footer) e a referência normativa que rege a estrutura do documento.
+FOOTER_TEXT_PREFIX = (
+    "DOQ-DIMCI-020 - Rev. 01 – Publicado Jun/2026"
+)
+FOOTER_TEXT_SUFFIX = (
+    " – Responsabilidade: Dmtic – Referência(s): NIG-Gabin-040"
 )
 
 
@@ -175,8 +179,44 @@ def slugify_anchor(text):
 # Estilos do documento
 # ---------------------------------------------------------------------------
 
+def setup_docDefaults(doc):
+    """Corrige o w:docDefaults do styles.xml (NC-07): por padrão o
+    python-docx herda o tema minorHAnsi (Calibri) 11pt do template em
+    branco do Word. Qualquer texto sem estilo explícito cairia nesse
+    padrão, então é preciso sobrescrevê-lo com Times New Roman 12pt,
+    além do estilo Normal (que já cobre o texto normal do documento)."""
+    styles_element = doc.styles.element
+    rPrDefault = styles_element.find(qn('w:docDefaults') + '/' + qn('w:rPrDefault'))
+    if rPrDefault is None:
+        return
+    rPr = rPrDefault.find(qn('w:rPr'))
+    if rPr is None:
+        return
+
+    rFonts = rPr.find(qn('w:rFonts'))
+    if rFonts is None:
+        rFonts = OxmlElement('w:rFonts')
+        rPr.insert(0, rFonts)
+    for attr in ('w:asciiTheme', 'w:eastAsiaTheme', 'w:hAnsiTheme', 'w:cstheme'):
+        if rFonts.get(qn(attr)) is not None:
+            del rFonts.attrib[qn(attr)]
+    rFonts.set(qn('w:ascii'), BODY_FONT)
+    rFonts.set(qn('w:hAnsi'), BODY_FONT)
+    rFonts.set(qn('w:cs'), BODY_FONT)
+    rFonts.set(qn('w:eastAsia'), BODY_FONT)
+
+    half_points = str(BODY_PT * 2)
+    for tag in ('w:sz', 'w:szCs'):
+        el = rPr.find(qn(tag))
+        if el is None:
+            el = OxmlElement(tag)
+            rPr.append(el)
+        el.set(qn('w:val'), half_points)
+
+
 def setup_styles(doc):
     styles = doc.styles
+    setup_docDefaults(doc)
 
     normal = styles['Normal']
     normal.font.name = BODY_FONT
@@ -277,6 +317,10 @@ def build_header(section, total_pages_placeholder="465"):
 
     code_p = code_cell.paragraphs[0]
     code_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    label_run = code_p.add_run('CODIFICAÇÃO\n')
+    label_run.bold = True
+    label_run.font.size = Pt(10)
+    label_run.font.name = BODY_FONT
     run = code_p.add_run(DOC_CODE)
     run.bold = True
     run.font.size = Pt(12)
@@ -344,10 +388,17 @@ def build_footer(section):
     p.text = ''
     p.alignment = WD_ALIGN_PARAGRAPH.LEFT
     set_paragraph_top_border(p)
-    run = p.add_run(FOOTER_TEXT)
-    run.bold = True
-    run.font.size = Pt(8)
-    run.font.name = 'Arial'
+
+    prefix_run = p.add_run(f'{FOOTER_TEXT_PREFIX} – Pg.')
+    page_run = add_field(p, 'PAGE')
+    sep_run = p.add_run('/')
+    total_run = add_field(p, 'NUMPAGES')
+    suffix_run = p.add_run(FOOTER_TEXT_SUFFIX)
+
+    for run in (prefix_run, page_run, sep_run, total_run, suffix_run):
+        run.bold = True
+        run.font.size = Pt(8)
+        run.font.name = 'Arial'
 
 
 def add_logo_run(paragraph, size_cm=1.79):
@@ -662,11 +713,11 @@ def convert(md_path, docx_path):
     section = doc.sections[0]
     section.page_width = Cm(21.0)
     section.page_height = Cm(29.7)
-    section.top_margin = Cm(2.5)
-    section.bottom_margin = Cm(2.0)
-    section.left_margin = Cm(2.5)
-    section.right_margin = Cm(2.0)
-    section.header_distance = Cm(1.0)
+    section.top_margin = Cm(1.0)
+    section.bottom_margin = Cm(1.5)
+    section.left_margin = Cm(1.5)
+    section.right_margin = Cm(1.5)
+    section.header_distance = Cm(2.0)
     section.footer_distance = Cm(1.0)
 
     setup_styles(doc)

@@ -210,7 +210,11 @@ def convert_markdown_to_docx(input_path: str) -> None:
                 'docx',
                 outputfile=str(output_file),
                 extra_args=[
-                    '--from=markdown+hard_line_breaks',  # Preserve line breaks and list formatting
+                    # Markdown padrão: quebras de linha simples dentro de um
+                    # parágrafo são tratadas como espaço (o texto reagrupa).
+                    # NÃO usar +hard_line_breaks, senão cada \n vira uma quebra
+                    # literal e o parágrafo fica picotado no meio.
+                    '--from=markdown',
                     '--to=docx',
                 ]
             )

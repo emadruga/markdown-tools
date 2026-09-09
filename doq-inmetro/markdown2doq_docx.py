@@ -456,7 +456,13 @@ HEADING_RE = re.compile(r'^(#{1,6})\s+(.*)$')
 TABLE_ROW_RE = re.compile(r'^\|(.+)\|\s*$')
 TABLE_SEP_RE = re.compile(r'^\|[\s:|-]+\|\s*$')
 BULLET_RE = re.compile(r'^( *)-\s+(.*)$')
+# Dois marcadores de bullet aparecem no fonte (transcrição do PDF): '•'
+# (U+2022) para o item de 1º nível e '●' (U+25CF, círculo preto cheio,
+# mais indentado) para o sub-item. São tratados separadamente para que o
+# sub-item '●' receba indent_level=1 em vez do nível bruto derivado dos
+# (muitos) espaços à esquerda.
 DOT_BULLET_RE = re.compile(r'^( *)•\s+(.*)$')
+SUB_DOT_BULLET_RE = re.compile(r'^( *)●\s+(.*)$')
 HTML_COMMENT_RE = re.compile(r'<!--.*?-->', re.DOTALL)
 ITALIC_LABEL_RE = re.compile(r'^\*(Tabela|Figura|Quadro)\s')
 
@@ -836,11 +842,18 @@ def convert(md_path, docx_path):
             i += 1
             continue
 
-        # --- bullets com '•' ---
+        # --- bullets com '•' (1º nível) ---
         m = DOT_BULLET_RE.match(line)
         if m:
             indent = len(m.group(1)) // 2
             builder.add_bullet(m.group(2), indent)
+            i += 1
+            continue
+
+        # --- sub-bullets com '●' (2º nível) ---
+        m = SUB_DOT_BULLET_RE.match(line)
+        if m:
+            builder.add_bullet(m.group(2), 1)
             i += 1
             continue
 
@@ -875,7 +888,7 @@ def convert(md_path, docx_path):
                 break
             if re.fullmatch(r'-{3,}', nxt_stripped):
                 break
-            if BULLET_RE.match(nxt) or DOT_BULLET_RE.match(nxt):
+            if BULLET_RE.match(nxt) or DOT_BULLET_RE.match(nxt) or SUB_DOT_BULLET_RE.match(nxt):
                 break
             if ITALIC_LABEL_RE.match(nxt_stripped) and nxt_stripped.endswith('*'):
                 break

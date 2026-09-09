@@ -465,6 +465,14 @@ DOT_BULLET_RE = re.compile(r'^( *)•\s+(.*)$')
 SUB_DOT_BULLET_RE = re.compile(r'^( *)●\s+(.*)$')
 HTML_COMMENT_RE = re.compile(r'<!--.*?-->', re.DOTALL)
 ITALIC_LABEL_RE = re.compile(r'^\*(Tabela|Figura|Quadro)\s')
+# Na transcrição do PDF (ANEXO II) o título do subprocesso vem colado ao
+# 'Objetivo:' na mesma linha (ex.: 'Subprocesso 4: Documentar Resultados
+# Objetivo: Formalizar...'). Separa o título (grupo 1) do restante, que
+# começa em 'Objetivo:' (grupo 2), para renderizá-los em parágrafos
+# distintos.
+SUBPROCESSO_OBJETIVO_RE = re.compile(
+    r'^(Subprocesso\s+\d+:\s+.+?)\s+(Objetivo:\s+.+)$'
+)
 
 # Headings que devem sempre iniciar em nova página: ANEXO, APÊNDICE, cada
 # Dimensão (tanto '### I.N Dimensão: ...' no ANEXO I quanto '#### Dimensão N:
@@ -845,7 +853,11 @@ def convert(md_path, docx_path):
         # --- bullets com '•' (1º nível) ---
         m = DOT_BULLET_RE.match(line)
         if m:
-            indent = len(m.group(1)) // 2
+            # No fonte, o item de 1º nível vem com 3 espaços ('   •   ' ->
+            # nível 1). Quando uma quebra de página do PDF original apaga a
+            # indentação, o item reaparece na coluna 0 e cairia no nível 0,
+            # desalinhado dos demais. Garante nível mínimo 1 para o item base.
+            indent = max(1, len(m.group(1)) // 2)
             builder.add_bullet(m.group(2), indent)
             i += 1
             continue
@@ -867,6 +879,14 @@ def convert(md_path, docx_path):
             rows = parse_plain_text_table(plain_rows)
             builder.add_table(rows)
             i = j
+            continue
+
+        # --- 'Subprocesso N: <título> Objetivo: ...' numa linha só ---
+        m = SUBPROCESSO_OBJETIVO_RE.match(stripped)
+        if m:
+            builder.add_paragraph_text(m.group(1))
+            builder.add_paragraph_text(m.group(2))
+            i += 1
             continue
 
         # --- parágrafo comum ---

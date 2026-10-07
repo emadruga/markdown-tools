@@ -57,15 +57,16 @@ BODY_FONT = "Times New Roman"
 BODY_PT = 12
 # O rodapé é a única exceção do template: Arial 8 pt (ver build_footer).
 
-# Rodapé institucional (modelo MOD-Gabin-039): texto fixo antes e depois do
-# campo de paginação dinâmico (– Pg.X/X, inserido via add_field em
-# build_footer) e a referência normativa que rege a estrutura do documento.
-FOOTER_TEXT_PREFIX = (
-    "DOQ-DIMCI-020 - Rev. 01 – Publicado Jun/2026"
-)
-FOOTER_TEXT_SUFFIX = (
-    " – Responsabilidade: Dmtic – Referência(s): NIG-Gabin-040"
-)
+# Rodapé institucional: texto fixo antes e depois do campo de paginação
+# dinâmico (– Pg.X/X, inserido via add_field em build_footer). Identifica o
+# MODELO institucional que rege a estrutura do documento (MOD-Gabin-039 para
+# DOQ, MOD-Gabin-040 para NIT) — não o código do documento individual gerado
+# (DOC_CODE), que já aparece no cabeçalho de página. Fixo por formato.
+FOOTER_TEXT_PREFIX = {
+    'doq': "MOD-Gabin-039 - Rev. 02 – Publicado Jan/22",
+    'nit': "MOD-Gabin-040 - Rev. 02 – Publicado Jan/22",
+}
+FOOTER_TEXT_SUFFIX = " – Responsabilidade: Gabin – Referência(s): NIG-Gabin-040"
 
 
 # ---------------------------------------------------------------------------
@@ -510,10 +511,12 @@ def set_paragraph_top_border(paragraph, color='000000', sz='4'):
     pBdr.append(top)
 
 
-def build_footer(section):
-    """Rodapé institucional (modelo MOD-Gabin-039): linha fina + texto de
-    codificação em Arial 8 pt, negrito, replicado em todas as páginas
-    (F-2 do PLANO). Aplicado tanto na seção da capa quanto na do corpo."""
+def build_footer(section, doc_format='doq'):
+    """Rodapé institucional: linha fina + texto de codificação em Arial 8 pt,
+    negrito, replicado em todas as páginas (F-2 do PLANO). Aplicado tanto na
+    seção da capa quanto na do corpo. O texto identifica o modelo
+    institucional (MOD-Gabin-039/040, ver FOOTER_TEXT_PREFIX) conforme
+    doc_format, não o documento individual sendo gerado."""
     footer = section.footer
     footer.is_linked_to_previous = False
     p = footer.paragraphs[0] if footer.paragraphs else footer.add_paragraph()
@@ -521,7 +524,8 @@ def build_footer(section):
     p.alignment = WD_ALIGN_PARAGRAPH.LEFT
     set_paragraph_top_border(p)
 
-    prefix_run = p.add_run(f'{FOOTER_TEXT_PREFIX} – Pg.')
+    prefix_text = FOOTER_TEXT_PREFIX.get(doc_format, FOOTER_TEXT_PREFIX['doq'])
+    prefix_run = p.add_run(f'{prefix_text} – Pg.')
     page_run = add_field(p, 'PAGE')
     sep_run = p.add_run('/')
     total_run = add_field(p, 'NUMPAGES')
@@ -946,7 +950,7 @@ def convert(md_path, docx_path, doc_format='doq', cli_overrides=None):
         build_header_nit(section)
     else:
         build_cover_header(section)
-    build_footer(section)
+    build_footer(section, doc_format=doc_format)
 
     builder = MarkdownDocxBuilder(doc)
 
@@ -1067,7 +1071,7 @@ def convert(md_path, docx_path, doc_format='doq', cli_overrides=None):
                 new_section.header_distance = section.header_distance
                 new_section.footer_distance = section.footer_distance
                 build_header(new_section)
-                build_footer(new_section)
+                build_footer(new_section, doc_format=doc_format)
                 started_body_section = True
                 insert_toc_placeholder(doc, builder, doc_format=doc_format)
                 add_page_break(doc)
@@ -1092,7 +1096,7 @@ def convert(md_path, docx_path, doc_format='doq', cli_overrides=None):
                 new_section.header_distance = section.header_distance
                 new_section.footer_distance = section.footer_distance
                 build_header(new_section)
-                build_footer(new_section)
+                build_footer(new_section, doc_format=doc_format)
 
             builder.add_heading(level, text)
             i += 1

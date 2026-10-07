@@ -40,15 +40,15 @@ python markdown2inmetro_docx.py <input.md> [-o output.docx] [--format {doq,nit}]
 ## Gerar um DOQ
 
 ```bash
-python markdown2inmetro_docx.py doq-inmetro/DOQ-DIMCI-020_jun2026-Final.md \
-  -o DOQ-DIMCI-020_jun2026-Final.docx \
+python markdown2inmetro_docx.py testes/doq/DOQ-DIMCI-020_jun2026-Final.md \
+  -o testes/doq/DOQ-DIMCI-020_jun2026-Final.docx \
   --format doq
 ```
 
 Equivalente (formato é o default, pode ser omitido):
 
 ```bash
-python markdown2inmetro_docx.py doq-inmetro/DOQ-DIMCI-020_jun2026-Final.md
+python markdown2inmetro_docx.py testes/doq/DOQ-DIMCI-020_jun2026-Final.md
 ```
 
 ### Markdown mínimo para um DOQ
@@ -102,8 +102,8 @@ Texto do campo de aplicação.
 ## Gerar uma NIT
 
 ```bash
-python markdown2inmetro_docx.py doq-inmetro/NIT-LAINF-009_jun2026.md \
-  -o NIT-LAINF-009_jun2026.docx \
+python markdown2inmetro_docx.py testes/nit/NIT-LAINF-009_jun2026.md \
+  -o testes/nit/NIT-LAINF-009_jun2026.docx \
   --format nit
 ```
 

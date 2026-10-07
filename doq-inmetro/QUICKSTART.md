@@ -3,8 +3,8 @@
 Conversor de Markdown para `.docx` no padrão institucional Inmetro, cobrindo os dois
 formatos de documento normativo:
 
-- **DOQ** (Documento Orientativo da Qualidade) — modelo [MOD-Gabin-39](MOD-Gabin-39_02.docx)
-- **NIT** (Norma Inmetro Técnica) — modelo [MOD-Gabin-40](MOD-Gabin-40_02.doc)
+- **DOQ** (Documento Orientativo da Qualidade) — modelo [MOD-Gabin-39](normas/MOD-Gabin-39_02.docx)
+- **NIT** (Norma Inmetro Técnica) — modelo [MOD-Gabin-40](normas/MOD-Gabin-40_02.doc)
 
 As diferenças entre os dois modelos estão detalhadas em
 [MOD39_MOD40_DIFERENCAS.md](MOD39_MOD40_DIFERENCAS.md). Em resumo: o corpo do documento

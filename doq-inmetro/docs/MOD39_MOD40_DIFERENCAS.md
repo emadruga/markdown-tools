@@ -50,7 +50,7 @@ está em **ter ou não página de capa** antes do sumário.
 
 Como o corpo do documento (headings numerados, parágrafos, tabelas, listas, rodapé,
 cabeçalho de página) é idêntico entre os dois formatos, **não foi necessário um script
-de conversão novo**. Em vez disso, [`markdown2inmetro_docx.py`](markdown2inmetro_docx.py) recebeu
+de conversão novo**. Em vez disso, [`markdown2inmetro_docx.py`](../markdown2inmetro_docx.py) recebeu
 um knob de linha de comando:
 
 ```

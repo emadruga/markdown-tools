@@ -7,7 +7,7 @@ formatos de documento normativo:
 - **NIT** (Norma Inmetro Técnica) — modelo [MOD-Gabin-40](normas/MOD-Gabin-40_02.doc)
 
 As diferenças entre os dois modelos estão detalhadas em
-[MOD39_MOD40_DIFERENCAS.md](MOD39_MOD40_DIFERENCAS.md). Em resumo: o corpo do documento
+[docs/MOD39_MOD40_DIFERENCAS.md](docs/MOD39_MOD40_DIFERENCAS.md). Em resumo: o corpo do documento
 (fonte, margens, cabeçalho/rodapé de página, tabelas, listas) é idêntico — a única
 diferença real é que o **DOQ tem página de capa** antes do sumário e a **NIT não tem**
 (o sumário já é a primeira página).

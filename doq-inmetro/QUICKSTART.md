@@ -31,7 +31,8 @@ O script usa `inmetro-logo.png` (já presente nesta pasta) para o logo do cabeç
 
 ```bash
 python markdown2inmetro_docx.py <input.md> [-o output.docx] [--format {doq,nit}] \
-  [--doc-code CÓDIGO] [--doc-rev REVISÃO] [--doc-title TÍTULO] [--doc-date MÊS/ANO]
+  [--doc-code CÓDIGO] [--doc-rev REVISÃO] [--doc-title TÍTULO] [--doc-date MÊS/ANO] \
+  [--doc-toc-levels N]
 ```
 
 | Opção | Obrigatório | Default | Descrição |
@@ -40,9 +41,10 @@ python markdown2inmetro_docx.py <input.md> [-o output.docx] [--format {doq,nit}]
 | `-o`, `--output` | não | `<input>.docx` (mesmo nome, extensão trocada) | Caminho do `.docx` de saída |
 | `--format` | não | **`doq`** | `doq` (com capa) ou `nit` (sem capa) |
 | `--doc-code` | não | `DOQ-DIMCI-020` | Código exibido no cabeçalho (coluna CODIFICAÇÃO no DOQ; NORMA Nº / CODIFICAÇÃO na 1ª página da NIT) e na capa, se `--format doq` |
-| `--doc-rev` | não | `REV. 01` | Revisão exibida no cabeçalho (coluna REV.) |
+| `--doc-rev` | não | `01` | **Só o número da revisão** (ex. `00`, `02`) — o rótulo "REV." já é fixo no layout, numa linha acima do valor |
 | `--doc-title` | não | H1 do markdown, se houver; senão `TÍTULO` | **Só usado em `--format nit`** — título exibido no cabeçalho da 1ª página. No DOQ o título vem sempre do H1 da capa |
 | `--doc-date` | não | `MÊS/ANO` | **Só usado em `--format nit`** — mês/ano de publicação exibido no cabeçalho da 1ª página (coluna PUBLICADO EM). Não aparece no cabeçalho do DOQ |
+| `--doc-toc-levels` | não | `4` | Quantos níveis de heading (1 a 5) entram no sumário (campo `TOC \o "1-N"` do Word) — `1` inclui só headings de nível 1, `5` inclui até o nível mais profundo suportado |
 
 > Se `--format` não for informado, o script assume **`doq`** — o comportamento
 > histórico do script, preservado para não quebrar scripts/pipelines existentes.
@@ -65,9 +67,10 @@ HTML):
 ```markdown
 ---
 doc-code: NIT-LAINF-009
-doc-rev: REV. 00
+doc-rev: "00"
 doc-date: Jun/2026
 doc-title: AVALIAÇÃO DE MATURIDADE DE INDÚSTRIAS 4.0
+doc-toc-levels: "3"
 ---
 
 ## SUMÁRIO
@@ -82,8 +85,11 @@ python markdown2inmetro_docx.py testes/nit/NIT-LAINF-009_jun2026.md --format nit
 
 Regras:
 
-- **Chaves aceitas**: `doc-code`, `doc-rev`, `doc-date`, `doc-title` — qualquer outra
-  linha `chave: valor` no bloco é ignorada (reservado para uso futuro).
+- **Chaves aceitas**: `doc-code`, `doc-rev`, `doc-date`, `doc-title`, `doc-toc-levels` —
+  qualquer outra linha `chave: valor` no bloco é ignorada (reservado para uso futuro).
+  `doc-toc-levels` precisa ser um número inteiro entre `1` e `5` (como texto ou não —
+  `"3"` e `3` são equivalentes); um valor fora desse intervalo ou não numérico interrompe
+  a conversão com erro.
 - **Prioridade**: se a mesma flag for passada via CLI *e* existir no front matter, a
   CLI vence. Isso permite, por exemplo, usar o front matter como valor padrão do
   arquivo e sobrescrever pontualmente (ex. uma revisão diferente) sem editar o `.md`.
@@ -104,7 +110,7 @@ Regras:
 ```bash
 python markdown2inmetro_docx.py testes/doq/DOQ-DIMCI-020_jun2026-Final.md \
   -o testes/doq/DOQ-DIMCI-020_jun2026-Final.docx \
-  --format doq --doc-code DOQ-DIMCI-020 --doc-rev "REV. 01"
+  --format doq --doc-code DOQ-DIMCI-020 --doc-rev "01"
 ```
 
 Equivalente (formato é o default, pode ser omitido):
@@ -178,14 +184,14 @@ Equivalente, se o markdown **não** tivesse front matter — tudo via flags:
 ```bash
 python markdown2inmetro_docx.py testes/nit/NIT-LAINF-009_jun2026.md \
   -o testes/nit/NIT-LAINF-009_jun2026.docx \
-  --format nit --doc-code NIT-LAINF-009 --doc-rev "REV. 00" \
+  --format nit --doc-code NIT-LAINF-009 --doc-rev "00" \
   --doc-date "Jun/2026" --doc-title "AVALIAÇÃO DE MATURIDADE DE INDÚSTRIAS 4.0"
 ```
 
 `--format nit` é **obrigatório** para gerar uma NIT — sem ele, o script monta a capa
 estilo DOQ mesmo que o markdown não tenha um H1 real no início. `doc-code`/`doc-rev`/
 `doc-date` também são essenciais aqui (via CLI ou front matter): sem eles o cabeçalho
-sai com os defaults (`DOQ-DIMCI-020` / `REV. 01` / `MÊS/ANO`), que não fazem sentido
+sai com os defaults (`DOQ-DIMCI-020` / `01` / `MÊS/ANO`), que não fazem sentido
 numa NIT. `doc-title` pode ser omitido se o markdown tiver um H1 antes do
 `## SUMÁRIO` — nesse caso o título do cabeçalho vem automaticamente desse H1.
 
@@ -221,7 +227,7 @@ Exemplo mínimo (sem H1, com front matter):
 ```markdown
 ---
 doc-code: NIT-LAINF-009
-doc-rev: REV. 00
+doc-rev: "00"
 doc-date: Jun/2026
 doc-title: TÍTULO DA NORMA
 ---

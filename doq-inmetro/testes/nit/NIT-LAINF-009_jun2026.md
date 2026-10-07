@@ -1,6 +1,6 @@
 ---
 doc-code: NIT-LAINF-009
-doc-rev: REV. 00
+doc-rev: "01"
 doc-date: Jun/2026
 doc-title: ORIENTAÇÃO PARA AVALIAÇÃO DE MATURIDADE DE INDÚSTRIAS 4.0
 ---

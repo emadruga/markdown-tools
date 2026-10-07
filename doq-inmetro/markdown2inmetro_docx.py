@@ -45,10 +45,16 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 LOGO_PATH = SCRIPT_DIR / "inmetro-logo.png"
 
 DOC_CODE = "DOQ-DIMCI-020"
-DOC_REV = "REV. 01"
+# Só o número da revisão (ex. "01") — o rótulo "REV." é fixo no layout do
+# cabeçalho, numa linha própria acima do valor (ver build_header e
+# build_header_nit), igual ao padrão visual dos modelos MOD-Gabin-39/40.
+DOC_REV = "01"
 DOC_DATE = "MÊS/ANO"
 DEFAULT_DOC_TITLE = "TÍTULO"
 DOC_TITLE = DEFAULT_DOC_TITLE
+# Profundidade do sumário (campo TOC \o "1-N"): quantos níveis de
+# heading (1=título de maior nível, 5=menor) entram no sumário.
+DOC_TOC_LEVELS = 4
 
 # Fonte do corpo e dos títulos (F-1 / decisão §5.4): o template usa
 # Times New Roman 12 pt no corpo e nos títulos, distinguindo os títulos
@@ -113,6 +119,21 @@ def set_cell_vcenter(cell):
     vAlign = OxmlElement('w:vAlign')
     vAlign.set(qn('w:val'), 'center')
     tcPr.append(vAlign)
+
+
+def set_cell_margins(cell, top=0, bottom=0, left=0, right=0):
+    """Define as margens internas (tcMar) de uma célula, em twips. Usada na
+    célula do logo para eliminar a margem padrão do Word (~190 twips de
+    cada lado), que faz sobrar pouca folga simétrica para centralizar uma
+    imagem próxima da largura total da coluna."""
+    tcPr = cell._tc.get_or_add_tcPr()
+    tcMar = OxmlElement('w:tcMar')
+    for side, value in (('top', top), ('bottom', bottom), ('left', left), ('right', right)):
+        el = OxmlElement(f'w:{side}')
+        el.set(qn('w:w'), str(value))
+        el.set(qn('w:type'), 'dxa')
+        tcMar.append(el)
+    tcPr.append(tcMar)
 
 
 def add_bookmark(paragraph, name, bookmark_id):
@@ -292,11 +313,14 @@ def setup_styles(doc):
     except KeyError:
         pass
 
-    # Estilo das entradas do sumário (campo TOC \o "1-4"): Times New Roman
-    # 10pt negrito, sem cor de hyperlink — o Word usa os estilos nativos
-    # TOC1..TOC9 para o conteúdo gerado pelo campo, que por padrão herdam
-    # Calibri de tamanho variável por nível se não forem redefinidos aqui.
-    for level in range(1, 5):
+    # Estilo das entradas do sumário (campo TOC \o "1-N", N = DOC_TOC_LEVELS):
+    # Times New Roman 10pt negrito, sem cor de hyperlink — o Word usa os
+    # estilos nativos TOC1..TOC9 para o conteúdo gerado pelo campo, que por
+    # padrão herdam Calibri de tamanho variável por nível se não forem
+    # redefinidos aqui. Sempre cria os 5 níveis possíveis (1-5), independente
+    # de DOC_TOC_LEVELS, pois o valor efetivo só é resolvido depois do front
+    # matter ser lido (em convert()), mais tarde do que setup_styles() roda.
+    for level in range(1, 6):
         name = f'TOC {level}'
         try:
             st = styles[name]
@@ -358,14 +382,14 @@ def build_header(section, total_pages_placeholder="465"):
 
     logo_cell, code_cell, rev_cell, page_cell = row.cells
 
+    set_cell_margins(logo_cell)
     add_logo_run(logo_cell.paragraphs[0])
 
     code_p = code_cell.paragraphs[0]
     code_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    label_run = code_p.add_run('CODIFICAÇÃO\n')
-    label_run.bold = True
-    label_run.font.size = Pt(10)
-    label_run.font.name = BODY_FONT
+    code_p.paragraph_format.space_after = Pt(0)
+    code_p.paragraph_format.space_before = Pt(0)
+    code_p.paragraph_format.line_spacing = 1.0
     run = code_p.add_run(DOC_CODE)
     run.bold = True
     run.font.size = Pt(12)
@@ -373,27 +397,37 @@ def build_header(section, total_pages_placeholder="465"):
 
     rev_p = rev_cell.paragraphs[0]
     rev_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    rev_p.paragraph_format.space_after = Pt(0)
+    rev_p.paragraph_format.space_before = Pt(0)
+    rev_p.paragraph_format.line_spacing = 1.0
+    label_run = rev_p.add_run('REV.\n')
+    label_run.bold = True
+    label_run.font.size = Pt(10)
+    label_run.font.name = BODY_FONT
     run = rev_p.add_run(DOC_REV)
     run.bold = True
     run.font.size = Pt(10)
     run.font.name = BODY_FONT
 
+    # 'PÁGINA' e o campo PAGE/NUMPAGES no mesmo parágrafo (quebra de linha
+    # '\n' em vez de um 2º parágrafo), igual ao padrão de build_header_nit —
+    # garante centralização vertical correta do bloco dentro da célula.
     page_p = page_cell.paragraphs[0]
     page_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    run = page_p.add_run('PÁGINA\n')
-    run.bold = True
-    run.font.size = Pt(10)
-    run.font.name = BODY_FONT
-    page_p2 = page_cell.add_paragraph()
-    page_p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    add_field(page_p2, 'PAGE')
-    r = page_p2.add_run('/')
-    r.font.size = Pt(10)
-    add_field(page_p2, 'NUMPAGES')
-    for pp in (page_p, page_p2):
-        for r in pp.runs:
-            r.font.size = Pt(10)
-            r.font.name = BODY_FONT
+    page_p.paragraph_format.space_after = Pt(0)
+    page_p.paragraph_format.space_before = Pt(0)
+    page_p.paragraph_format.line_spacing = 1.0
+    label_run = page_p.add_run('PÁGINA\n')
+    label_run.bold = True
+    label_run.font.size = Pt(10)
+    label_run.font.name = BODY_FONT
+    add_field(page_p, 'PAGE')
+    sep_run = page_p.add_run('/')
+    add_field(page_p, 'NUMPAGES')
+    for r in page_p.runs:
+        r.bold = True
+        r.font.size = Pt(10)
+        r.font.name = BODY_FONT
 
     set_table_borders(table)
     add_header_spacer(header)
@@ -406,7 +440,7 @@ def build_header_nit(section):
     verticalmente; a 3ª coluna traz 'NORMA Nº'/código na linha 1 e
     'PUBLICADO EM'/mês-ano na linha 2; a 4ª traz 'REV. Nº'/revisão na linha 1
     e 'PÁGINA'/paginação na linha 2. Diferente do cabeçalho do DOQ
-    (build_header), que é uma única linha com CODIFICAÇÃO/REV./PÁGINA."""
+    (build_header), que é uma única linha com código/REV./PÁGINA."""
     header = section.header
     header.is_linked_to_previous = False
     for p in list(header.paragraphs):
@@ -432,6 +466,7 @@ def build_header_nit(section):
     rev_cell = table.cell(0, 3)
     pagina_cell = table.cell(1, 3)
 
+    set_cell_margins(logo_cell)
     add_logo_run(logo_cell.paragraphs[0])
 
     title_p = title_cell.paragraphs[0]
@@ -537,11 +572,17 @@ def build_footer(section, doc_format='doq'):
         run.font.name = 'Arial'
 
 
-def add_logo_run(paragraph, size_cm=1.79):
-    # Largura do logo conforme o template MOD-Gabin-039 (C-4): 1,79 cm.
-    # A altura fica proporcional à imagem para não distorcê-la (o PNG atual
-    # tem proporção diferente da usada no template).
+def add_logo_run(paragraph, size_cm=1.9):
+    # Largura do logo: a célula tem 2,4cm e, com as margens internas
+    # zeradas (set_cell_margins, chamada pelo caller), 1,9cm de imagem
+    # deixa ~0,25cm de folga simétrica de cada lado — suficiente para
+    # centralização visível, sem estourar a célula. A altura fica
+    # proporcional à imagem para não distorcê-la (PNG quase quadrado,
+    # ~1.12:1).
     paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    paragraph.paragraph_format.space_after = Pt(0)
+    paragraph.paragraph_format.space_before = Pt(0)
+    paragraph.paragraph_format.line_spacing = 1.0
     if LOGO_PATH.exists():
         run = paragraph.add_run()
         run.add_picture(str(LOGO_PATH), width=Cm(size_cm))
@@ -570,6 +611,7 @@ def build_cover_header(section):
         set_cell_vcenter(cell)
 
     logo_cell, text_cell = row.cells
+    set_cell_margins(logo_cell)
     add_logo_run(logo_cell.paragraphs[0])
 
     text_p = text_cell.paragraphs[0]
@@ -644,15 +686,16 @@ def strip_html_comments(text):
 
 
 FRONT_MATTER_RE = re.compile(r'\A---\s*\n(.*?)\n---\s*\n?', re.DOTALL)
-FRONT_MATTER_KEYS = {'doc-code', 'doc-rev', 'doc-date', 'doc-title'}
+FRONT_MATTER_KEYS = {'doc-code', 'doc-rev', 'doc-date', 'doc-title', 'doc-toc-levels'}
 
 
 def extract_front_matter(raw):
     """Extrai um bloco opcional de front matter YAML-like no topo do
     arquivo — delimitado por '---' na 1ª linha e '---' sozinho numa linha
     seguinte, só com pares 'chave: valor' simples (sem aninhamento, listas
-    ou aspas) — para definir doc-code/doc-rev/doc-date/doc-title direto no
-    markdown, como alternativa às flags de CLI de mesmo nome.
+    ou aspas) — para definir doc-code/doc-rev/doc-date/doc-title/
+    doc-toc-levels direto no markdown, como alternativa às flags de CLI de
+    mesmo nome.
 
     Retorna (metadata_dict, raw_sem_front_matter). Chaves fora de
     FRONT_MATTER_KEYS são ignoradas (permite reaproveitar o mesmo front
@@ -904,8 +947,8 @@ def convert(md_path, docx_path, doc_format='doq', cli_overrides=None):
     os valores passados via CLI (ou None quando a flag correspondente não
     foi informada). Prioridade de resolução de cada campo doc-*: CLI (se não
     None) > front matter do markdown (se presente) > constante default do
-    módulo (DOC_CODE/DOC_REV/DOC_DATE/DOC_TITLE)."""
-    global DOC_CODE, DOC_REV, DOC_DATE, DOC_TITLE
+    módulo (DOC_CODE/DOC_REV/DOC_DATE/DOC_TITLE/DOC_TOC_LEVELS)."""
+    global DOC_CODE, DOC_REV, DOC_DATE, DOC_TITLE, DOC_TOC_LEVELS
     raw = Path(md_path).read_text(encoding='utf-8')
     front_matter, raw = extract_front_matter(raw)
     raw = strip_html_comments(raw)
@@ -919,6 +962,23 @@ def convert(md_path, docx_path, doc_format='doq', cli_overrides=None):
             globals()[global_name] = cli_value
         elif key in front_matter:
             globals()[global_name] = front_matter[key]
+
+    # doc-toc-levels é numérico (1-5), diferente dos demais campos doc-*
+    # (strings livres) — validado e convertido para int aqui.
+    toc_levels_value = cli_overrides.get('doc-toc-levels')
+    if toc_levels_value is None:
+        toc_levels_value = front_matter.get('doc-toc-levels')
+    if toc_levels_value is not None:
+        try:
+            toc_levels_int = int(toc_levels_value)
+        except (TypeError, ValueError):
+            raise ValueError(
+                f"doc-toc-levels deve ser um número inteiro entre 1 e 5, recebido: {toc_levels_value!r}")
+        if not 1 <= toc_levels_int <= 5:
+            raise ValueError(
+                f"doc-toc-levels deve estar entre 1 e 5, recebido: {toc_levels_int}")
+        DOC_TOC_LEVELS = toc_levels_int
+
     if front_matter:
         log.info('Front matter do markdown: %s', front_matter)
 
@@ -1241,13 +1301,14 @@ def insert_toc_placeholder(doc, builder, doc_format='doq'):
     p.paragraph_format.space_after = Pt(10)
 
     field_p = doc.add_paragraph()
+    toc_switch = f'\\o "1-{DOC_TOC_LEVELS}"'
     if doc_format == 'nit':
         # NIT (MOD-Gabin-40): sumário sem número de página (\n suprime a
         # coluna de página — e o leader de pontos que a acompanha — para
         # todos os níveis incluídos em \o), diferente do DOQ.
-        add_field(field_p, 'TOC \\o "1-4" \\n \\h \\z \\u')
+        add_field(field_p, f'TOC {toc_switch} \\n \\h \\z \\u')
     else:
-        add_field(field_p, 'TOC \\o "1-4" \\h \\z \\u')
+        add_field(field_p, f'TOC {toc_switch} \\h \\z \\u')
     note_p = doc.add_paragraph()
     if doc_format == 'nit':
         note_text = (
@@ -1283,8 +1344,8 @@ def main():
     )
     parser.add_argument(
         '--doc-code', default=None,
-        help=f"Código do documento exibido no cabeçalho (coluna CODIFICAÇÃO) "
-             f"e, no formato doq, também na capa. Pode também ser definido no "
+        help=f"Código do documento exibido no cabeçalho (célula à direita do "
+             f"título/logo) e, no formato doq, também na capa. Pode também ser definido no "
              f"front matter do markdown (doc-code: ...); a CLI tem prioridade "
              f"sobre o front matter. Padrão: {DOC_CODE!r}.",
     )
@@ -1307,6 +1368,12 @@ def main():
              "informado e o markdown trouxer um H1 antes do SUMÁRIO, o "
              "texto do H1 é usado.",
     )
+    parser.add_argument(
+        '--doc-toc-levels', type=int, default=None, choices=range(1, 6),
+        help=f"Quantos níveis de heading (1 a 5) entram no sumário (campo "
+             f"TOC \\o \"1-N\"). Pode também ser definido no front matter "
+             f"(doc-toc-levels: ...). Padrão: {DOC_TOC_LEVELS}.",
+    )
     args = parser.parse_args()
 
     input_path = Path(args.input)
@@ -1321,6 +1388,7 @@ def main():
         'doc-rev': args.doc_rev,
         'doc-date': args.doc_date,
         'doc-title': args.doc_title,
+        'doc-toc-levels': args.doc_toc_levels,
     }
 
     log.info('Convertendo %s -> %s (formato: %s)', input_path, output_path, args.format)

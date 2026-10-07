@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """
-Markdown -> DOCX para documentos normativos DOQ-Inmetro.
+Markdown -> DOCX para documentos normativos Inmetro (DOQ ou NIT).
 
 Converte o markdown do DOQ-DIMCI-020 (e documentos irmãos com a mesma
-estrutura) para um .docx que replica o padrão visual institucional do
-PDF de referência: documento monocromático, fonte sans-serif, cabeçalho
-em tabela (logo INMETRO | código do documento | revisão | página) em
-todas as páginas exceto a capa, capa simples, sumário com hyperlinks
-internos e campo TOC nativo do Word, tabelas com bordas simples e
-cabeçalho em negrito.
+estrutura, DOQ ou NIT) para um .docx que replica o padrão visual
+institucional do PDF de referência: documento monocromático, fonte
+Times New Roman, cabeçalho em tabela (logo INMETRO | código do documento
+| revisão | página) em todas as páginas exceto a capa (quando houver),
+sumário com hyperlinks internos e campo TOC nativo do Word, tabelas com
+bordas simples e cabeçalho em negrito.
 
 Uso:
-    python markdown2doq_docx.py <input.md> [-o output.docx]
+    python markdown2inmetro_docx.py <input.md> [-o output.docx] [--format {doq,nit}]
 """
 
 import argparse
@@ -716,7 +716,10 @@ def parse_plain_text_table(lines):
     return rows
 
 
-def convert(md_path, docx_path):
+def convert(md_path, docx_path, doc_format='doq'):
+    """doc_format: 'doq' (com capa própria) ou 'nit' (sem capa — a primeira
+    página já é o SUMÁRIO, com o cabeçalho completo logo/código/revisão/página
+    desde o início, em vez do cabeçalho reduzido logo+diretoria da capa DOQ)."""
     raw = Path(md_path).read_text(encoding='utf-8')
     raw = strip_html_comments(raw)
     lines = raw.split('\n')
@@ -735,7 +738,13 @@ def convert(md_path, docx_path):
     section.footer_distance = Cm(1.0)
 
     setup_styles(doc)
-    build_cover_header(section)
+    if doc_format == 'nit':
+        # NIT (MOD-Gabin-40): sem capa — o cabeçalho completo (logo, código,
+        # revisão, página) já vale para a primeira página, pois o SUMÁRIO é a
+        # própria primeira página do documento.
+        build_header(section)
+    else:
+        build_cover_header(section)
     build_footer(section)
 
     builder = MarkdownDocxBuilder(doc)
@@ -799,11 +808,35 @@ def convert(md_path, docx_path):
                     if HEADING_RE.match(l2) or re.fullmatch(r'-{3,}', l2.strip()):
                         break
                     i += 1
+                if doc_format == 'nit' and not first_h1_done:
+                    # NIT sem H1 de capa no markdown de origem: o SUMÁRIO é o
+                    # primeiro heading do arquivo e já abre o documento.
+                    first_h1_done = True
+                    started_body_section = True
+                    insert_toc_placeholder(doc, builder)
+                    add_page_break(doc)
                 continue
 
             if level == 1 and not first_h1_done:
-                build_cover_page(doc, text)
                 first_h1_done = True
+                if doc_format == 'nit':
+                    # NIT: sem página de capa — o título do H1 é descartado
+                    # (a identificação do documento já está no cabeçalho de
+                    # página, na coluna CODIFICAÇÃO) e o SUMÁRIO começa já na
+                    # primeira página, sob o mesmo cabeçalho/rodapé completos
+                    # montados antes do loop.
+                    i += 1
+                    while i < n and not re.fullmatch(r'-{3,}', lines[i].strip()):
+                        i += 1
+                    if i < n:
+                        i += 1  # pula o '---'
+                    started_body_section = True
+                    insert_toc_placeholder(doc, builder)
+                    add_page_break(doc)
+                    i += 1
+                    continue
+
+                build_cover_page(doc, text)
                 # consome as linhas de metadados da capa (autoria, código,
                 # revisão) já renderizadas por build_cover_page, até o
                 # separador '---' que fecha a capa no markdown de origem.
@@ -987,9 +1020,20 @@ def insert_toc_placeholder(doc, builder):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Converte markdown DOQ-Inmetro para DOCX.')
+    parser = argparse.ArgumentParser(
+        description='Converte markdown para DOCX no padrão institucional Inmetro (DOQ ou NIT).'
+    )
     parser.add_argument('input', help='Arquivo markdown de entrada')
     parser.add_argument('-o', '--output', help='Arquivo .docx de saída')
+    parser.add_argument(
+        '--format', choices=['doq', 'nit'], default='doq',
+        help=(
+            "Padrão de documento: 'doq' (MOD-Gabin-39, com página de capa "
+            "própria antes do sumário) ou 'nit' (MOD-Gabin-40, sem capa — o "
+            "sumário já é a primeira página, sob o cabeçalho completo). "
+            "Padrão: doq."
+        ),
+    )
     args = parser.parse_args()
 
     input_path = Path(args.input)
@@ -999,8 +1043,8 @@ def main():
 
     output_path = Path(args.output) if args.output else input_path.with_suffix('.docx')
 
-    log.info('Convertendo %s -> %s', input_path, output_path)
-    convert(str(input_path), str(output_path))
+    log.info('Convertendo %s -> %s (formato: %s)', input_path, output_path, args.format)
+    convert(str(input_path), str(output_path), doc_format=args.format)
     log.info('Concluído: %s', output_path)
 
 

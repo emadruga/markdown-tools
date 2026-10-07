@@ -1,3 +1,10 @@
+---
+doc-code: NIT-LAINF-009
+doc-rev: REV. 00
+doc-date: Jun/2026
+doc-title: ORIENTAÇÃO PARA AVALIAÇÃO DE MATURIDADE DE INDÚSTRIAS 4.0
+---
+
 <!--
 NIT-LAINF-009 — fixture de teste para a geração em formato NIT
 (python markdown2inmetro_docx.py NIT-LAINF-009_jun2026.md --format nit).
@@ -9,7 +16,9 @@ corresponde ao tema real de uma eventual NIT-LAINF-009; não usar como
 referência normativa.
 Cabeçalho ajustado para o padrão NIT (MOD-Gabin-40): sem página de capa — o
 SUMÁRIO já é o primeiro heading do arquivo, conforme
-QUICKSTART.md#gerar-uma-nit.
+QUICKSTART.md#gerar-uma-nit. Os dados de identificação do cabeçalho (código,
+revisão, data, título) agora vêm do front matter acima, em vez de precisarem
+ser passados via --doc-code/--doc-rev/--doc-date/--doc-title na CLI.
 Cada seção do corpo ainda traz um comentário (pág. original: N/465) herdado
 da transcrição de origem, apontando a página no PDF do DOQ-DIMCI-020 — não
 tem relação com a paginação de uma NIT real.

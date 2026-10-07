@@ -12,6 +12,12 @@ bordas simples e cabeçalho em negrito.
 
 Uso:
     python markdown2inmetro_docx.py <input.md> [-o output.docx] [--format {doq,nit}]
+
+Os dados de identificação do documento (código, revisão, título, data de
+publicação) podem vir de flags --doc-code/--doc-rev/--doc-title/--doc-date
+ou de um front matter no topo do markdown (doc-code:/doc-rev:/doc-title:/
+doc-date:, delimitado por '---'); a CLI tem prioridade sobre o front matter.
+Ver extract_front_matter() e QUICKSTART.md.
 """
 
 import argparse
@@ -40,6 +46,9 @@ LOGO_PATH = SCRIPT_DIR / "inmetro-logo.png"
 
 DOC_CODE = "DOQ-DIMCI-020"
 DOC_REV = "REV. 01"
+DOC_DATE = "MÊS/ANO"
+DEFAULT_DOC_TITLE = "TÍTULO"
+DOC_TITLE = DEFAULT_DOC_TITLE
 
 # Fonte do corpo e dos títulos (F-1 / decisão §5.4): o template usa
 # Times New Roman 12 pt no corpo e nos títulos, distinguindo os títulos
@@ -255,6 +264,25 @@ def setup_styles(doc):
         st.paragraph_format.space_after = Pt(6)
         st.paragraph_format.keep_with_next = True
         st.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        # Remove os atributos de tema (asciiTheme/hAnsiTheme/...) herdados
+        # do template em branco do Word: quando coexistem com w:ascii/
+        # w:hAnsi no mesmo w:rFonts, alguns caminhos de renderização do
+        # Word (ex.: ao copiar o texto do heading para dentro do campo TOC
+        # ao atualizar) priorizam o tema (Calibri/majorHAnsi) em vez da
+        # fonte explícita — mesmo problema que setup_docDefaults() já
+        # corrige para o rPrDefault.
+        rpr = st.element.get_or_add_rPr()
+        rFonts = rpr.find(qn('w:rFonts'))
+        if rFonts is None:
+            rFonts = OxmlElement('w:rFonts')
+            rpr.insert(0, rFonts)
+        for attr in ('w:asciiTheme', 'w:eastAsiaTheme', 'w:hAnsiTheme', 'w:cstheme'):
+            if rFonts.get(qn(attr)) is not None:
+                del rFonts.attrib[qn(attr)]
+        rFonts.set(qn('w:ascii'), BODY_FONT)
+        rFonts.set(qn('w:hAnsi'), BODY_FONT)
+        rFonts.set(qn('w:cs'), BODY_FONT)
+        rFonts.set(qn('w:eastAsia'), BODY_FONT)
 
     try:
         hl = styles['Hyperlink']
@@ -262,6 +290,22 @@ def setup_styles(doc):
         hl.font.underline = True
     except KeyError:
         pass
+
+    # Estilo das entradas do sumário (campo TOC \o "1-4"): Times New Roman
+    # 10pt negrito, sem cor de hyperlink — o Word usa os estilos nativos
+    # TOC1..TOC9 para o conteúdo gerado pelo campo, que por padrão herdam
+    # Calibri de tamanho variável por nível se não forem redefinidos aqui.
+    for level in range(1, 5):
+        name = f'TOC {level}'
+        try:
+            st = styles[name]
+        except KeyError:
+            st = styles.add_style(name, WD_STYLE_TYPE.PARAGRAPH)
+        st.font.name = BODY_FONT
+        st.font.size = Pt(10)
+        st.font.bold = True
+        st.font.color.rgb = RGBColor(0, 0, 0)
+        st.paragraph_format.space_after = Pt(4)
 
     # Estilo visualmente idêntico ao Heading4, porém sem outlineLvl — usado
     # para subtítulos que se repetem em toda Capacidade ('Bloco/Pilar',
@@ -349,6 +393,94 @@ def build_header(section, total_pages_placeholder="465"):
         for r in pp.runs:
             r.font.size = Pt(10)
             r.font.name = BODY_FONT
+
+    set_table_borders(table)
+    add_header_spacer(header)
+    return table
+
+
+def build_header_nit(section):
+    """Cabeçalho de página da NIT (MOD-Gabin-40): tabela de 2 linhas x 4
+    colunas — logo e título ocupam as duas primeiras colunas, mescladas
+    verticalmente; a 3ª coluna traz 'NORMA Nº'/código na linha 1 e
+    'PUBLICADO EM'/mês-ano na linha 2; a 4ª traz 'REV. Nº'/revisão na linha 1
+    e 'PÁGINA'/paginação na linha 2. Diferente do cabeçalho do DOQ
+    (build_header), que é uma única linha com CODIFICAÇÃO/REV./PÁGINA."""
+    header = section.header
+    header.is_linked_to_previous = False
+    for p in list(header.paragraphs):
+        p.text = ''
+
+    table = header.add_table(rows=2, cols=4, width=Cm(17))
+    table.alignment = WD_TABLE_ALIGNMENT.CENTER
+    # Coluna 3 (NORMA Nº / PUBLICADO EM) alargada e coluna 2 (título)
+    # estreitada em relação ao cabeçalho do DOQ: 'PUBLICADO EM' em Times New
+    # Roman 10pt bold não cabe em 1 linha com 2.8cm, quebrando em 2 linhas.
+    widths = [Cm(2.4), Cm(8.3), Cm(3.6), Cm(2.7)]
+    for col, w in zip(table.columns, widths):
+        col.width = w
+    for row in table.rows:
+        for cell, w in zip(row.cells, widths):
+            cell.width = w
+            set_cell_vcenter(cell)
+
+    logo_cell = table.cell(0, 0).merge(table.cell(1, 0))
+    title_cell = table.cell(0, 1).merge(table.cell(1, 1))
+    norma_cell = table.cell(0, 2)
+    publicado_cell = table.cell(1, 2)
+    rev_cell = table.cell(0, 3)
+    pagina_cell = table.cell(1, 3)
+
+    add_logo_run(logo_cell.paragraphs[0])
+
+    title_p = title_cell.paragraphs[0]
+    title_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    title_p.paragraph_format.space_after = Pt(0)
+    title_p.paragraph_format.space_before = Pt(0)
+    title_p.paragraph_format.line_spacing = 1.0
+    run = title_p.add_run(DOC_TITLE)
+    run.bold = True
+    run.font.size = Pt(10)
+    run.font.name = BODY_FONT
+
+    def label_value_cell(cell, label, value):
+        p = cell.paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.space_after = Pt(0)
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.line_spacing = 1.0
+        label_run = p.add_run(f'{label}\n')
+        label_run.bold = True
+        label_run.font.size = Pt(10)
+        label_run.font.name = BODY_FONT
+        value_run = p.add_run(value)
+        value_run.bold = True
+        value_run.font.size = Pt(10)
+        value_run.font.name = BODY_FONT
+
+    label_value_cell(norma_cell, 'NORMA Nº', DOC_CODE)
+    label_value_cell(publicado_cell, 'PUBLICADO EM', DOC_DATE)
+    label_value_cell(rev_cell, 'REV. Nº', DOC_REV)
+
+    # 'PÁGINA' e o campo PAGE/NUMPAGES no mesmo parágrafo (quebra de linha
+    # '\n' em vez de um 2º parágrafo) para não sobrar uma linha em branco
+    # entre o rótulo e o número — mesmo padrão usado em label_value_cell.
+    pagina_p = pagina_cell.paragraphs[0]
+    pagina_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    pagina_p.paragraph_format.space_after = Pt(0)
+    pagina_p.paragraph_format.space_before = Pt(0)
+    pagina_p.paragraph_format.line_spacing = 1.0
+    label_run = pagina_p.add_run('PÁGINA\n')
+    label_run.bold = True
+    label_run.font.size = Pt(10)
+    label_run.font.name = BODY_FONT
+    add_field(pagina_p, 'PAGE')
+    sep_run = pagina_p.add_run('/')
+    add_field(pagina_p, 'NUMPAGES')
+    for r in pagina_p.runs:
+        r.bold = True
+        r.font.size = Pt(10)
+        r.font.name = BODY_FONT
 
     set_table_borders(table)
     add_header_spacer(header)
@@ -507,6 +639,39 @@ def strip_html_comments(text):
     return HTML_COMMENT_RE.sub('', text)
 
 
+FRONT_MATTER_RE = re.compile(r'\A---\s*\n(.*?)\n---\s*\n?', re.DOTALL)
+FRONT_MATTER_KEYS = {'doc-code', 'doc-rev', 'doc-date', 'doc-title'}
+
+
+def extract_front_matter(raw):
+    """Extrai um bloco opcional de front matter YAML-like no topo do
+    arquivo — delimitado por '---' na 1ª linha e '---' sozinho numa linha
+    seguinte, só com pares 'chave: valor' simples (sem aninhamento, listas
+    ou aspas) — para definir doc-code/doc-rev/doc-date/doc-title direto no
+    markdown, como alternativa às flags de CLI de mesmo nome.
+
+    Retorna (metadata_dict, raw_sem_front_matter). Chaves fora de
+    FRONT_MATTER_KEYS são ignoradas (permite reaproveitar o mesmo front
+    matter para outros metadados no futuro sem quebrar esta função)."""
+    m = FRONT_MATTER_RE.match(raw)
+    if not m:
+        return {}, raw
+    block = m.group(1)
+    metadata = {}
+    for line in block.split('\n'):
+        line = line.strip()
+        if not line or line.startswith('#'):
+            continue
+        if ':' not in line:
+            continue
+        key, _, value = line.partition(':')
+        key = key.strip().lower()
+        value = value.strip().strip('"').strip("'")
+        if key in FRONT_MATTER_KEYS and value:
+            metadata[key] = value
+    return metadata, raw[m.end():]
+
+
 def split_inline_runs(text):
     """Divide uma linha em runs (text, bold, italic) respeitando **bold** e *italic*."""
     runs = []
@@ -587,15 +752,25 @@ class MarkdownDocxBuilder:
         p = self.doc.add_paragraph(style=style_name)
         anchor = self.unique_anchor(text)
         add_bookmark(p, anchor, self.next_bookmark_id())
-        add_runs(p, text, base_size=BODY_PT)
         # Todos os níveis em BODY_PT (12 pt); só o negrito distingue títulos
         # (decisão §5.4). H5 permanece sem negrito e em itálico, exceto o
         # Heading4NoTOC (subtítulos de Capacidade), que é negrito.
+        #
+        # Importante: NÃO define run.font.size/run.font.name aqui (diferente
+        # de add_runs, usada no corpo comum) — formatação direta de run tem
+        # prioridade sobre o estilo do parágrafo no OOXML, e o campo TOC do
+        # Word copia essa formatação de run do heading de origem para dentro
+        # da entrada do sumário, sobrescrevendo o estilo TOC1-TOC4 (10pt)
+        # definido em setup_styles. Deixando o tamanho/fonte vir só do estilo
+        # 'Heading N' (que já define Times New Roman BODY_PT), o TOC herda
+        # corretamente o estilo TOC1-TOC4 ao ser atualizado no Word.
         italic5 = (level == 5) and not excluded_from_toc
-        for run in p.runs:
-            run.font.size = Pt(BODY_PT)
+        for chunk, bold, italic in split_inline_runs(text):
+            if chunk == '':
+                continue
+            run = p.add_run(chunk)
             run.bold = (level != 5) or excluded_from_toc
-            run.italic = italic5 or run.italic
+            run.italic = italic5 or italic
         if not excluded_from_toc:
             self.toc_entries.append((level, text, anchor))
         return p
@@ -716,13 +891,32 @@ def parse_plain_text_table(lines):
     return rows
 
 
-def convert(md_path, docx_path, doc_format='doq'):
+def convert(md_path, docx_path, doc_format='doq', cli_overrides=None):
     """doc_format: 'doq' (com capa própria) ou 'nit' (sem capa — a primeira
     página já é o SUMÁRIO, com o cabeçalho completo logo/código/revisão/página
-    desde o início, em vez do cabeçalho reduzido logo+diretoria da capa DOQ)."""
+    desde o início, em vez do cabeçalho reduzido logo+diretoria da capa DOQ).
+
+    cli_overrides: dict opcional {'doc-code': ..., 'doc-rev': ..., ...} com
+    os valores passados via CLI (ou None quando a flag correspondente não
+    foi informada). Prioridade de resolução de cada campo doc-*: CLI (se não
+    None) > front matter do markdown (se presente) > constante default do
+    módulo (DOC_CODE/DOC_REV/DOC_DATE/DOC_TITLE)."""
+    global DOC_CODE, DOC_REV, DOC_DATE, DOC_TITLE
     raw = Path(md_path).read_text(encoding='utf-8')
+    front_matter, raw = extract_front_matter(raw)
     raw = strip_html_comments(raw)
     lines = raw.split('\n')
+
+    cli_overrides = cli_overrides or {}
+    for key, global_name in (('doc-code', 'DOC_CODE'), ('doc-rev', 'DOC_REV'),
+                              ('doc-date', 'DOC_DATE'), ('doc-title', 'DOC_TITLE')):
+        cli_value = cli_overrides.get(key)
+        if cli_value is not None:
+            globals()[global_name] = cli_value
+        elif key in front_matter:
+            globals()[global_name] = front_matter[key]
+    if front_matter:
+        log.info('Front matter do markdown: %s', front_matter)
 
     doc = Document()
 
@@ -739,10 +933,17 @@ def convert(md_path, docx_path, doc_format='doq'):
 
     setup_styles(doc)
     if doc_format == 'nit':
-        # NIT (MOD-Gabin-40): sem capa — o cabeçalho completo (logo, código,
-        # revisão, página) já vale para a primeira página, pois o SUMÁRIO é a
-        # própria primeira página do documento.
-        build_header(section)
+        # NIT (MOD-Gabin-40): sem capa — o cabeçalho completo (logo, título,
+        # código, revisão, data de publicação, página) já vale para a
+        # primeira página, pois o SUMÁRIO é a própria primeira página do
+        # documento. Se o markdown trouxer um H1 antes do SUMÁRIO e
+        # --doc-title não tiver sido informado via CLI ou front matter, usa
+        # o texto do H1 como DOC_TITLE; o H1 em si não vira página de capa.
+        if DOC_TITLE == DEFAULT_DOC_TITLE:
+            first_heading_match = next((HEADING_RE.match(l) for l in lines if HEADING_RE.match(l)), None)
+            if first_heading_match and len(first_heading_match.group(1)) == 1:
+                DOC_TITLE = first_heading_match.group(2).strip()
+        build_header_nit(section)
     else:
         build_cover_header(section)
     build_footer(section)
@@ -754,6 +955,12 @@ def convert(md_path, docx_path, doc_format='doq'):
     n = len(lines)
     first_h1_done = False
     started_body_section = False
+    # NIT: a 1ª página (com o cabeçalho especial 2x4 de título/norma/data)
+    # vale só para o SUMÁRIO — a partir do primeiro heading do corpo (ex.:
+    # '1 OBJETIVO'), o cabeçalho volta ao padrão de 1 linha usado nas demais
+    # páginas (igual ao DOQ). Este flag marca que essa troca de seção ainda
+    # não ocorreu; vira False assim que o 1º heading do corpo é processado.
+    nit_needs_body_section = (doc_format == 'nit')
     table_buffer = []
     list_buffer_flush = None
 
@@ -810,29 +1017,31 @@ def convert(md_path, docx_path, doc_format='doq'):
                     i += 1
                 if doc_format == 'nit' and not first_h1_done:
                     # NIT sem H1 de capa no markdown de origem: o SUMÁRIO é o
-                    # primeiro heading do arquivo e já abre o documento.
+                    # primeiro heading do arquivo e já abre o documento. Ao
+                    # contrário do DOQ, o MOD-Gabin-40 não força quebra de
+                    # página entre o sumário e o corpo — o texto flui normal.
                     first_h1_done = True
                     started_body_section = True
-                    insert_toc_placeholder(doc, builder)
-                    add_page_break(doc)
+                    insert_toc_placeholder(doc, builder, doc_format=doc_format)
                 continue
 
             if level == 1 and not first_h1_done:
                 first_h1_done = True
                 if doc_format == 'nit':
-                    # NIT: sem página de capa — o título do H1 é descartado
-                    # (a identificação do documento já está no cabeçalho de
-                    # página, na coluna CODIFICAÇÃO) e o SUMÁRIO começa já na
-                    # primeira página, sob o mesmo cabeçalho/rodapé completos
-                    # montados antes do loop.
+                    # NIT: sem página de capa — o H1 já foi usado como
+                    # DOC_TITLE do cabeçalho de página (ver pré-leitura antes
+                    # do loop) e aqui é apenas descartado do corpo; o SUMÁRIO
+                    # começa já na primeira página, sob o mesmo cabeçalho/
+                    # rodapé completos montados antes do loop.
                     i += 1
                     while i < n and not re.fullmatch(r'-{3,}', lines[i].strip()):
                         i += 1
                     if i < n:
                         i += 1  # pula o '---'
                     started_body_section = True
-                    insert_toc_placeholder(doc, builder)
-                    add_page_break(doc)
+                    insert_toc_placeholder(doc, builder, doc_format=doc_format)
+                    # NIT: sem quebra de página forçada entre o sumário e o
+                    # corpo (diferente do DOQ) — ver comentário acima.
                     i += 1
                     continue
 
@@ -860,10 +1069,30 @@ def convert(md_path, docx_path, doc_format='doq'):
                 build_header(new_section)
                 build_footer(new_section)
                 started_body_section = True
-                insert_toc_placeholder(doc, builder)
+                insert_toc_placeholder(doc, builder, doc_format=doc_format)
                 add_page_break(doc)
                 i += 1
                 continue
+
+            if nit_needs_body_section:
+                # Primeiro heading do corpo da NIT (após o SUMÁRIO): fecha a
+                # seção da 1ª página (cabeçalho especial título/norma/data) e
+                # abre uma nova seção com o cabeçalho padrão de 1 linha
+                # (logo/código/revisão/página), igual ao usado nas demais
+                # páginas do DOQ — sem forçar quebra de página antes, já que
+                # o MOD-Gabin-40 deixa o texto fluir normalmente.
+                nit_needs_body_section = False
+                new_section = doc.add_section(WD_SECTION.CONTINUOUS)
+                new_section.page_width = section.page_width
+                new_section.page_height = section.page_height
+                new_section.top_margin = section.top_margin
+                new_section.bottom_margin = section.bottom_margin
+                new_section.left_margin = section.left_margin
+                new_section.right_margin = section.right_margin
+                new_section.header_distance = section.header_distance
+                new_section.footer_distance = section.footer_distance
+                build_header(new_section)
+                build_footer(new_section)
 
             builder.add_heading(level, text)
             i += 1
@@ -999,7 +1228,7 @@ def build_cover_page(doc, title_text):
     run.font.name = BODY_FONT
 
 
-def insert_toc_placeholder(doc, builder):
+def insert_toc_placeholder(doc, builder, doc_format='doq'):
     p = doc.add_paragraph(style='Heading 2')
     run = p.add_run('SUMÁRIO')
     run.font.size = Pt(14)
@@ -1008,18 +1237,32 @@ def insert_toc_placeholder(doc, builder):
     p.paragraph_format.space_after = Pt(10)
 
     field_p = doc.add_paragraph()
-    add_field(field_p, 'TOC \\o "1-4" \\h \\z \\u')
+    if doc_format == 'nit':
+        # NIT (MOD-Gabin-40): sumário sem número de página (\n suprime a
+        # coluna de página — e o leader de pontos que a acompanha — para
+        # todos os níveis incluídos em \o), diferente do DOQ.
+        add_field(field_p, 'TOC \\o "1-4" \\n \\h \\z \\u')
+    else:
+        add_field(field_p, 'TOC \\o "1-4" \\h \\z \\u')
     note_p = doc.add_paragraph()
-    note_run = note_p.add_run(
-        '(Clique com o botão direito no sumário acima e escolha '
-        '"Atualizar campo" para carregar os números de página após abrir o documento no Word.)'
-    )
+    if doc_format == 'nit':
+        note_text = (
+            '(Clique com o botão direito no sumário acima e escolha '
+            '"Atualizar campo" para carregar os itens após abrir o documento no Word.)'
+        )
+    else:
+        note_text = (
+            '(Clique com o botão direito no sumário acima e escolha '
+            '"Atualizar campo" para carregar os números de página após abrir o documento no Word.)'
+        )
+    note_run = note_p.add_run(note_text)
     note_run.italic = True
     note_run.font.size = Pt(9)
     note_run.font.color.rgb = RGBColor(0x60, 0x60, 0x60)
 
 
 def main():
+    global DOC_CODE, DOC_REV, DOC_DATE, DOC_TITLE
     parser = argparse.ArgumentParser(
         description='Converte markdown para DOCX no padrão institucional Inmetro (DOQ ou NIT).'
     )
@@ -1034,6 +1277,32 @@ def main():
             "Padrão: doq."
         ),
     )
+    parser.add_argument(
+        '--doc-code', default=None,
+        help=f"Código do documento exibido no cabeçalho (coluna CODIFICAÇÃO) "
+             f"e, no formato doq, também na capa. Pode também ser definido no "
+             f"front matter do markdown (doc-code: ...); a CLI tem prioridade "
+             f"sobre o front matter. Padrão: {DOC_CODE!r}.",
+    )
+    parser.add_argument(
+        '--doc-rev', default=None,
+        help=f"Revisão exibida no cabeçalho (coluna REV.). Pode também ser "
+             f"definida no front matter (doc-rev: ...). Padrão: {DOC_REV!r}.",
+    )
+    parser.add_argument(
+        '--doc-date', default=None,
+        help=f"Mês/ano de publicação exibido no cabeçalho NIT (coluna "
+             f"PUBLICADO EM; não usado no formato doq). Pode também ser "
+             f"definido no front matter (doc-date: ...). Padrão: {DOC_DATE!r}.",
+    )
+    parser.add_argument(
+        '--doc-title', default=None,
+        help="Título exibido no cabeçalho NIT (não usado no formato doq, "
+             "onde o título vem do H1 da capa). Pode também ser definido no "
+             "front matter (doc-title: ...). Se nenhum dos dois for "
+             "informado e o markdown trouxer um H1 antes do SUMÁRIO, o "
+             "texto do H1 é usado.",
+    )
     args = parser.parse_args()
 
     input_path = Path(args.input)
@@ -1043,8 +1312,15 @@ def main():
 
     output_path = Path(args.output) if args.output else input_path.with_suffix('.docx')
 
+    cli_overrides = {
+        'doc-code': args.doc_code,
+        'doc-rev': args.doc_rev,
+        'doc-date': args.doc_date,
+        'doc-title': args.doc_title,
+    }
+
     log.info('Convertendo %s -> %s (formato: %s)', input_path, output_path, args.format)
-    convert(str(input_path), str(output_path), doc_format=args.format)
+    convert(str(input_path), str(output_path), doc_format=args.format, cli_overrides=cli_overrides)
     log.info('Concluído: %s', output_path)
 
 
